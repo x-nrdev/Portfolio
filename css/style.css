@@ -67,6 +67,7 @@ body {
     align-items: center;
 } 
 .header__card {
+    color: var(--white);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: .5rem;
     text-align: center;
@@ -79,7 +80,7 @@ body {
     font-weight: normal;
 }
 .header__card__text-fe {
-    color: black;
+    color: var(--primaryColor);
 }
 .header__logo {
     margin: 3rem 0;
