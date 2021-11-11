@@ -1,0 +1,89 @@
+
+/* --Globals--*/
+:root {
+    --primaryColor: #52144C;
+    --white: #fff;
+    --black: #000;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* --Utilities-- */
+.container {
+    width: 90%;
+}
+
+/* --BEM-- */
+
+/* Nav */
+.nav__list {
+    background-color: var(--primaryColor);
+    padding: 2rem 0;
+    list-style: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.nav__item {
+    margin-right: 4rem;
+    margin: 0 2rem;
+}
+.nav__item:last-child {
+    margin-right: 6rem;
+}
+.nav__item a{
+    text-decoration: none;
+    color: var(--white)
+}
+
+/* Header */
+.header {
+}
+ .header__bg {
+    background-image: url("../images/laptop2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -6rem;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+.header__card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+    padding: 2.2rem 0;
+    width: 45%;
+}
+.header__card__text-dw {
+    font-weight: normal;
+}
+.header__card__text-fe {
+    color: black;
+}
+.header__logo {
+    margin: 3rem 0;
+    width: 15%;
+}
+.name {}
+.frontend {}
