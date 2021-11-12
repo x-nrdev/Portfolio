@@ -82,7 +82,7 @@ body {
     text-transform: uppercase;
     
     padding: 2.2rem 0;
-    width: 45%;
+    width: 50%;
 }
 .header__card__text-dw {
     font-weight: normal;
@@ -102,25 +102,36 @@ body {
     margin: 0 auto;
     gap: 2rem;
 }
-.main__about {
-    background-color: lightgray;
-    width: 50%;
+.main h2 {
+    margin: 2rem 0;
 }
+.main p {
+    font-size: 1.2rem;
+}
+.main__about,
 .main__skills {
     background-color: lightgray;
     width: 50%;
-    height: 20rem;
+    height: 30rem;
+    border-radius: .5rem;
+    
+}
+.main__about__text {
+    text-align: justify;
+    margin-top: 4rem;
+    padding: 2rem;
 }
 .main__skills__logos {
-    margin: 3rem 0;
+    margin: 1rem;
     
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
 }
-.logo__html,
-.logo__css {
-    width: 10%;
+.main__skills__logos > img {
+    width: 75%;
 }
-.logo__js {
-    width: 13%;
+
+.logo__git {
+    grid-column: span 2;
 }
