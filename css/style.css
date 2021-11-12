@@ -9,6 +9,13 @@
 h1 {
     font-size: 2.5rem;
 }
+h2 {
+    font-size: 2rem;
+}
+h1, h2, h3 {
+    text-align: center;
+    font-weight: bold;
+}
 
 * {
     margin: 0;
@@ -30,7 +37,7 @@ body {
 /* Nav */
 .nav__list {
     background-color: var(--primaryColor);
-    padding: 2rem 0;
+    padding: 1.6rem 0;
     list-style: none;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -53,9 +60,10 @@ body {
 
 /* Header */
 .header {
+    margin-bottom: 2rem;
 }
  .header__bg {
-    background-image: url("../images/laptop2.webp");
+    background-image: url("../images/laptop.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -6rem;
@@ -68,7 +76,7 @@ body {
 } 
 .header__card {
     color: var(--white);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: .5rem;
     text-align: center;
     text-transform: uppercase;
@@ -86,5 +94,33 @@ body {
     margin: 3rem 0;
     width: 15%;
 }
-.name {}
-.frontend {}
+
+/* Main */
+.main {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.main__about {
+    background-color: lightgray;
+    width: 50%;
+}
+.main__skills {
+    background-color: lightgray;
+    width: 50%;
+    height: 20rem;
+}
+.main__skills__logos {
+    margin: 3rem 0;
+    
+    display: flex;
+    justify-content: center;
+}
+.logo__html,
+.logo__css {
+    width: 10%;
+}
+.logo__js {
+    width: 13%;
+}
