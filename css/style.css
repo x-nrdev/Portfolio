@@ -10,11 +10,11 @@ h1 {
     font-size: 2.5rem;
 }
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 4rem 0;
 }
 h1, h2, h3 {
     text-align: center;
-    font-weight: bold;
 }
 
 * {
@@ -26,10 +26,15 @@ h1, h2, h3 {
 body {
     font-family: sans-serif;
 }
-
 /* --Utilities-- */
 .container {
     width: 90%;
+}
+.distance {
+    margin: .7rem 0;
+}
+.bold--words {
+    font-weight: bold;
 }
 
 /* --BEM-- */
@@ -96,42 +101,71 @@ body {
 }
 
 /* Main */
-.main {
+.main {    
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
+    margin: 0 auto 15rem auto;
     gap: 2rem;
-}
-.main h2 {
-    margin: 2rem 0;
 }
 .main p {
     font-size: 1.2rem;
 }
-.main__about,
-.main__skills {
-    background-color: lightgray;
-    width: 50%;
-    height: 30rem;
-    border-radius: .5rem;
-    
-}
 .main__about__text {
     text-align: justify;
-    margin-top: 4rem;
     padding: 2rem;
 }
-.main__skills__logos {
-    margin: 1rem;
-    
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 3rem;
-}
-.main__skills__logos > img {
-    width: 75%;
+/* Skills */
+.main__about,
+.main__skills {
+    width: 50%;
+    height: 30rem;    
 }
 
+.main__skills__logos {
+    height: 74%;
+    width: 90%;
+    margin: 4rem auto;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    gap: 2rem;
+}
+/* Logos */
+.main__skills__logos > img {
+    width: 100%;
+    height: 100%;
+}
+.logo__js {
+    width: 92%;
+}
 .logo__git {
     grid-column: span 2;
+    width: 70%;
+    margin: 0 auto;
+}
+.logo__github {
+    grid-column: 3 / 4;
+}
+
+/* Portfolio */
+.portfolio__window {
+    background-color: lightgray;
+    height: 20rem;
+    width: 20rem;
+    margin: 0 auto;
+}
+
+/* Footer */
+
+.footer {
+    color: var(--white);
+    background-color: var(--primaryColor);
+}
+.footer h2{
+    padding-top: 2rem;
+}
+.footer p {
+    font-size: 1.5rem;
+    text-align: center;
 }
