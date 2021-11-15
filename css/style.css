@@ -62,7 +62,13 @@ body {
 }
 .nav__item a{
     text-decoration: none;
-    color: var(--white)
+    color: #afafaf;
+    transition: .5s;
+    padding-bottom: .6rem;
+}
+.nav__item a:hover {
+    border-bottom: solid 2px;
+    color: var(--white);
 }
 
 /* Header */
@@ -105,9 +111,11 @@ body {
 
 /* Main */
 .main {    
+    height: 35rem;
+    margin: 5rem auto;
+    
     display: flex;
     flex-direction: row;
-    margin: 0 auto 15rem auto;
     gap: 2rem;
 }
 .main p {
