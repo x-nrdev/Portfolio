@@ -222,6 +222,8 @@ body {
     color: var(--white);
     background-color: var(--primaryColor);
     box-shadow: var(--boxShadow);
+
+    height: 30rem;
 }
 .footer h2{
     padding-top: 2rem;
@@ -229,4 +231,18 @@ body {
 .footer p {
     font-size: 1.5rem;
     text-align: center;
+}
+.footer__sn {
+    width: 90%;
+    height: 10rem;
+    margin: 2rem auto;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer__sn > a{
+    width: 8rem;
+}
+.footer__sn > a > img {
+    width: 100%;
 }
