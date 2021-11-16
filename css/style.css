@@ -119,7 +119,7 @@ body {
 /* Main */
 .main {    
     height: 35rem;
-    margin: 8rem 0 20rem auto;
+    margin: 8rem auto 20rem auto;
     
     display: flex;
     flex-direction: row;
