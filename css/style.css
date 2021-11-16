@@ -1,9 +1,12 @@
 
 /* --Globals--*/
 :root {
-    --primaryColor: #52144C;
+    --primaryColor: #77046D;
+    --secundaryColor: #63035b;
     --white: #fff;
     --black: #000;
+    --gray: #b8b8b8;
+    --boxShadow: 0px 0px 20px 5px rgb(41 9 39);
 }
 
 h1 {
@@ -12,6 +15,10 @@ h1 {
 h2 {
     font-size: 3rem;
     margin: 4rem 0;
+}
+h3 {
+    font-size: 2rem;
+    margin: 3rem 0;
 }
 h1, h2, h3 {
     text-align: center;
@@ -24,6 +31,7 @@ h1, h2, h3 {
 }
 
 body {
+    background-color: #f3f3f3;
     font-family: sans-serif;
 }
 /* --Utilities-- */
@@ -42,19 +50,19 @@ body {
 /* Nav */
 .nav__list {
     background-color: var(--primaryColor);
-    padding: 1.6rem 0;
     list-style: none;
     font-size: 1.1rem;
     text-transform: uppercase;
     position: fixed;
     width: 100%;
+    box-shadow: var(--boxShadow);
     
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 .nav__item {
-    margin-right: 4rem;
+    padding: 1.6rem 1rem;
     margin: 0 2rem;
 }
 .nav__item:last-child {
@@ -62,8 +70,8 @@ body {
 }
 .nav__item a{
     text-decoration: none;
-    color: #afafaf;
-    transition: .5s;
+    color: var(--gray);
+    transition: .2s;
     padding-bottom: .6rem;
 }
 .nav__item a:hover {
@@ -74,7 +82,6 @@ body {
 /* Header */
 .header {
     padding-top: 4rem;
-    margin-bottom: 2rem;
 }
  .header__bg {
     background-image: url("../images/laptop.webp");
@@ -112,7 +119,7 @@ body {
 /* Main */
 .main {    
     height: 35rem;
-    margin: 5rem auto;
+    margin: 8rem 0 20rem auto;
     
     display: flex;
     flex-direction: row;
@@ -159,18 +166,62 @@ body {
 }
 
 /* Portfolio */
-.portfolio__window {
-    background-color: lightgray;
-    height: 20rem;
-    width: 20rem;
+.pf__section {
+    margin: 10rem 0;
+    display: flex;
+}
+.pf__container {
     margin: 0 auto;
 }
+.pf__container__card {
+    background-color: var(--white);
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto;
+    transition: .3s;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0);
+}
+.pf__container__card:hover {
+    box-shadow: var(--boxShadow);
+}
+.card__logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
+    padding: 2rem 0;
+}
+.card__logos img{
+    width: 10%;
+}
+.pf__container__image {
+    width: inherit;
+    border: 2px solid var(--primaryColor);
+}
+.pf__container__link{
+    margin-top: 1.8rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.pf__container__link > a {
+    color: var(--gray);
+    background-color: var(--secundaryColor);
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .3s;
+}
+.pf__container__link > a:hover {
+    color: var(--white)
+}
 /* Footer */
 
 .footer {
     color: var(--white);
     background-color: var(--primaryColor);
+    box-shadow: var(--boxShadow);
 }
 .footer h2{
     padding-top: 2rem;
