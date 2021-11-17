@@ -16,7 +16,6 @@
 
 html {
     scroll-behavior: smooth;
-    position: absolute;
 }
 
 body {
@@ -30,7 +29,8 @@ h1 {
 }
 h2 {
     font-size: 3rem;
-    margin: 4rem 0;
+    padding: 4rem 0;
+    margin: 2rem auto;
 }
 h3 {
     font-size: 2rem;
@@ -43,6 +43,7 @@ h1, h2, h3 {
 /* --Utilities-- */
 .container {
     width: 90%;
+    margin: 0 auto;
 }
 .distance {
     margin: .7rem 0;
@@ -50,7 +51,6 @@ h1, h2, h3 {
 .bold--words {
     font-weight: bold;
 }
-
 /* --BEM-- */
 
 /* Nav */
@@ -91,9 +91,9 @@ h1, h2, h3 {
 }
  .header__bg {
     background-image: url("../images/laptop.webp");
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -6rem;
 
     height: 105vh;
 
@@ -124,12 +124,15 @@ h1, h2, h3 {
 
 /* Main */
 .main {    
-    height: 35rem;
-    margin: 8rem auto 20rem auto;
-    
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    margin: 10rem auto;
+}
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
 }
 .main p {
     font-size: 1.2rem;
@@ -173,8 +176,11 @@ h1, h2, h3 {
 
 /* Portfolio */
 .pf__section {
-    margin: 10rem 0;
+    margin: 25rem auto 10rem auto;
+}
+.pf__section__flex {
     display: flex;
+    flex-direction: row;
 }
 .pf__container {
     margin: 0 auto;
@@ -195,6 +201,11 @@ h1, h2, h3 {
     justify-content: space-evenly;
     align-items: center;
     padding: 2rem 0;
+}
+@media (max-width: 768px) {
+    .pf__section__flex {
+        flex-direction: column;
+    }
 }
 .card__logos img{
     width: 10%;
@@ -228,11 +239,9 @@ h1, h2, h3 {
     color: var(--white);
     background-color: var(--primaryColor);
     box-shadow: var(--boxShadow);
-
-    height: 30rem;
 }
 .footer h2{
-    padding-top: 2rem;
+    padding: 2rem 0 0 0;
 }
 .footer p {
     font-size: 1.5rem;
