@@ -31,7 +31,7 @@ h1 {
 }
 h2 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 h3 {
     font-size: 2rem;
@@ -122,6 +122,15 @@ h1, h2, h3 {
     margin: 3rem 0;
     width: 15%;
 }
+@media (max-width: 768px) {
+    .header__card {
+        width: 90%;
+    }
+    .header__logo {
+        margin: 4rem 0;
+        width: 60%;
+    }
+}
 
 /* Main */
 /* About */
@@ -130,10 +139,14 @@ h1, h2, h3 {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 30vh;
 }
+@media (max-width: 768px) {
+    .main {
+        display: block;
+    }
+}
 .main h2 {
     padding-top: 30vh;
 }
-.main__about {}
 .main__about__text {
     display: flex;
     flex-direction: column;
@@ -141,7 +154,12 @@ h1, h2, h3 {
     text-align: justify;
     font-size: 1.4rem;
 }
-
+@media (max-width: 768px) {
+    .main__about__text {
+        padding-top: 14rem;
+        gap: 1rem;
+    }
+}
 /* Skills */
 .main__about__text,
 .main__skills__logos {
@@ -154,14 +172,32 @@ h1, h2, h3 {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+   
     gap: 2rem;
 }
 .main__skills__logos > img,
 .main__skills__logos a {
-    width: 50%;
+    width: 70%;
 }
 .main__skills__logos img:nth-child(4) {
     grid-column: span 2;
+}
+@media (max-width: 768px) {
+    .main__skills__logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main__skills__logos img:nth-child(3) {
+        grid-column: span 2;
+        
+    }
+    .main__skills__logos img:nth-child(4) {
+        grid-column: unset;
+
+    }
+    .main__skills__logos > img,
+    .main__skills__logos a {
+        width: 8rem;
+    }
 }
 
 /* Portfolio */
@@ -188,6 +224,11 @@ h1, h2, h3 {
 }
 .pf__container__card:hover {
     box-shadow: var(--boxShadow);
+}
+@media (max-width: 768px) {
+    .pf__container__card {
+        width: 100%;
+    }
 }
 .card__logos {
     display: flex;
@@ -226,6 +267,14 @@ h1, h2, h3 {
     color: var(--white);
     background-color: var(--primaryColor);
 }
+@media (max-width: 768px) {
+    .pf__container__link {
+        margin-top: 10vh;
+    }
+    .pf__container__link > a {
+        color: var(--white);
+    }
+}
 /* Footer */
 
 .footer {
@@ -247,10 +296,8 @@ h1, h2, h3 {
 
     display: flex;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 .footer__sn > a{
     width: 8rem;
-}
-.footer__sn > a > img {
-    width: 100%;
 }
