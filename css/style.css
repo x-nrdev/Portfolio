@@ -55,40 +55,10 @@ h1, h2, h3 {
 /* --BEM-- */
 
 /* Nav */
-.nav__list {
-    background-color: var(--primaryColor);
-    list-style: none;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    position: fixed;
-    width: 100%;
-    box-shadow: var(--boxShadow);
-    
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.nav__item {
-    padding: 1.6rem 1rem;
-    margin: 0 2rem;
-}
-.nav__item:last-child {
-    margin-right: 6rem;
-}
-.nav__item a{
-    text-decoration: none;
-    color: var(--gray);
-    transition: .2s;
-    padding-bottom: .6rem;
-}
-.nav__item a:hover {
-    border-bottom: solid 2px;
-    color: var(--white);
-}
+
 
 /* Header */
 .header {
-    padding-top: 4rem;
 }
  .header__bg {
     background-image: url("../images/laptop.webp");
