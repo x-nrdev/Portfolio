@@ -238,9 +238,13 @@ h1, h2, h3 {
     text-align: justify;
     font-size: 1.4rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .main__about__text {
         padding-top: 14rem;
+    }
+}
+@media (max-width: 768px) {
+    .main__about__text {
         gap: 1rem;
     }
 }
@@ -334,6 +338,11 @@ h1, h2, h3 {
     padding: 2rem 0;
 }
 @media (max-width: 768px) {
+    .pf__section__flex {
+        flex-direction: column;
+    }
+}
+@media (max-width: 1700px) {
     .pf__section__flex {
         flex-direction: column;
     }
