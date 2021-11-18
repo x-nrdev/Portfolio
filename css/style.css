@@ -168,7 +168,7 @@ h1, h2, h3 {
 }
 @media (min-width: 768px) {
     .header {
-        margin-top: 6vh;
+        padding-top: 6vh;
     }
 }
 .header__bg {
@@ -244,11 +244,24 @@ h1, h2, h3 {
         gap: 1rem;
     }
 }
+@media (min-width: 768px) {
+    .main h2 {
+        padding-top: 10rem;
+    }
+    .main__about {
+        margin-bottom: unset;
+    }
+}
 /* Skills */
 .main__about__text,
 .main__skills__logos {
     height: 20rem;
     margin: 0 1rem;
+}
+@media (min-width: 768px) {
+    .main__about__text {
+        margin-top: 8rem;
+    }
 }
 .main__skills__logos {
 
