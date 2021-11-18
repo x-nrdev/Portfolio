@@ -75,6 +75,11 @@ h1, h2, h3 {
 #btn__menu:hover {
     background-color: rgba(100, 100, 100, .2);
 }
+@media (min-width: 768px) {
+    #btn__menu {
+        display: none;
+    }
+}
 .back__menu {
     position: fixed;
     top: 0;
@@ -118,6 +123,7 @@ h1, h2, h3 {
     display: block;
     color: var(--gray);
     text-decoration: none;
+    text-transform: uppercase;
 
     transition: .3s;
 
@@ -125,11 +131,45 @@ h1, h2, h3 {
 .nav__li a:hover{
     color: var(--white);
     background-color: var(--secundaryColor);
+    font-weight: bold;
 }
 
+@media (min-width: 768px) {
+    .nav {
+        right: 0;
+        height: unset;
+
+        width: 100%;
+        box-shadow: var(--boxShadow);
+    }
+    .nav__ul {
+        flex-direction: row;
+        justify-content: right;
+    }
+    .nav__li {
+        width: unset;
+    }
+    .nav__li a {
+        height: unset;
+        display: inline-block;
+        padding: 2rem;
+        font-size: 1rem;
+    }
+    .nav__ul:last-child {
+        margin-right: 4rem;
+    }
+    .nav__li:nth-child(3) {
+        display: none;
+    }
+}
 /* Header */
 .header{
     margin-bottom: 10vh;
+}
+@media (min-width: 768px) {
+    .header {
+        margin-top: 6vh;
+    }
 }
 .header__bg {
     background-image: url("../images/laptop.webp");
