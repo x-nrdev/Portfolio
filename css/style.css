@@ -128,7 +128,10 @@ h1, h2, h3 {
 }
 
 /* Header */
- .header__bg {
+.header{
+    margin-bottom: 10vh;
+}
+.header__bg {
     background-image: url("../images/laptop.webp");
     background-position: center;
     background-size: cover;
@@ -183,7 +186,10 @@ h1, h2, h3 {
     }
 }
 .main h2 {
-    padding-top: 30vh;
+    padding-top: 8vh;
+}
+.main__about {
+    margin-bottom: 30vh;
 }
 .main__about__text {
     display: flex;
@@ -329,7 +335,6 @@ h1, h2, h3 {
 }
 .footer__sn {
     width: 90%;
-    height: 10rem;
     margin: 2rem auto;
 
     display: flex;

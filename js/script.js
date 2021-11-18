@@ -6,6 +6,7 @@ bgMenu = document.getElementById('back__menu');
 document.getElementById('btn__menu').addEventListener('click', showMenu);
 document.getElementById('back__menu').addEventListener('click', hideMenu);
 
+// Functions
 function showMenu () {
     nav.style.right = "0";
     bgMenu.style.left = "0";
