@@ -189,7 +189,6 @@ h1, h2, h3 {
     text-align: center;
     text-transform: uppercase;
     
-    padding: 2.2rem 0;
     width: 50%;
 }
 .header__card__text-dw {
@@ -202,6 +201,15 @@ h1, h2, h3 {
     margin: 3rem 0;
     width: 15%;
 }
+@media (max-width: 950px) {
+    .header__card {
+        width: 80%;
+    }
+    .header__logo {
+        margin: unset;
+        margin-top: 4rem;
+    }
+}
 @media (max-width: 768px) {
     .header__card {
         width: 90%;
@@ -211,7 +219,6 @@ h1, h2, h3 {
         width: 60%;
     }
 }
-
 /* Main */
 /* About */
 .main {
@@ -236,6 +243,9 @@ h1, h2, h3 {
     justify-content: space-evenly;
     text-align: justify;
     font-size: 1.4rem;
+}
+.main__about__text > p {
+    margin: 1rem 0;
 }
 @media (max-width: 600px) {
     .main__about__text {
