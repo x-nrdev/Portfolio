@@ -214,6 +214,9 @@ h1, h2, h3 {
     .header__card {
         width: 90%;
     }
+    .header__card p, h1 {
+        font-size: 2em;
+    }
     .header__logo {
         margin: 4rem 0;
         width: 60%;
