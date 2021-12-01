@@ -327,7 +327,7 @@ h1, h2, h3 {
 }
 .pf__container {
     margin: 0 auto;
-    max-width: 40%;
+    max-width: 30%;
 }
 .pf__container__card {
     background-color: var(--white);
