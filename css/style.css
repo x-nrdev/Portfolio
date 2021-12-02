@@ -321,9 +321,9 @@ h1, h2, h3 {
 }
 .pf__section__flex {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 .pf__container {
     margin: 0 auto;
@@ -380,7 +380,7 @@ h1, h2, h3 {
 }
 @media (max-width: 768px) {
     .pf__section__flex {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .pf__container__link > a {
         color: var(--white);
@@ -388,7 +388,7 @@ h1, h2, h3 {
 }
 @media (max-width: 970px) {
     .pf__section__flex {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 
