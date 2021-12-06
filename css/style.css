@@ -290,6 +290,7 @@ h1, h2, h3 {
 .main__skills__logos > img,
 .main__skills__logos a {
     width: 70%;
+    height: 12rem;
 }
 .main__skills__logos img:nth-child(4) {
     grid-column: span 2;
