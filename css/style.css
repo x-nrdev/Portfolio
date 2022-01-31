@@ -7,6 +7,7 @@
     --black: #000;
     --gray: #b8b8b8;
     --boxShadow: 0px 0px 20px 5px rgb(41 9 39);
+    --buttonShadow: 0px 0px 20px 5px #77046D;
 }
 * {
     margin: 0;
@@ -190,6 +191,7 @@ h1, h2, h3 {
     text-transform: uppercase;
     
     width: 50%;
+    margin-bottom: 5rem;
 }
 .header__card__text-dw {
     font-weight: normal;
@@ -200,6 +202,21 @@ h1, h2, h3 {
 .header__logo {
     margin: 3rem 0;
     width: 15%;
+}
+.ccv__button {
+    border: black 1px solid;
+    padding: 0.6rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: .3s;
+    font-weight: bold;
+    box-shadow: var(--buttonShadow);
+    color: black;
+    font-size: 20px;
+}
+.ccv__button:hover {
+    background-color: var(--primaryColor);
+    color: white;
 }
 @media (max-width: 950px) {
     .header__card {
