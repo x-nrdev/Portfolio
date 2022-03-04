@@ -200,8 +200,10 @@ h1, h2, h3 {
     color: var(--primaryColor);
 }
 .header__logo {
-    margin: 3rem 0;
-    width: 15%;
+    max-width: 15rem;
+    border-radius: 50%;
+    margin-top: 10vh;
+    margin-bottom: 2rem;
 }
 .ccv__button {
     border: black 1px solid;
@@ -222,10 +224,6 @@ h1, h2, h3 {
     .header__card {
         width: 80%;
     }
-    .header__logo {
-        margin: unset;
-        margin-top: 4rem;
-    }
 }
 @media (max-width: 768px) {
     .header__card {
@@ -233,10 +231,6 @@ h1, h2, h3 {
     }
     .header__card p, h1 {
         font-size: 2em;
-    }
-    .header__logo {
-        margin: 4rem 0;
-        width: 60%;
     }
 }
 /* Main */
