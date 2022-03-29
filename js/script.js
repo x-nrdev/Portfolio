@@ -32,7 +32,32 @@ async function changeLanguage (language) {
     for (let i of textsToChange) {
         const section = i.dataset.section;
         const value = i.dataset.value;
-        i.innerHTML = txt[section][value];
+
+        if (section !== 'header') {
+            i.innerHTML = txt[section][value];
+        } else if (language === 'en') {
+            i.innerHTML = `
+                Nelson Rojas
+                <br>
+                <span class="header__card__text-fe">
+                    Frontend
+                </span>
+                <span class="header__card__text-dw" data-section="header" data-value="dev">
+                    ${txt[section][value]}
+                </span>
+            `;
+        } else {
+            i.innerHTML = `
+                Nelson Rojas
+                <br>
+                <span class="header__card__text-dw" data-section="header" data-value="dev">
+                    ${txt[section][value]}
+                </span>
+                <span class="header__card__text-fe">
+                    Frontend
+                </span>
+            `;
+        }
     };
     // console.log (txt);
 }
