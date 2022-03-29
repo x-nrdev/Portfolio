@@ -19,6 +19,10 @@
         "main-description-2": "Always I'm ready to learn new technologies with the purpose of grow up in my professional development, I consider my self as autodidact person, because all that I know about web development I learned by my self."
     },
 
+    "skills": {
+        "skills-title": "Skills"
+    },
+    
     "portfolio": {
         "pf-title": "Portfolio",
         "repo": "Repository"
@@ -30,6 +34,6 @@
     },
 
     "footer": {
-        "ft-desctiption": "© All right reserved - Nelson Rojas"
+        "ft-description": "© All right reserved - Nelson Rojas"
     }
 }

@@ -3,6 +3,7 @@ const nav = document.getElementById('nav');
 const bgMenu = document.getElementById
 ('back__menu');
 const lang = document.forms['form']['lang'];
+const textsToChange = document.querySelectorAll("[data-section]");
 
 // Event on bar click
 document.getElementById('btn__menu').addEventListener('click', showMenu);
@@ -28,5 +29,10 @@ async function changeLanguage (language) {
     const requestJson = await fetch(`../languages/${language}.json`);
     const txt = await requestJson.json();
 
-    console.log (txt);
+    for (let i of textsToChange) {
+        const section = i.dataset.section;
+        const value = i.dataset.value;
+        i.innerHTML = txt[section][value];
+    };
+    // console.log (txt);
 }

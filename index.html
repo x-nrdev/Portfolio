@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio | Nelson Rojas</title>
+        <title data-section="title">Portfolio | Nelson Rojas</title>
 
         <!-- Preloads -->
         <link rel="preload" as="image" href="images/profile.webp">
@@ -37,11 +37,31 @@
         <nav class="nav" id="nav">
             <div class="nav__links">
                 <ul class="nav__ul">
-                    <li class="nav__li"><a href="#home">Inicio</a></li>
-                    <li class="nav__li"><a href="#about">Sobre Mi</a></li>
-                    <li class="nav__li"><a href="#skills">Habilidades</a></li>
-                    <li class="nav__li"><a href="#portfolio">Portfolio</a></li>
-                    <li class="nav__li"><a href="#contact">Contacto</a></li>
+                    <li class="nav__li">
+                        <a href="#home"
+                            data-section="nav"
+                            data-value="home">Inicio</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#about"
+                            data-section="nav"
+                            data-value="about">Sobre Mi</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#skills"
+                            data-section="nav"
+                            data-value="skills">Habilidades</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#portfolio"
+                            data-section="nav"
+                            data-value="portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#contact"
+                            data-section="nav"
+                            data-value="contact">Contacto</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -53,7 +73,7 @@
                     <h1>
                         Nelson Rojas
                         <br>
-                        <span class="header__card__text-dw">
+                        <span class="header__card__text-dw" data-section="header" data-value="dev">
                             Desarrollador Web
                         </span>
                         <span class="header__card__text-fe">
@@ -71,13 +91,13 @@
 
             <!-- About -->
             <div class="main__about" id="about">
-                <h2>Sobre Mí</h2>
+                <h2 data-section="main" data-value="main-title">Sobre Mí</h2>
                 
                 <div class="main__about__text">
-                    <p>
+                    <p data-section="main" data-value="main-description">
                         Hola me llamo <span class="bold--words">Nelson Rojas</span> y actualmente estoy buscando una empresa donde poder aportar mis habilidades como <span class="bold--words">Desarrollador Web Frontend</span>.
                     </p>
-                    <p>
+                    <p data-section="main" data-value="main-description-2">
                         Me apasiona el sector de la tecnología y de los videojuegos desde que era pequeño. Siempre estoy dispuesto a aprender nuevas tecnologías con el propósito de mejorar profesionalmente.
                     </p>
                 </div>
@@ -86,7 +106,7 @@
 
             <!-- Skills -->
             <div class="main__skills" id="skills">
-                <h2>Habilidades</h2>
+                <h2 data-section="skills" data-value="skills-title">Habilidades</h2>
 
                 <div class="main__skills__logos">
                     <img loading="lazy" src="images/logos/html-5.svg" alt="html" title="HTML">
@@ -102,7 +122,7 @@
 
         <!-- Portfolio -->
         <section id="portfolio" class="pf__section container">
-            <h2>Portfolio</h2>
+            <h2 data-section="portfolio" data-value="pf-title">Portfolio</h2>
 
             <div class="pf__section__flex">
                 <div class="pf__container">
@@ -115,7 +135,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/web-freelancer.webp" alt="Landing Page">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/Landing-Page/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/Landing-Page" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Landing-Page" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -129,7 +149,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/Frontend-Store.webp" alt="Frontend Store">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/FrontEnd-Store/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/FrontEnd-Store" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/FrontEnd-Store" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +163,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/Blog-Cafe.webp" alt="Blog cafe">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/Blog-Cafe/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/Blog-Cafe" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Blog-Cafe" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +177,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/order-summary.webp" alt="Order summary">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/order-summary/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/order-summary" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/order-summary" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +191,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/tribute-page.webp" alt="Tribute page">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/Tribute-Page/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/Tribute-Page" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Tribute-Page" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +205,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/arcane-survey-form.webp" alt="Arcane survey form">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/survey-form/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/survey-form" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/survey-form" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +220,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/reloj-digital.webp" alt="Reloj Digital">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/Reloj_Digital/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/Reloj_Digital" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Reloj_Digital" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -215,7 +235,7 @@
                         <img loading="lazy" class="pf__container__image" src="images/pages/budget-app.webp" alt="Budget App">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/budget-app" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/budget-app" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/budget-app" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -227,10 +247,10 @@
                             <img loading="lazy" src="images/logos/css-3.svg" alt="css">
                             <img loading="lazy" src="images/logos/javascript-js.svg" alt="css">
                         </div>
-                        <img loading="lazy" class="pf__container__image" src="images/pages/color-picker.webp" alt="Budget App">
+                        <img loading="lazy" class="pf__container__image" src="images/pages/color-picker.webp" alt="Color Picker">
                         <div class="pf__container__link">
                             <a class="link__web" href="https://nrdevpy.github.io/color-picker/" target="_blank">Web</a>
-                            <a class="link__repository" href="https://github.com/nrdevpy/color-picker" target="_blank">Repositorio</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/color-picker" target="_blank" data-section="portfolio" data-value="repo">Repositorio</a>
                         </div>
                     </div>
                 </div>
@@ -240,8 +260,8 @@
         <!-- Contact -->
         <footer id="contact">
             <div class="footer">
-                <h2>Contacto</h2>
-                <p>Contactame si te gustaría trabajar conmigo</p>
+                <h2 data-section="contact" data-value="ct-title">Contacto</h2>
+                <p data-section="contact" data-value="ct-description">Contactame si te gustaría trabajar conmigo</p>
                 <div class="footer__sn container">
                     <a href="mailto:nelson_rojas_janda@hotmail.com">
                         <img loading="lazy" src="images/logos/mail.svg" alt="email">
@@ -257,7 +277,7 @@
                     </a>
                 </div>
 
-                <p>© Nelson Rojas - Todos los derechos reservados 2022</p>
+                <p data-section="footer" data-value="ft-description">© Nelson Rojas - Todos los derechos reservados 2022</p>
             </div>
         </footer>
 
