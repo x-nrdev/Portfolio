@@ -1,0 +1,35 @@
+{
+    "title": "Portfolio | Nelson Rojas",
+
+    "nav": {
+        "home": "Home",
+        "about": "About me",
+        "skills": "Skills",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+
+    "header": {
+        "dev": "Web Developer"
+    },
+
+    "main": {
+        "main-title": "About me",
+        "main-description": "Hi I'm Nelson Rojas, actually I'm looking for a opportunity as Frontend Junior Developer in any company where put up my abilities as web developer.",
+        "main-description-2": "Always I'm ready to learn new technologies with the purpose of grow up in my professional development, I consider my self as autodidact person, because all that I know about web development I learned by my self."
+    },
+
+    "portfolio": {
+        "pf-title": "Portfolio",
+        "repo": "Repository"
+    },
+
+    "contact": {
+        "ct-title": "Contact",
+        "ct-description": "If you would like to work with me, contact me"
+    },
+
+    "footer": {
+        "ft-desctiption": "© All right reserved - Nelson Rojas"
+    }
+}
