@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title data-section="title">Portfolio | Nelson Rojas</title>
+
+        <!-- Preloads -->
+        <link rel="preload" as="image" href="images/profile.webp">
+        <link rel="preload" as="image" href="images/laptop.webp">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/61a3e91baa.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- Nav -->
+        <div class="back__menu" id="back__menu"></div>
+        <i class="fas fa-bars" id="btn__menu"></i>
+        <nav class="nav" id="nav">
+            <div class="nav__links">
+                <ul class="nav__ul">
+                    <li class="nav__li">
+                        <a href="#home"
+                            data-section="nav"
+                            data-value="home">Home</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#about"
+                            data-section="nav"
+                            data-value="about">About Me</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#skills"
+                            data-section="nav"
+                            data-value="skills">Skills</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#portfolio"
+                            data-section="nav"
+                            data-value="portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav__li">
+                        <a href="#contact"
+                            data-section="nav"
+                            data-value="contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Header -->
+        <header class="header" id="home">
+            <form id="form">
+                <select name="lang" id="lang">
+                    <option value="es">ES</option>
+                    <option value="en" selected>EN</option>
+                </select>
+            </form>
+            <div class="header__bg">
+                <img class="header__logo" src="images/profile.webp" alt="logo">
+                <div class="header__card">
+                    <h1 data-section="header" data-value="dev">
+                        Nelson Rojas
+                        <br>
+                        <span class="header__card__text-fe">
+                            Frontend
+                        </span>
+                        <span class="header__card__text-dw">
+                            Web Developer
+                        </span>
+                    </h1>
+                </div>
+
+                <a class="ccv__button" href="CCV Nelson Developer 2022.pdf" download>CV</a>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="main container" >
+
+            <!-- About -->
+            <div class="main__about" id="about">
+                <h2 data-section="main" data-value="main-title">About Me</h2>
+                
+                <div class="main__about__text">
+                    <p data-section="main" data-value="main-description">
+                        Hi I'm Nelson Rojas, actually I'm looking for a opportunity as Frontend Junior Developer in any company where put up my abilities as web developer.
+                    </p>
+                    <p data-section="main" data-value="main-description-2">
+                        I'm Always ready to learn new technologies with the purpose of grow up in my professional development, I consider my self as autodidact person, because all that I know about web development I learned by my self.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Skills -->
+            <div class="main__skills" id="skills">
+                <h2 data-section="skills" data-value="skills-title">Skills</h2>
+
+                <div class="main__skills__logos">
+                    <img loading="lazy" src="images/logos/html-5.svg" alt="html" title="HTML">
+                    <img loading="lazy" src="images/logos/css-3.svg" alt="css" title="CSS">
+                    <img loading="lazy" src="images/logos/javascript-js.svg" alt="js" title="JavaScript">
+                    <img loading="lazy" src="images/logos/git.svg" alt="git" title="Git">
+                    <a href="https://github.com/nrdevpy" target="_blank" title="GitHub">
+                        <img loading="lazy" class="logo__github" src="images/logos/github.svg" alt="github">
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="pf__section container">
+            <h2 data-section="portfolio" data-value="pf-title">Portfolio</h2>
+
+            <div class="pf__section__flex">
+                <div class="pf__container">
+                    <h3>Landing Page</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/web-freelancer.webp" alt="Landing Page">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/Landing-Page/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Landing-Page" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Frontend Store</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/Frontend-Store.webp" alt="Frontend Store">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/FrontEnd-Store/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/FrontEnd-Store" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Blog de Café</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/Blog-Cafe.webp" alt="Blog cafe">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/Blog-Cafe/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Blog-Cafe" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Order Summary</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/order-summary.webp" alt="Order summary">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/order-summary/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/order-summary" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Tribute Page</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/tribute-page.webp" alt="Tribute page">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/Tribute-Page/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Tribute-Page" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Arcane Survey Form</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/arcane-survey-form.webp" alt="Arcane survey form">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/survey-form/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/survey-form" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Reloj Digital</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                            <img loading="lazy" src="images/logos/javascript-js.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/reloj-digital.webp" alt="Reloj Digital">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/Reloj_Digital/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/Reloj_Digital" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Budget App</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                            <img loading="lazy" src="images/logos/javascript-js.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/budget-app.webp" alt="Budget App">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/budget-app" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/budget-app" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf__container">
+                    <h3>Color Picker</h3>
+                    <div class="pf__container__card">
+                        <div class="card__logos">
+                            <img loading="lazy" src="images/logos/html-5.svg" alt="html">
+                            <img loading="lazy" src="images/logos/css-3.svg" alt="css">
+                            <img loading="lazy" src="images/logos/javascript-js.svg" alt="css">
+                        </div>
+                        <img loading="lazy" class="pf__container__image" src="images/pages/color-picker.webp" alt="Color Picker">
+                        <div class="pf__container__link">
+                            <a class="link__web" href="https://nrdevpy.github.io/color-picker/" target="_blank">Web</a>
+                            <a class="link__repository" href="https://github.com/nrdevpy/color-picker" target="_blank" data-section="portfolio" data-value="repo">Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <footer id="contact">
+            <div class="footer">
+                <h2 data-section="contact" data-value="ct-title">Contact</h2>
+                <p data-section="contact" data-value="ct-description">If you would like to work with me, contact me</p>
+                <div class="footer__sn container">
+                    <a href="mailto:nelson_rojas_janda@hotmail.com">
+                        <img loading="lazy" src="images/logos/mail.svg" alt="email">
+                    </a>
+                    <a href="https://www.linkedin.com/in/nelson-arismendi-rojas-janda-142476166/" target="_blank">
+                        <img loading="lazy" src="images/logos/linkedin.svg" alt="linkedin">
+                    </a>
+                    <a href="https://github.com/nrdevpy" target="_blank">
+                        <img loading="lazy" src="images/logos/github.svg" alt="github">
+                    </a>
+                    <a href="https://twitter.com/N3LSONROJ4S" target="_blank">
+                        <img loading="lazy" src="images/logos/twitter.svg" alt="twitter">
+                    </a>
+                </div>
+
+                <p data-section="footer" data-value="ft-description">© All Right Reserverd 2022 - Nelson Rojas</p>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
