@@ -46,11 +46,17 @@ form {
 }
 form select {
     color: #fff;
-    background-color: #000;
+    background-color: var(--secundaryColor);
     border: none;
-    max-width: 3rem;
+    outline: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
 }
-
+@media screen and (min-width: 768px) {
+    form {
+        padding-top: 4rem;
+    }
+}
 /* --Utilities-- */
 .container {
     width: 90%;
@@ -80,7 +86,7 @@ form select {
     justify-content: center;
     align-items: center;
     
-    transition: .3s;
+    transition: .3s ease all;
 }
 #btn__menu:hover {
     background-color: rgba(100, 100, 100, .2);
@@ -98,7 +104,7 @@ form select {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
 
-    transition: .5s;
+    transition: .5s ease all;
 }
 
 .nav {
@@ -109,10 +115,13 @@ form select {
     z-index: 1;
     width: 50%;
     height: 100vh;
-    transition: .5s;
+    transition: .5s ease all;
 }
 .nav__links {
     height: 50%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
 }
 .nav__ul {
     list-style: none;
@@ -133,7 +142,7 @@ form select {
     text-decoration: none;
     text-transform: uppercase;
 
-    transition: .3s;
+    transition: .3s ease all;
 
 }
 .nav__li a:hover{
@@ -221,7 +230,7 @@ form select {
     padding: 0.6rem 2rem;
     border-radius: 8px;
     text-decoration: none;
-    transition: .3s;
+    transition: .3s ease all;
     box-shadow: var(--buttonShadow);
     color: white;
     font-size: 20px;
@@ -354,7 +363,7 @@ form select {
 .pf__container__card {
     background-color: var(--white);
     margin: 0 auto;
-    transition: .3s;
+    transition: .3s ease all;
     box-shadow: 0px 0px 20px 0px rgb(0 0 0);
 }
 .pf__container__card:hover {
@@ -386,7 +395,7 @@ form select {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    transition: .3s;
+    transition: .3s ease all;
 }
 .pf__container__link > a:hover {
     color: var(--white);
