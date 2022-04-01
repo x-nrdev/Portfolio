@@ -443,7 +443,11 @@ form select {
     gap: 1rem;
 }
 .footer__sn > a{
+    transition: ease .3s all;
     width: 6rem;
+}
+.footer__sn > a:hover {
+    transform: translateY(6px)
 }
 .footer p:last-of-type {
     padding: 2rem;
