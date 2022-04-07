@@ -1,5 +1,5 @@
 // Variables
-const nav = document.getElementById('nav');
+const nav = document.getElementById('navbar');
 const bgMenu = document.getElementById
 ('back__menu');
 const lang = document.forms['form']['lang'];

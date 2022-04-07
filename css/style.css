@@ -184,6 +184,7 @@ form select {
 }
 /* Header */
 .header{
+    height: 100vh;
     margin-bottom: 10vh;
 }
 @media (min-width: 768px) {
