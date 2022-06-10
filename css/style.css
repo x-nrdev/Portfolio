@@ -260,6 +260,7 @@ form select {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 30vh;
+    gap: 3rem;
 }
 @media (max-width: 768px) {
     .main {
@@ -299,36 +300,22 @@ form select {
         margin-bottom: unset;
     }
 }
-/* Skills */
-.main__about__text,
 .main__skills__logos {
-    height: 20rem;
-    margin: 0 1rem;
-}
-@media (min-width: 768px) {
-    .main__about__text {
-        margin-top: 8rem;
-    }
-}
-.main__skills__logos {
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-   
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3rem;
 }
 .main__skills__logos > img,
-.main__skills__logos a {
-    width: 50%;
+.main__skills__logos > a img {
+    width: 6rem;
 }
-.main__skills__logos img:hover {
+.main__skills__logos > img:hover,
+.main__skills__logos > a img:hover {
     animation: skillLogoMove 2s ease-in-out;
 }
-.main__skills__logos img:nth-child(4) {
-    grid-column: 1 / 3;
-}
+
 @keyframes skillLogoMove {
     25% {
         transform: rotateZ(-10deg)
@@ -337,27 +324,14 @@ form select {
         transform: rotateZ(10deg)
     }
 }
-@media (max-width: 768px) {
-    .main__skills__logos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .main__skills__logos img:nth-child(3) {
-        grid-column: span 2;
-        
-    }
-    .main__skills__logos img:nth-child(4) {
-        grid-column: unset;
-
-    }
-    .main__skills__logos > img,
-    .main__skills__logos a {
-        width: 6rem;
-    }
-}
 
 /* Portfolio */
 .pf__section {
     margin-bottom: 30vh;
+}
+.pf__section p:first-of-type {
+    text-align: center;
+    font-size: 1.5rem;
 }
 .pf__section h2 {
     padding-top: 12vh;
