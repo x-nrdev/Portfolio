@@ -282,11 +282,6 @@ form select {
 .main__about__text > p {
     margin: 1rem 0;
 }
-@media (max-width: 600px) {
-    .main__about__text {
-        padding-top: 14rem;
-    }
-}
 @media (max-width: 768px) {
     .main__about__text {
         gap: 1rem;
