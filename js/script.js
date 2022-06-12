@@ -35,4 +35,11 @@ async function changeLanguage (language) {
 
 // AOS
 let sec = 300;
-AOS.init({delay: sec, duration: 1000,});
+AOS.init(
+    {
+        delay: sec,
+        duration: 1000,
+        once: true,
+        mirror: true,
+    }
+);
