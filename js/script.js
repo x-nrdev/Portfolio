@@ -38,7 +38,7 @@ async function changeLanguage (language) {
 let projects = document.querySelectorAll('.pf__container');
 projects.forEach(p => {
     p.setAttribute('data-aos', 'flip-up')
-    p.setAttribute('data-aos-delay', 600)
+    p.setAttribute('data-aos-delay', 400)
 })
 
 // AOS
