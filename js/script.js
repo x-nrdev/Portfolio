@@ -32,3 +32,7 @@ async function changeLanguage (language) {
         location.href = "index.html"
     }
 }
+
+// AOS
+let sec = 300;
+AOS.init({delay: sec, duration: 1000,});

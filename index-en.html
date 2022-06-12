@@ -7,22 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio | Nelson Rojas</title>
         <link rel="icon" rel="icon" type="image/x-icon" href="images/logos/programming.png">
-
         <!-- Preloads -->
         <link rel="preload" as="image" href="images/profile.webp">
         <link rel="preload" as="image" href="images/laptop.webp">
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-        
+        <!-- AOS (Animate on scroll) -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/61a3e91baa.js" crossorigin="anonymous"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
-
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/61a3e91baa.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -59,8 +57,8 @@
                 </select>
             </form>
             <div class="header__bg">
-                <img class="header__logo" src="images/profile.webp" alt="logo">
-                <div class="header__card">
+                <img class="header__logo" src="images/profile.webp" alt="logo" data-aos="fade-up">
+                <div class="header__card" data-aos="fade-up" data-aos-delay="600">
                     <h1>
                         Nelson Rojas
                         <br>
@@ -72,7 +70,6 @@
                         </span>
                     </h1>
                 </div>
-
                 <a class="ccv__button" href="pdf/Nelson-Rojas-English-CV-2022.pdf" download>CV</a>
             </div>
         </header>
@@ -234,7 +231,8 @@
                 <p>© All Right Reserved 2022 - Nelson Rojas</p>
             </div>
         </footer>
-
+        <!-- * Scripts -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
         <script src="js/script.js"></script>
     </body>
 
