@@ -299,8 +299,10 @@ form select {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     gap: 3rem;
+    max-width: 30rem;
+    margin: 0 auto;
 }
 .main__skills__logos > img,
 .main__skills__logos > a img {
