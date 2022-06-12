@@ -33,6 +33,14 @@ async function changeLanguage (language) {
     }
 }
 
+// Portfolio animation test.
+
+let projects = document.querySelectorAll('.pf__container');
+projects.forEach(p => {
+    p.setAttribute('data-aos', 'flip-up')
+    p.setAttribute('data-aos-delay', 600)
+})
+
 // AOS
 let sec = 300;
 AOS.init(
