@@ -5,6 +5,12 @@ const bgMenu = document.getElementById
 const lang = document.forms['form']['lang'];
 const textsToChange = document.querySelectorAll("[data-section]");
 
+// Nav hide menu
+const navList = document.querySelectorAll('.nav__li');
+console.log(navList.forEach (e => {
+    e.addEventListener('click', hideMenu)
+}));
+
 // Event on bar click
 document.getElementById('btn__menu').addEventListener('click', showMenu);
 document.getElementById('back__menu').addEventListener('click', hideMenu);
