@@ -1,5 +1,7 @@
 ---
 import Icon from "../Icon.astro";
+import { Image } from "astro:assets";
+import profileImage from "../../assets/profile.webp";
 
 const socials = [
     {
@@ -31,8 +33,8 @@ const socials = [
             users.
         </p>
     </div>
-    <img
-        src="/assets/profile.webp"
+    <Image
+        src={profileImage}
         alt="Profile"
         class="max-w-36 max-h-36 aspect-square rounded-full"
     />
