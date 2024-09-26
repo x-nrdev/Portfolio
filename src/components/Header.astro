@@ -1,0 +1,46 @@
+---
+import Icon from "./Icon.astro";
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.webp";
+
+const socials = [
+    {
+        link: "https://github.com/nrdevpy",
+        src: "/assets/logos/github.svg",
+        alt: "Github Icon"
+    },
+    {
+        link: "https://www.linkedin.com/in/nr-dev/",
+        src: "/assets/logos/linkedin.svg",
+        alt: "Linkedin Icon"
+    },
+    {
+        link: "https://x.com/N3LSONROJ4S",
+        src: "/assets/logos/x.svg",
+        alt: "Twitter Icon"
+    }
+];
+---
+
+<header class="mb-8">
+    <div class="flex items-center mb-4 gap-x-6">
+        <div class="flex flex-col gap-y-4 max-w-[30ch]">
+            <h1 class="font-bold leading-tight">
+                <span class="text-4xl text-accent">Nelson Rojas</span>
+                <span class="text-2xl block">Frontend Developer</span>
+            </h1>
+            <p class="prose prose-invert">
+                I build clean, modern, and efficient web solutions that engage
+                users.
+            </p>
+        </div>
+        <Image
+            src={profileImage}
+            alt="Profile"
+            class="max-w-36 max-h-36 aspect-square rounded-full"
+        />
+    </div>
+    <div class="flex gap-x-6">
+        {socials.map((social) => <Icon {...social} />)}
+    </div>
+</header>
