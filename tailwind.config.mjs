@@ -8,6 +8,9 @@ export default {
 				primary: '#0F0505',
 				accent: '#CF1917',
 			},
+			spacing: {
+				'section-gap': '1.6rem',
+			}
 		},
 	},
 	plugins: [tailwindConfig],
