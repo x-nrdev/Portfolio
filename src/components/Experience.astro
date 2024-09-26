@@ -1,0 +1,28 @@
+---
+import { date } from "astro:schema";
+import JobCard from "./JobCard.astro";
+
+const jobs = [
+    {
+        title: "Website Manager - Playtech",
+        date: "2022 - Present",
+        description:
+            "Build responsive pages and interfaces for various devices, automate manual tasks with JavaScript, and collaborate with designers to optimize user experiences. Manage and maintain websites, performing updates and resolving technical issues, and conduct QA testing to ensure flawless functionality.",
+        link: "https://www.playtech.com/",
+        skills: ["CMS", "HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "Waiter - Hospitality Industry",
+        date: "2017 - 2022",
+        description:
+            "I honed skills in customer relationship management, team leadership, and problem-solving under pressure. I effectively managed payments, inventory, and financial records, demonstrating strong attention to detail and organizational abilities. My role also involved training and supervising team members, implementing strategies to enhance efficiency and service quality, and resolving issues to ensure a smooth operation."
+    }
+];
+---
+
+<section class="mb-section-gap">
+    <h2 class="text-xl font-bold mb-4 uppercase">Experience</h2>
+    <ul>
+        {jobs.map((job) => <JobCard {...job} />)}
+    </ul>
+</section>
