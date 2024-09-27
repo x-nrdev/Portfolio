@@ -1,0 +1,19 @@
+---
+import Article from "./Article.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const projectsSorted = projects.sort((a, b) => {
+    if (a.data.order && b.data.order) {
+        return a.data.order - b.data.order;
+    }
+    return 0;
+});
+---
+
+<section class="mb-section-gap">
+    <h2 class="text-lg font-bold mb-4 uppercase">Projects</h2>
+    <ul>
+        {projectsSorted.map((project) => <Article {...project} />)}
+    </ul>
+</section>

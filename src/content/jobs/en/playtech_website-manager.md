@@ -1,6 +1,7 @@
 ---
 title: Website Manager - Playtech
 date: 2022 - Present
+link: https://www.playtech.com/
 skills: [CMS, HTML, CSS, JavaScript]
 ---
 

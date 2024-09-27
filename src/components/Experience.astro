@@ -1,5 +1,5 @@
 ---
-import JobCard from "./JobCard.astro";
+import Article from "./Article.astro";
 import { getCollection } from "astro:content";
 
 const jobs = (await getCollection("jobs")).sort((a, b) =>
@@ -8,8 +8,8 @@ const jobs = (await getCollection("jobs")).sort((a, b) =>
 ---
 
 <section class="mb-section-gap">
-    <h2 class="text-xl font-bold mb-4 uppercase">Experience</h2>
+    <h2 class="text-lg font-bold mb-4 uppercase">Experience</h2>
     <ul>
-        {jobs.map((job) => <JobCard {job} />)}
+        {jobs.map((job) => <Article {...job} />)}
     </ul>
 </section>

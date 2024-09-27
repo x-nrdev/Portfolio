@@ -10,8 +10,11 @@ export default {
 				accent: '#CF1917',
 			},
 			spacing: {
-				'section-gap': '1.6rem',
-			}
+				'section-gap': '2.4rem',
+			},
+			transitionDuration: {
+				custom: '300ms',
+			},
 		},
 	},
 	plugins: [tailwindConfig],
