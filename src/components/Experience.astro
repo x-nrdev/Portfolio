@@ -2,7 +2,9 @@
 import JobCard from "./JobCard.astro";
 import { getCollection } from "astro:content";
 
-const jobs = await getCollection("jobs");
+const jobs = (await getCollection("jobs")).sort((a, b) =>
+    b.data.date.localeCompare(a.data.date)
+);
 ---
 
 <section class="mb-section-gap">
