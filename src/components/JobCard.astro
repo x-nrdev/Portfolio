@@ -1,17 +1,21 @@
 ---
 import Skill from "./Skill.astro";
-import type { Job } from "../types.d.ts";
-interface Props extends Job {}
+import type { Job } from "../types";
+import { render } from "astro:content";
 
-const { title, skills, link, date } = Astro.props;
+const { job } = Astro.props;
+const { data } = job;
+const { title, skills, link, date } = data as Job;
+
+const { Content } = await render(job);
 ---
 
 <article class="mb-section-gap">
     <h3 class="text-lg font-bold mb-2">{title}</h3>
-    <span class="block text-sm text-gray-500 mb-2">{date}</span>
-    <p class="prose prose-invert mb-4">
-        <slot />
-    </p>
+    <span class="block text-sm text-gray-400 mb-2">{date}</span>
+    <div class="mb-4 prose prose-invert">
+        <Content />
+    </div>
     {
         skills && (
             <ul class="flex gap-x-2">

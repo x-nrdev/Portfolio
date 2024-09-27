@@ -8,11 +8,6 @@ const jobs = await getCollection("jobs");
 <section class="mb-section-gap">
     <h2 class="text-xl font-bold mb-4 uppercase">Experience</h2>
     <ul>
-        {
-            jobs.map((job) => {
-                const { data, body } = job;
-                return <JobCard {...data}>{body}</JobCard>;
-            })
-        }
+        {jobs.map((job) => <JobCard {job} />)}
     </ul>
 </section>
