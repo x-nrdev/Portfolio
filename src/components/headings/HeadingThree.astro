@@ -1,0 +1,16 @@
+---
+type Props = {
+    title: string;
+    isMargin?: boolean;
+};
+
+const { isMargin, title } = Astro.props as Props;
+---
+
+{
+    isMargin ? (
+        <h3 class="text-lg font-bold mb-4">{title}</h3>
+    ) : (
+        <h3 class="text-lg font-bold">{title}</h3>
+    )
+}

@@ -1,15 +1,17 @@
 ---
-import Article from "./Article.astro";
+import Article from "./article/Article.astro";
 import { getCollection } from "astro:content";
+import HeadingTwo from "./headings/HeadingTwo.astro";
+import Section from "./article/Section.astro";
 
 const jobs = (await getCollection("jobs")).sort((a, b) =>
     b.data.date.localeCompare(a.data.date)
 );
 ---
 
-<section class="mb-section-gap">
-    <h2 class="text-lg font-bold mb-4 uppercase">Experience</h2>
+<Section>
+    <HeadingTwo>Experience</HeadingTwo>
     <ul>
         {jobs.map((job) => <Article {...job} />)}
     </ul>
-</section>
+</Section>

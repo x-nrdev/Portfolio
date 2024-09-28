@@ -1,25 +1,7 @@
 ---
-import Icon from "./Icon.astro";
 import { Image } from "astro:assets";
-import profileImage from "../assets/profile.webp";
-
-const socials = [
-    {
-        link: "https://github.com/nrdevpy",
-        src: "/assets/logos/github.svg",
-        alt: "Github Icon"
-    },
-    {
-        link: "https://www.linkedin.com/in/nr-dev/",
-        src: "/assets/logos/linkedin.svg",
-        alt: "Linkedin Icon"
-    },
-    {
-        link: "https://x.com/N3LSONROJ4S",
-        src: "/assets/logos/x.svg",
-        alt: "Twitter Icon"
-    }
-];
+import profileImage from "@assets/profile.webp";
+import SocialNetworks from "./SocialNetworks.astro";
 ---
 
 <header class="mb-section-gap">
@@ -42,7 +24,5 @@ const socials = [
             height={200}
         />
     </div>
-    <div class="flex gap-x-6">
-        {socials.map((social) => <Icon {...social} />)}
-    </div>
+    <SocialNetworks />
 </header>

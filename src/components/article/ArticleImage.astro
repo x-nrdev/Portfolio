@@ -1,0 +1,18 @@
+---
+import type { ProjectImageType } from "../../types";
+const { imageSrc, title, link } = Astro.props as ProjectImageType;
+---
+
+{
+    imageSrc && (
+        <a href={link} class="group flex gap-x-1 mb-4" target="_blank">
+            <img
+                src={imageSrc}
+                alt={title}
+                class="w-full rounded-md object-cover aspect-[16/9] max-w-48"
+                width="474"
+                height="267"
+            />
+        </a>
+    )
+}

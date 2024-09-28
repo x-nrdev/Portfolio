@@ -1,6 +1,8 @@
 ---
-import Article from "./Article.astro";
+import Article from "./article/Article.astro";
 import { getCollection } from "astro:content";
+import HeadingTwo from "./headings/HeadingTwo.astro";
+import Section from "./article/Section.astro";
 
 const projects = await getCollection("projects");
 const projectsSorted = projects.sort((a, b) => {
@@ -11,9 +13,9 @@ const projectsSorted = projects.sort((a, b) => {
 });
 ---
 
-<section class="mb-section-gap">
-    <h2 class="text-lg font-bold mb-4 uppercase">Projects</h2>
+<Section>
+    <HeadingTwo>Projects</HeadingTwo>
     <ul>
         {projectsSorted.map((project) => <Article {...project} />)}
     </ul>
-</section>
+</Section>

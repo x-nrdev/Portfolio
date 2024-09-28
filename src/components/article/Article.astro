@@ -1,0 +1,28 @@
+---
+import type { ArticleType, ProjectType } from "../../types";
+import ArticleImage from "../article/ArticleImage.astro";
+import ArticleTitle from "../article/ArticleTitle.astro";
+import Skills from "../common/Skills.astro";
+import ArticleDate from "./ArticleDate.astro";
+import ArticleContent from "./ArticleContent.astro";
+
+const md = Astro.props;
+const { data } = md;
+const { Content } = await md.render();
+const { title, skills, link, date } = data as ArticleType | ProjectType;
+const { imageSrc }: { imageSrc?: string } = data;
+
+function instanceOfProject(data: any): data is ProjectType {
+    return "imageSrc" in data;
+}
+
+const isProject = instanceOfProject(data);
+---
+
+<article class="mb-section-gap">
+    <ArticleImage title={title} imageSrc={imageSrc} link={link} />
+    <ArticleTitle title={title} link={link} />
+    <ArticleDate date={date} isProject={isProject} />
+    <ArticleContent Content={Content} />
+    <Skills skills={skills} />
+</article>

@@ -1,0 +1,15 @@
+---
+import type { ArticleSkillsType } from "../../types";
+import Skill from "../common/Skill.astro";
+const { skills } = Astro.props as ArticleSkillsType;
+---
+
+{
+    skills && (
+        <ul class="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+                <Skill name={skill} />
+            ))}
+        </ul>
+    )
+}

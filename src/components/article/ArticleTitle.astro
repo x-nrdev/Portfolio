@@ -1,0 +1,17 @@
+---
+import type { ArticleHeadingType } from "../../types";
+import HeadingThree from "../headings/HeadingThree.astro";
+import LinkIcon from "../common/LinkIcon.astro";
+const { title, link } = Astro.props as ArticleHeadingType;
+---
+
+{
+    link ? (
+        <a href={link} class="group flex gap-x-1 mb-2" target="_blank">
+            <HeadingThree title={title} />
+            <LinkIcon />
+        </a>
+    ) : (
+        <HeadingThree title={title} isMargin={true} />
+    )
+}
