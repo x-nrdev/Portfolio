@@ -1,4 +1,6 @@
 ---
+import Wrapper from "./Wrapper.astro";
+
 interface Props {
     title: string;
 }
@@ -16,8 +18,10 @@ const { title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="bg-primary text-white py-6 px-4">
-        <slot />
+    <body class="bg-primary text-white py-8 px-4">
+        <Wrapper>
+            <slot />
+        </Wrapper>
     </body>
 </html>
 <style is:global>

@@ -6,7 +6,11 @@ import Main from "../components/Main.astro";
 ---
 
 <Layout title="Nelson Rojas - Frontend Developer">
-    <Header />
-    <Main />
-    <Footer />
+    <div class="lg:grid grid-cols-2 relative">
+        <Header />
+        <Main />
+        <div class="hidden max-lg:block">
+            <Footer />
+        </div>
+    </div>
 </Layout>
