@@ -5,9 +5,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#0F0505',
-				secondary: '#1f0000',
-				accent: '#CF1917',
+				primary: '#0D0821',
+				secondary: '#1C1437',
+				accent: '#9F85FF',
 			},
 			spacing: {
 				'section-gap': '2.4rem',
