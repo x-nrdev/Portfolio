@@ -5,7 +5,7 @@ const { imageSrc, title, link } = Astro.props as ProjectImageType;
 
 {
     imageSrc && (
-        <a href={link} class="mb-4" target="_blank">
+        <a href={link} class="mb-4 block max-w-fit" target="_blank">
             <img
                 src={imageSrc}
                 alt={title}
