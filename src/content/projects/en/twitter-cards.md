@@ -3,7 +3,7 @@ title: Twitter Cards
 date: 02-06-2024
 order: 2
 imageSrc: /assets/projects/twitter-cards.webp
-link: https://nrdevpy.github.io/space-tourism-website/
+link: https://twitter-cards-seven.vercel.app/
 skills: [HTML, CSS, TypeScript, React, Tailwind]
 ---
 
