@@ -6,8 +6,8 @@ export default {
 		extend: {
 			colors: {
 				primary: '#0D0821',
-				secondary: '#1C1437',
-				accent: '#9F85FF',
+				secondary: '#281F4C',
+				accent: '#BAA8FF',
 			},
 			spacing: {
 				'section-gap': '2.4rem',
