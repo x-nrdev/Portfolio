@@ -11,7 +11,14 @@ const { link, src, alt } = Astro.props;
 <a
     href={link}
     target="_blank"
-    class="lg:hover:scale-110 transition-transform duration-custom ease-in-out"
+    class="lg:hover:scale-110 transition-transform duration-custom ease-in-out icon"
 >
     <img src={src} alt={alt} class="w-8 w-1/1" />
 </a>
+
+<style>
+    .icon:hover {
+        filter: invert(68%) sepia(18%) saturate(1378%) hue-rotate(207deg)
+            brightness(100%) contrast(107%);
+    }
+</style>
