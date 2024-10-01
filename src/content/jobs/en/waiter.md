@@ -1,5 +1,5 @@
 ---
-title: "Waiter - Hospitality Industry"
+title: "Waiter"
 date: "2017 - 2022"
 ---
 I honed skills in customer relationship management, team leadership, and problem-solving under pressure.

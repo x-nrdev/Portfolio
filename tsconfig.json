@@ -3,8 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@src/*": [
+        "src/*"
+      ],
       "@assets/*": [
         "src/assets/*"
+      ],
+      "@article/*": [
+        "src/components/article/*"
+      ],
+      "@ui/*": [
+        "src/components/ui/*"
       ],
     },
     "strictNullChecks": true,
