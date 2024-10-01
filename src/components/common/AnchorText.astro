@@ -1,0 +1,15 @@
+---
+import type { AnchorTextType } from "../../types";
+
+type Props = AnchorTextType;
+
+const { href, target } = Astro.props;
+---
+
+<a
+    class="font-medium lg:hover:text-accent transition-colors transition-duration-custom ease-in-out"
+    href={href}
+    target={target ? target : "_blank"}
+>
+    <slot />
+</a>

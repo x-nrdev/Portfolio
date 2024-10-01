@@ -1,12 +1,22 @@
+---
+import AnchorText from "./AnchorText.astro";
+---
+
 <footer>
     <p>
         Inspired by
-        <a
-            class="text-accent font-medium"
-            href="https://brittanychiang.com/"
-            target="_blank">Brittany Chiang's</a
-        > portfolio.
+        <AnchorText href="https://brittanychiang.com/">
+            Brittany Chiang's
+        </AnchorText> portfolio.
     </p>
-    <p>Developed using Astro, Tailwind CSS, and TypeScript.</p>
+    <p>
+        Developed using <AnchorText href="https://astro.build/"
+            >Astro</AnchorText
+        >,
+        <AnchorText href="https://tailwindcss.com/">Tailwind CSS</AnchorText>,
+        and <AnchorText href="https://www.typescriptlang.org/"
+            >TypeScript</AnchorText
+        >.
+    </p>
     <p>Made with <span aria-label="love">❤️</span> by Nelson Rojas.</p>
 </footer>
