@@ -15,6 +15,12 @@ export interface AnchorTextType {
     target?: string
 }
 
+export interface SocialNetworkType {
+    link: string
+    src: string
+    alt: string
+}
+
 export type ProjectImageType = Pick<ProjectType, "title" | "imageSrc" | "link">
 export type ArticleHeadingType = Pick<ArticleType, "title" | "link">
 export type ArticleSkillsType = Required<Pick<ArticleType, "skills">>
