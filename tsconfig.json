@@ -16,6 +16,11 @@
         "src/components/ui/*"
       ],
     },
-    "strictNullChecks": true,
+    "strictNullChecks": true
   },
+  "include": [
+    "src/**/*",
+    "astro.config.*",
+    "types/**/*.d.ts"
+  ]
 }
