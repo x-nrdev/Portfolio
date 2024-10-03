@@ -16,6 +16,12 @@ const projectsSorted = projects.sort((a, b) => {
 <Section>
     <HeadingTwo>Projects</HeadingTwo>
     <ul>
-        {projectsSorted.map((project) => <Article {...project} />)}
+        {
+            projectsSorted.map((project) => (
+                <li>
+                    <Article {...project} />
+                </li>
+            ))
+        }
     </ul>
 </Section>
