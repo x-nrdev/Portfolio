@@ -6,11 +6,17 @@
       "@src/*": [
         "src/*"
       ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
       "@assets/*": [
         "src/assets/*"
       ],
       "@article/*": [
         "src/components/article/*"
+      ],
+      "@components/*": [
+        "src/components/*"
       ],
       "@ui/*": [
         "src/components/ui/*"
