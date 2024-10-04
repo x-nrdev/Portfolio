@@ -31,20 +31,50 @@ const isProject = instanceOfProject(data);
 </article>
 
 <script>
-    const handleArticleClick = (article: HTMLElement) => {
-        article.addEventListener("click", () => {
-            const { href } = article.dataset;
-            window.open(href, "_blank");
+    let listenersAttached = false;
+
+    const handleArticleClick = () => {
+        const articles = document.querySelectorAll(".fn-article-link");
+        articles.forEach((article) => {
+            if (!(article instanceof HTMLElement)) return;
+            article.addEventListener("click", handleClick);
         });
     };
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 1024) {
-            const articles = document.querySelectorAll(".fn-article-link");
-            articles.forEach((article) => {
-                if (!(article instanceof HTMLElement)) return;
-                handleArticleClick(article);
-            });
+    const removeArticleClick = () => {
+        const articles = document.querySelectorAll(".fn-article-link");
+        articles.forEach((article) => {
+            if (!(article instanceof HTMLElement)) return;
+            article.removeEventListener("click", handleClick);
+        });
+    };
+
+    const handleClick = (event: Event) => {
+        event.preventDefault();
+        const article = event.currentTarget as HTMLElement;
+        if (article instanceof HTMLElement) {
+            const { href } = article.dataset;
+            if (href) {
+                window.open(href, "_blank");
+            }
         }
-    });
+    };
+
+    const handleResize = () => {
+        if (window.innerWidth > 1024 && !listenersAttached) {
+            handleArticleClick();
+            listenersAttached = true;
+        } else if (window.innerWidth <= 1024 && listenersAttached) {
+            removeArticleClick();
+            listenersAttached = false;
+        }
+    };
+
+    // Attach the event listener on page load if the width is greater than 1024px
+    if (window.innerWidth > 1024) {
+        handleArticleClick();
+        listenersAttached = true;
+    }
+
+    window.addEventListener("resize", handleResize);
 </script>
