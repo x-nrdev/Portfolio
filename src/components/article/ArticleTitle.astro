@@ -1,13 +1,17 @@
 ---
 import type { ArticleHeadingType } from "@src/types";
 import HeadingThree from "../headings/HeadingThree.astro";
-import LinkIcon from "../LinkIcon.astro";
+import LinkIcon from "@ui/LinkIcon.astro";
 const { title, link } = Astro.props as ArticleHeadingType;
 ---
 
 {
     link ? (
-        <a href={link} class="group flex gap-x-1 mb-2" target="_blank">
+        <a
+            href={link}
+            class="group flex gap-x-1 mb-2 lg:group-hover:text-accent group-hover:fill-acent fill-white transition-colors duration-custom ease-in-out"
+            target="_blank"
+        >
             <HeadingThree title={title} />
             <LinkIcon />
         </a>

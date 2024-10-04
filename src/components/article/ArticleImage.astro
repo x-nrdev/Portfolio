@@ -1,17 +1,19 @@
 ---
 import type { ProjectImageType } from "@src/types";
+import Image from "astro/components/Image.astro";
 const { imageSrc, title, link } = Astro.props as ProjectImageType;
 ---
 
 {
     imageSrc && (
         <a href={link} class="mb-4 block max-w-fit" target="_blank">
-            <img
+            <Image
                 src={imageSrc}
                 alt={title}
-                class="w-full rounded-md object-cover aspect-[16/9] max-w-48"
+                class="w-full object-cover aspect-[16/9] max-w-48 rounded-md"
                 width="474"
                 height="267"
+                loading="lazy"
             />
         </a>
     )

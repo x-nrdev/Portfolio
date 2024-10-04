@@ -19,10 +19,33 @@ function instanceOfProject(data: any): data is ProjectType {
 const isProject = instanceOfProject(data);
 ---
 
-<article class="mb-section-gap">
+<article
+    class=`transition-backgroundColor transition-opacity duration-custom ease-in-out mb-section-gap lg:rounded-[10px] lg:p-4 ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-50 fn-article-link"}`
+    data-href=`${link && link}`
+>
     <ArticleImage title={title} imageSrc={imageSrc} link={link} />
     <ArticleTitle title={title} link={link} />
     <ArticleDate date={date} isProject={isProject} />
     <ArticleContent Content={Content} />
     <Skills skills={skills} />
 </article>
+
+<script>
+    const handleArticleClick = (article: HTMLElement) => {
+        article.addEventListener("click", () => {
+            console.log("clicked", article);
+            const { href } = article.dataset;
+            window.open(href, "_blank");
+        });
+    };
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+            const articles = document.querySelectorAll(".fn-article-link");
+            articles.forEach((article) => {
+                if (!(article instanceof HTMLElement)) return;
+                handleArticleClick(article);
+            });
+        }
+    });
+</script>

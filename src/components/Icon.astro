@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 interface Props {
     link?: string;
     src: string;
@@ -13,12 +15,14 @@ const { link, src, alt } = Astro.props;
     target="_blank"
     class="lg:hover:scale-110 transition-transform duration-custom ease-in-out icon"
 >
-    <img src={src} alt={alt} class="w-8 w-1/1" />
+    <Image src={src} alt={alt} width={24} height={24} loading="eager" />
 </a>
 
 <style>
-    .icon:hover {
-        filter: invert(68%) sepia(18%) saturate(1378%) hue-rotate(207deg)
-            brightness(100%) contrast(107%);
+    @media screen and (min-width: 1024px) {
+        .icon:hover {
+            filter: invert(68%) sepia(18%) saturate(1378%) hue-rotate(207deg)
+                brightness(100%) contrast(107%);
+        }
     }
 </style>

@@ -12,6 +12,10 @@ export default {
 			spacing: {
 				'section-gap': '2.4rem',
 			},
+			transitionProperty: {
+				backgroundColor: 'background-color',
+				opacity: 'opacity',
+			},
 			transitionDuration: {
 				custom: '300ms',
 			},
