@@ -1,0 +1,7 @@
+---
+import type { TechSkillType } from "@src/types";
+import Image from "astro/components/Image.astro";
+const { title, src } = Astro.props as TechSkillType;
+---
+
+<Image src={src} alt={title} title={title} width={32} height={32} />
