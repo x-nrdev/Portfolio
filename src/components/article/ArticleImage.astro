@@ -10,7 +10,7 @@ const { imageSrc, title, link } = Astro.props as ProjectImageType;
             <Image
                 src={imageSrc}
                 alt={title}
-                class="w-full object-cover aspect-[16/9] max-w-48 rounded-md"
+                class="w-full object-cover aspect-[16/9] max-w-48 md:max-w-sm lg:max-w-48  rounded-md"
                 width="474"
                 height="267"
                 loading="lazy"

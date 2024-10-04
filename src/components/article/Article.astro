@@ -20,14 +20,27 @@ const isProject = instanceOfProject(data);
 ---
 
 <article
-    class=`transition-backgroundColor transition-opacity duration-custom ease-in-out mb-section-gap lg:rounded-[10px] lg:p-4 ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link"}`
+    class=`transition-backgroundColor transition-opacity duration-custom ease-in-out mb-section-gap lg:rounded-[10px] lg:p-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link"} ${imageSrc && "md:flex md:gap-x-12"}`
     data-href=`${link && link}`
 >
-    <ArticleImage title={title} imageSrc={imageSrc} link={link} />
-    <ArticleTitle title={title} link={link} />
-    <ArticleDate date={date} isProject={isProject} />
-    <ArticleContent Content={Content} />
-    <ArticleSkills skills={skills} />
+    {
+    imageSrc ? 
+    <div>
+        <ArticleImage title={title} imageSrc={imageSrc} link={link} />
+    </div>
+    <div>
+        <ArticleTitle title={title} link={link} />
+        <ArticleDate date={date} isProject={isProject} />
+        <ArticleContent Content={Content} />
+        <ArticleSkills skills={skills} />
+    </div> 
+    : 
+        <ArticleImage title={title} imageSrc={imageSrc} link={link} />
+        <ArticleTitle title={title} link={link} />
+        <ArticleDate date={date} isProject={isProject} />
+        <ArticleContent Content={Content} />
+        <ArticleSkills skills={skills} />
+}
 </article>
 
 <script>

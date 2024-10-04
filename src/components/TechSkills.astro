@@ -1,7 +1,7 @@
 ---
 import type { TechSkillType } from "@src/types";
 import TechSkill from "./TechSkill.astro";
-import HeadingTwo from "./headings/HeadingTwo.astro"
+import HeadingTwo from "./headings/HeadingTwo.astro";
 
 const techSkills: TechSkillType[] = [
     {
@@ -63,13 +63,20 @@ const { class: className } = Astro.props;
 
 {
     techSkills && (
-        <HeadingTwo>Skills</HeadingTwo>
-        <ul class:list={[className, "grid grid-cols-5 lg:grid-cols-4 gap-4 max-w-[16rem]"]}>
-            {techSkills.map((skill) => (
-                <li>
-                    <TechSkill {...skill} />
-                </li>
-            ))}
-        </ul>
+        <div>
+            <HeadingTwo>Skills</HeadingTwo>
+            <ul
+                class:list={[
+                    className,
+                    "grid grid-cols-5 lg:grid-cols-4 gap-4 max-w-[16rem]"
+                ]}
+            >
+                {techSkills.map((skill) => (
+                    <li>
+                        <TechSkill {...skill} />
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
