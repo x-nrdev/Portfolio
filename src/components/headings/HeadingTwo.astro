@@ -1,3 +1,10 @@
-<h2 class="text-lg font-bold mb-4 uppercase">
+---
+const { class: className } = Astro.props;
+const classList = className
+    ? `${className} text-lg font-bold mb-4 uppercase`
+    : "text-lg font-bold mb-4 uppercase";
+---
+
+<h2 class={classList}>
     <slot />
 </h2>

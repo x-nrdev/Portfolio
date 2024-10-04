@@ -10,7 +10,7 @@ const jobs = (await getCollection("jobs")).sort((a, b) =>
 ---
 
 <Section>
-    <HeadingTwo>Experience</HeadingTwo>
+    <HeadingTwo class:list={"lg:px-4"}>Experience</HeadingTwo>
     <ul>
         {jobs.map((job) => <Article {...job} />)}
     </ul>
