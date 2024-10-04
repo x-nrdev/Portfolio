@@ -33,7 +33,6 @@ const isProject = instanceOfProject(data);
 <script>
     const handleArticleClick = (article: HTMLElement) => {
         article.addEventListener("click", () => {
-            console.log("clicked", article);
             const { href } = article.dataset;
             window.open(href, "_blank");
         });
