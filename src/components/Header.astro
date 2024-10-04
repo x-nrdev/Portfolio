@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import profileImage from "@assets/profile.webp";
 import SocialNetworks from "./SocialNetworks.astro";
 import Footer from "./common/Footer.astro";
+import TechSkills from "./TechSkills.astro";
+import HeadingTwo from "./headings/HeadingTwo.astro";
 ---
 
 <div
@@ -35,7 +37,10 @@ import Footer from "./common/Footer.astro";
         </div>
         <SocialNetworks />
     </header>
-    <div class="py-6 mb-8 max-lg:hidden">
+    <div class="max-lg:hidden pb-48">
+        <TechSkills class:list={["mb-section-gap"]} />
+    </div>
+    <div class="max-lg:hidden">
         <Footer />
     </div>
 </div>

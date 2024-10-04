@@ -2,7 +2,7 @@
 import type { ArticleType, ProjectType } from "@src/types";
 import ArticleImage from "@article/ArticleImage.astro";
 import ArticleTitle from "@article/ArticleTitle.astro";
-import Skills from "@ui/Skills.astro";
+import ArticleSkills from "@ui/ArticleSkills.astro";
 import ArticleDate from "./ArticleDate.astro";
 import ArticleContent from "./ArticleContent.astro";
 
@@ -27,7 +27,7 @@ const isProject = instanceOfProject(data);
     <ArticleTitle title={title} link={link} />
     <ArticleDate date={date} isProject={isProject} />
     <ArticleContent Content={Content} />
-    <Skills skills={skills} />
+    <ArticleSkills skills={skills} />
 </article>
 
 <script>

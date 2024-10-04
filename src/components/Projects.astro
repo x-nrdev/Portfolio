@@ -3,6 +3,7 @@ import Article from "./article/Article.astro";
 import { getCollection } from "astro:content";
 import HeadingTwo from "./headings/HeadingTwo.astro";
 import Section from "./article/Section.astro";
+import type { ProjectType } from "@src/types";
 
 const projects = await getCollection("projects");
 const projectsSorted = projects.sort((a, b) => {
