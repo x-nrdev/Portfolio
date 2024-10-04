@@ -74,10 +74,10 @@ const isProject = instanceOfProject(data);
     };
 
     const handleResize = () => {
-        if (window.innerWidth > 1024 && !listenersAttached) {
+        if (window.innerWidth >= 1024 && !listenersAttached) {
             handleArticleClick();
             listenersAttached = true;
-        } else if (window.innerWidth <= 1024 && listenersAttached) {
+        } else if (window.innerWidth < 1024 && listenersAttached) {
             removeArticleClick();
             listenersAttached = false;
         }
