@@ -26,9 +26,9 @@ const lang = Astro.preferredLocale;
                         >Frontend Developer</span
                     >
                 </h1>
-                <p class="prose prose-invert">
+                <div class="prose prose-invert">
                     {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
-                </p>
+                </div>
             </div>
             <Image
                 src={profileImage}
