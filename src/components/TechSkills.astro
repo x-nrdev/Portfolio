@@ -59,12 +59,13 @@ const techSkills: TechSkillType[] = [
 ];
 
 const { class: className } = Astro.props;
+const lang = Astro.preferredLocale;
 ---
 
 {
     techSkills && (
         <div>
-            <H2>Skills</H2>
+            <H2>{lang === "es" ? "Tecnologías" : "Skills"}</H2>
             <ul
                 class:list={[
                     className,

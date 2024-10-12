@@ -3,18 +3,23 @@ import Article from "./article/Article.astro";
 import { getCollection } from "astro:content";
 import H2 from "./headings/H2.astro";
 import Section from "./article/Section.astro";
+const lang = Astro.preferredLocale;
 
 const projects = await getCollection("projects");
-const projectsSorted = projects.sort((a, b) => {
-    if (a.data.order && b.data.order) {
-        return a.data.order - b.data.order;
-    }
-    return 0;
-});
+const projectsSorted = projects
+    // filter jobs by locale
+    .filter((job) => job.id.startsWith(`${lang}/`))
+    // sort by order
+    .sort((a, b) => {
+        if (a.data.order && b.data.order) {
+            return a.data.order - b.data.order;
+        }
+        return 0;
+    });
 ---
 
 <Section>
-    <H2 class:list={"lg:px-4"}>Projects</H2>
+    <H2 class:list={"lg:px-4"}>{lang === "es" ? "Proyectos" : "Projects"}</H2>
     <ul class="group/opacity">
         {
             projectsSorted.map((project) => (

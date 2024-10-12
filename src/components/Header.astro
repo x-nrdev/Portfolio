@@ -4,6 +4,10 @@ import profileImage from "@assets/profile.webp";
 import SocialNetworks from "./SocialNetworks.astro";
 import Footer from "./common/Footer.astro";
 import TechSkills from "./TechSkills.astro";
+
+import { Content as HeaderContent } from "../content/header/en/header.md";
+import { Content as HeaderContentES } from "../content/header/es/header.md";
+const lang = Astro.preferredLocale;
 ---
 
 <div
@@ -22,10 +26,9 @@ import TechSkills from "./TechSkills.astro";
                         >Frontend Developer</span
                     >
                 </h1>
-                <p class="prose prose-invert">
-                    I build clean, modern, and efficient web solutions that
-                    engage users.
-                </p>
+                <div class="prose prose-invert">
+                    {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
+                </div>
             </div>
             <Image
                 src={profileImage}

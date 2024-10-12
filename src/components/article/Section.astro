@@ -3,6 +3,6 @@ const { class: className } = Astro.props;
 const classList = className ? `mb-section-gap ${className}` : "mb-section-gap";
 ---
 
-<section class="mb-section-gap">
+<section class={classList}>
     <slot />
 </section>
