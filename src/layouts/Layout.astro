@@ -28,7 +28,28 @@ const lang = Astro.preferredLocale;
     </body>
 </html>
 <style is:global>
+    @font-face {
+        font-family: "Nunito";
+        src: url("./fonts/Nunito-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Nunito Bold";
+        src: url("./fonts/Nunito-Bold.woff2");
+    }
+
     html {
-        font-family: system-ui, sans-serif;
+        font-family: "Nunito", system-ui, sans-serif;
+    }
+
+    strong,
+    b,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Nunito Bold", system-ui, sans-serif;
     }
 </style>
