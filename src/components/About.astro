@@ -1,33 +1,15 @@
 ---
 import Section from "./article/Section.astro";
 import H2 from "./headings/H2.astro";
+import { Content as AboutContent } from "../content/about/en/about.md";
+import { Content as AboutContentES } from "../content/about/es/about.md";
 
 const lang = Astro.preferredLocale;
-const enDescription = "";
 ---
 
 <Section class:list={"group/sectionAlign"}>
-    <H2 class:list={"lg:px-4"}>About</H2>
+    <H2 class:lis t={"lg:px-4"}>{lang === "es" ? "Sobre mí" : "About"}</H2>
     <div class="prose prose-invert lg:px-4">
-        <p>
-            I am Nelson Rojas, an outgoing, kind, and persevering individual
-            with a passion for <strong>web development</strong>.
-        </p>
-        <p>
-            Since 4 years ago, I have been self-taught in front-end development,
-            dedicating myself to mastering technologies with discipline and
-            determination.
-        </p>
-        <p>
-            Through a solid learning path, constant practice, and project
-            creation, I have honed my technical skills and gained a better
-            understanding of user needs.
-        </p>
-        <p>
-            Each project has allowed me to deepen my knowledge, and my passion
-            drives me to continue <strong>learning</strong> and <strong
-                >improving</strong
-            >.
-        </p>
+        {lang === "es" ? <AboutContentES /> : <AboutContent />}
     </div>
 </Section>
