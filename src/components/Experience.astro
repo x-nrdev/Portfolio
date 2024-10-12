@@ -4,13 +4,16 @@ import Article from "./article/Article.astro";
 import H2 from "./headings/H2.astro";
 import Section from "./article/Section.astro";
 
-const jobs = (await getCollection("jobs")).sort((a, b) =>
-    b.data.date.localeCompare(a.data.date)
-);
+const lang = Astro.preferredLocale;
+const jobs = (await getCollection("jobs"))
+    .filter((job) => job.id.startsWith(`${lang}/`)) // filter jobs by locale
+    .sort((a, b) => b.data.date.localeCompare(a.data.date)); // sort by date
 ---
 
 <Section>
-    <H2 class:list={"lg:px-4"}>Experience</H2>
+    <H2 class:list={"lg:px-4"}
+        >{lang === "es" ? "Experiencia" : "Experience"}</H2
+    >
     <ul>
         {jobs.map((job) => <Article {...job} />)}
     </ul>
