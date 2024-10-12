@@ -14,5 +14,3 @@ de las necesidades de los usuarios.
 
 Cada proyecto me ha permitido profundizar en mis conocimientos, y mi pasión
 me impulsa a seguir **aprendiendo** y **mejorando**.
-
-Traducción realizada con la versión gratuita del traductor DeepL.com
