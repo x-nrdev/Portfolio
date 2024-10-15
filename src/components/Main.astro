@@ -2,10 +2,12 @@
 import About from "./About.astro";
 import Experience from "./Experience.astro";
 import Projects from "./Projects.astro";
+
+const { lang } = Astro.props;
 ---
 
 <main class="lg:py-8">
-    <About />
-    <Experience />
-    <Projects />
+    <About lang={lang} />
+    <Experience lang={lang} />
+    <Projects lang={lang} />
 </main>

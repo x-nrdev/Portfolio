@@ -1,20 +1,41 @@
 ---
 import AnchorText from "./AnchorText.astro";
+import FooterEs from "./FooterEs.astro";
+const { lang } = Astro.props;
 ---
 
-<footer class="text-pretty">
-    <p>
-        Inspired by<AnchorText href="https://brittanychiang.com/"
-            >Brittany Chiang's
-        </AnchorText>portfolio.
-    </p>
-    <p>
-        Developed using<AnchorText href="https://astro.build/"
-            >Astro,</AnchorText
-        ><AnchorText href="https://tailwindcss.com/">Tailwind CSS,</AnchorText
-        >and <AnchorText href="https://www.typescriptlang.org/"
-            >TypeScript.</AnchorText
-        >
-    </p>
-    <p>Made with <span aria-label="love">❤️</span> by Nelson Rojas.</p>
-</footer>
+{
+    lang === "es" ? (
+        <FooterEs />
+    ) : (
+        <footer class="text-pretty">
+            <p>
+                Inspired by
+                <AnchorText href="https://brittanychiang.com/">
+                    Brittany Chiang's
+                </AnchorText>
+                portfolio.
+            </p>
+            <p>
+                Developed using
+                <>
+                    <AnchorText href="https://astro.build/">Astro,</AnchorText>
+                    <AnchorText href="https://tailwindcss.com/">
+                        Tailwind CSS,
+                    </AnchorText>
+                </>
+                and{" "}
+                <AnchorText href="https://www.typescriptlang.org/">
+                    TypeScript.
+                </AnchorText>
+            </p>
+            <p>
+                Made with{" "}
+                <span aria-label="love" title="love">
+                    ❤️
+                </span>{" "}
+                by Nelson Rojas.
+            </p>
+        </footer>
+    )
+}

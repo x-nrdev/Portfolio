@@ -4,11 +4,11 @@ import H2 from "./headings/H2.astro";
 import { Content as AboutContent } from "../content/about/en/about.md";
 import { Content as AboutContentES } from "../content/about/es/about.md";
 
-const lang = Astro.preferredLocale;
+const { lang } = Astro.props;
 ---
 
 <Section class:list={"group/sectionAlign"}>
-    <H2 class:lis t={"lg:px-4"}>{lang === "es" ? "Sobre mí" : "About"}</H2>
+    <H2 class:list={"lg:px-4"}>{lang === "es" ? "Sobre mí" : "About"}</H2>
     <div class="prose prose-invert lg:px-4">
         {lang === "es" ? <AboutContentES /> : <AboutContent />}
     </div>
