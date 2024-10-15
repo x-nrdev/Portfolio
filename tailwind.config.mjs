@@ -19,6 +19,10 @@ export default {
 			transitionDuration: {
 				custom: '300ms',
 			},
+			fontFamily: {
+				nunito: ['Nunito', 'sans-serif'],
+				nunitoBold: ['Nunito Bold', 'sans-serif'],
+			},
 		},
 	},
 	plugins: [tailwindConfig],

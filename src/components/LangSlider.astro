@@ -1,0 +1,29 @@
+---
+import type { lang } from "@src/types";
+
+interface Props {
+    lang: lang;
+    href: string;
+}
+
+const { lang, href } = Astro.props;
+const conditionalClass =
+    lang === "es"
+        ? "before:-right-1 before:left-[50%] hover:before:translate-x-[-100%]"
+        : "before:-left-1 before:right-[50%] hover:before:translate-x-[100%]";
+---
+
+<a
+    href={href}
+    class=`lang-slider flex uppercase rounded-[10px] overflow-hidden border-accent border-2 font-nunitoBold font-bold relative before:block before:absolute before:top-0 before:bottom-0 before:bg-accent before:-z-10 before:transition-transform before:duration-custom before:ease-in-out group ${conditionalClass}`
+    }
+>
+    <span
+        class=`py-1 px-4 ${lang === 'en' ? 'text-black group-hover:text-white' : 'text-white group-hover:text-black'}  transition-colors duration-custom ease-in-out`
+        >en</span
+    >
+    <span
+        class=`py-1 px-4 ${lang === 'es' ? 'text-black group-hover:text-white' : 'text-white group-hover:text-black'} group-hover:text-black transition-colors duration-custom ease-in-out`
+        >es</span
+    >
+</a>

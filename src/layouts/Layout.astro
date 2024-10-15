@@ -6,11 +6,10 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const lang = Astro.preferredLocale;
 ---
 
 <!doctype html>
-<html lang={lang === "es" ? "es" : "en"}>
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />

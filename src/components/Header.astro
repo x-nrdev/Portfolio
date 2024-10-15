@@ -7,6 +7,7 @@ import TechSkills from "./TechSkills.astro";
 
 import { Content as HeaderContent } from "../content/header/en/header.md";
 import { Content as HeaderContentES } from "../content/header/es/header.md";
+import LangSlider from "./LangSlider.astro";
 const { lang } = Astro.props;
 ---
 
@@ -39,7 +40,10 @@ const { lang } = Astro.props;
                 loading={"eager"}
             />
         </div>
-        <SocialNetworks />
+        <div class="flex justify-between">
+            <SocialNetworks />
+            <LangSlider lang={lang} href={lang === "es" ? "/" : "/es"} />
+        </div>
     </header>
     <div class="max-lg:hidden">
         <TechSkills class:list={["mb-section-gap"]} />
@@ -48,3 +52,5 @@ const { lang } = Astro.props;
         <Footer lang={lang} />
     </div>
 </div>
+
+<style></style>
