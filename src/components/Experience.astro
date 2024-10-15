@@ -4,7 +4,7 @@ import Article from "./article/Article.astro";
 import H2 from "./headings/H2.astro";
 import Section from "./article/Section.astro";
 
-const lang = Astro.preferredLocale;
+const { lang } = Astro.props;
 const jobs = (await getCollection("jobs"))
     .filter((job) => job.id.startsWith(`${lang}/`)) // filter jobs by locale
     .sort((a, b) => b.data.date.localeCompare(a.data.date)); // sort by date

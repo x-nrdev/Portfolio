@@ -7,7 +7,7 @@ import TechSkills from "./TechSkills.astro";
 
 import { Content as HeaderContent } from "../content/header/en/header.md";
 import { Content as HeaderContentES } from "../content/header/es/header.md";
-const lang = Astro.preferredLocale;
+const { lang } = Astro.props;
 ---
 
 <div
@@ -45,6 +45,6 @@ const lang = Astro.preferredLocale;
         <TechSkills class:list={["mb-section-gap"]} />
     </div>
     <div class="max-lg:hidden">
-        <Footer />
+        <Footer lang={lang} />
     </div>
 </div>
