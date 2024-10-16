@@ -38,6 +38,7 @@ const { lang } = Astro.props;
                 </div>
             </div>
             <Image
+                transition:name="profileImage"
                 src={profileImage}
                 alt="Profile"
                 class="lg:max-w-36 lg:max-h-36 md:max-w-36 md:max-h-36 max-w-36 max-h-36 aspect-square rounded-full"
