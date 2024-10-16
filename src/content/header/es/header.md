@@ -1,1 +1,1 @@
-Construyo soluciones digitales, modernas y eficientes que cautivan a los usuarios.
+Construyo soluciones digitales modernas y eficientes.

@@ -1,2 +1,1 @@
-I build clean, modern, and efficient web solutions that
-engage users.
+I build clean, modern, and efficient software solutions.
