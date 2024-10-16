@@ -17,6 +17,13 @@ const projectSchema = z.object({
     link: z.string().optional(),
 })
 
+const certificateSchema = z.object({
+    title: z.string(),
+    date: z.string(),
+    link: z.string().optional(),
+    skills: z.string().array().optional(),
+})
+
 // Collections
 const jobCollection = defineCollection({
     type: 'content',
@@ -27,8 +34,13 @@ const projectCollection = defineCollection({
     type: 'content',
     schema: projectSchema,
 })
+const certificateCollection = defineCollection({
+    type: 'content',
+    schema: certificateSchema,
+})
 
 export const collections = {
     jobs: jobCollection,
     projects: projectCollection,
+    certificates: certificateCollection,
 }
