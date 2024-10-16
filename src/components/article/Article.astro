@@ -5,12 +5,12 @@ import ArticleTitle from "@article/ArticleTitle.astro";
 import ArticleSkills from "@ui/ArticleSkills.astro";
 import ArticleDate from "./ArticleDate.astro";
 import ArticleContent from "./ArticleContent.astro";
+import H4 from "../headings/H4.astro"
 
 const md = Astro.props;
-const {isCertificate} = Astro.props;
 const { data } = md;
 const { Content } = await md.render();
-const { title, skills, link, date } = data as ArticleType | ProjectType;
+const { title, skills, link, date, subTitle } = data as ArticleType | ProjectType;
 const { imageSrc }: { imageSrc?: string } = data;
 
 function instanceOfProject(data: any): data is ProjectType {
@@ -31,14 +31,20 @@ const isProject = instanceOfProject(data);
     </div>
     <div>
         <ArticleTitle title={title} link={link} />
-        <ArticleDate date={date} isProject={isProject} />
+        <div>
+            <H4 title={subTitle} isMargin={true}/>
+            <ArticleDate date={date} isProject={isProject} />
+        </div>
         <ArticleContent Content={Content} />
         <ArticleSkills skills={skills} />
     </div> 
     : 
         <ArticleImage title={title} imageSrc={imageSrc} link={link} />
         <ArticleTitle title={title} link={link} />
-        <ArticleDate date={date} isProject={isProject} />
+        <div>
+            <H4 title={subTitle} isMargin={true}/>
+            <ArticleDate date={date} isProject={isProject} />
+        </div>
         <ArticleContent Content={Content} />
         <ArticleSkills skills={skills} />
 }

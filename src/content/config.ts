@@ -19,6 +19,7 @@ const projectSchema = z.object({
 
 const certificateSchema = z.object({
     title: z.string(),
+    subTitle: z.string(),
     date: z.string(),
     link: z.string().optional(),
     skills: z.string().array().optional(),

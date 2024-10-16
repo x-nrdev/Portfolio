@@ -1,0 +1,21 @@
+---
+type Props = {
+    title: string | undefined;
+    isMargin?: boolean;
+};
+
+const { isMargin, title } = Astro.props as Props;
+
+const className = isMargin
+    ? "inline text-md text-gray-400 font-bold mb-2 pr-1"
+    : "inline text-md text-gray-400 font-bold pr-1";
+---
+
+{
+    title && (
+        <>
+            <h4 class={className}>{title}</h4>
+            <span class="text-md text-gray-400">-</span>
+        </>
+    )
+}

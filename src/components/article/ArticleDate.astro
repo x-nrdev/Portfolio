@@ -3,8 +3,4 @@ import type { ArticleDateType } from "@src/types";
 const { date, isProject } = Astro.props as ArticleDateType;
 ---
 
-{
-    !isProject && date && (
-        <span class="block text-sm text-gray-400 mb-2">{date}</span>
-    )
-}
+{!isProject && date && <span class="text-sm text-gray-400 mb-2">{date}</span>}
