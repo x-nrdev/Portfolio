@@ -1,16 +1,9 @@
-Soy Nelson Rojas, una persona extrovertida, amable y perseverante
-apasionado por el **desarrollo web**.
+¡Hola a todos! 👋
 
+Soy Nelson Rojas, un amable y extrovertido **desarrollador web** 🧑‍💻.
 
-Desde hace 4 años, he sido autodidacta en el desarrollo front-end,
-dedicándome a dominar tecnologías con disciplina
-y determinación.
+Durante los últimos cuatro años, me he sumergido en diferentes proyectos 
+que han perfeccionado mis habilidades a través de diversas tecnologías.
 
-
-A través de un sólido camino de aprendizaje, la práctica constante, y la creación de proyectos, he perfeccionado mis habilidades técnicas.
-creación de proyectos, he perfeccionado mis habilidades técnicas y ganado una mejor
-de las necesidades de los usuarios.
-
-
-Cada proyecto me ha permitido profundizar en mis conocimientos, y mi pasión
-me impulsa a seguir **aprendiendo** y **mejorando**.
+Mi pasión por el desarrollo web y el compromiso con el **aprendizaje constante** me inspiran 
+para empujar continuamente mis límites y esforzarme para mejorar 💪.

@@ -9,7 +9,7 @@ const { lang } = Astro.props;
 
 <Section class:list={"group/sectionAlign"}>
     <H2 class:list={"lg:px-4"}>{lang === "es" ? "Sobre mí" : "About"}</H2>
-    <div class="prose prose-invert lg:px-4">
+    <div class="prose prose-invert lg:px-4 text-pretty">
         {lang === "es" ? <AboutContentES /> : <AboutContent />}
     </div>
 </Section>
