@@ -1,5 +1,6 @@
 ---
 import Wrapper from "./Wrapper.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
     title: string;
@@ -17,6 +18,7 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <ClientRouter />
     </head>
     <body
         class="text-white max-lg:py-8 px-4 sm:px-4 lg:px-4 md:px-36 selection:bg-accent selection:text-primary before:block before:fixed before:-inset-80 before:bg-gradient-to-br before:from-secondary before:from-[-75%] before:via-primary before:to-secondary before:to-[175%]"
