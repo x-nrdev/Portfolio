@@ -26,7 +26,11 @@ const { lang } = Astro.props;
                     >
                     <span
                         class="sm:text-lg lg:text-2xl md:text-2xl text-xl block"
-                        >Frontend Developer</span
+                        >{
+                            lang === "es"
+                                ? "Desarrollador Frontend"
+                                : "Frontend Developer"
+                        }</span
                     >
                 </h1>
                 <div class="prose prose-invert">
