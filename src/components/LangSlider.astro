@@ -1,5 +1,9 @@
 ---
-import type { lang } from "@src/types";
+import type {
+    lang,
+    TransitionAnimation,
+    TransitionDirectionalAnimations
+} from "@src/types";
 
 interface Props {
     lang: lang;
@@ -7,22 +11,39 @@ interface Props {
 }
 
 const { lang, href } = Astro.props;
-const conditionalClass =
-    lang === "es"
-        ? "before:-right-1 before:left-[50%] hover:before:translate-x-[-100%]"
-        : "before:-left-1 before:right-[50%] hover:before:translate-x-[100%]";
+
+const anim: TransitionAnimation = {
+    name: "langSlideForwards",
+    fillMode: "forwards"
+};
+
+const customTransition: TransitionDirectionalAnimations = {
+    forwards: {
+        old: anim,
+        new: anim
+    },
+    backwards: {
+        old: anim,
+        new: anim
+    }
+};
 ---
 
 <a
     href={href}
-    class=`lang-slider flex uppercase rounded-[10px] overflow-hidden border-accent border-2 font-nunitoBold font-bold relative before:block before:absolute before:top-0 before:bottom-0 before:bg-accent z-0 before:-z-10 before:transition-transform before:duration-custom before:ease-in-out group ${conditionalClass}`
+    class=`lang-slider block flex uppercase rounded-[10px] bg-accent overflow-hidden border-accent border-2 font-nunitoBold font-bold relative z-0 $`
 >
     <span
-        class=`py-1 px-4 ${lang === 'en' ? 'text-black group-hover:text-white' : 'text-white group-hover:text-black'}  transition-colors duration-custom ease-in-out`
+        class=`py-1 px-4 ${lang === 'en' ? 'text-black' : 'text-white bg-primary'}  transition-colors duration-custom ease-in-out rounded-l-[10px]`
         >en</span
     >
     <span
-        class=`py-1 px-4 ${lang === 'es' ? 'text-black group-hover:text-white' : 'text-white group-hover:text-black'} group-hover:text-black transition-colors duration-custom ease-in-out`
+        transition:name="lang-slider"
+        transition:animate={customTransition}
+        class=`lang-slider-bubble absolute top-0 bottom-0 ${lang === 'es' ? '-right-0 left-[50%] ' : '-left-0 right-[50%]'} bg-accent -z-10 transition-transform duration-custom ease-in-out rounded-[10px]`
+    ></span>
+    <span
+        class=`py-1 px-4 ${lang === 'es' ? 'text-black' : 'text-white bg-primary'} transition-colors duration-custom ease-in-out rounded-r-[10px]`
         >es</span
     >
 </a>
