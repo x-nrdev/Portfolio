@@ -40,7 +40,7 @@ const customTransition: TransitionDirectionalAnimations = {
     <span
         transition:name="lang-slider"
         transition:animate={customTransition}
-        class=`lang-slider-bubble absolute top-0 bottom-0 ${lang === 'es' ? '-right-0 left-[50%] ' : '-left-0 right-[50%]'} bg-accent -z-10 transition-transform duration-custom ease-in-out rounded-[10px]`
+        class=`absolute top-0 bottom-0 ${lang === 'es' ? '-right-0 left-[50%] ' : '-left-0 right-[50%]'} bg-accent -z-10 transition-transform duration-custom ease-in-out rounded-[10px]`
     ></span>
     <span
         class=`py-1 px-4 ${lang === 'es' ? 'text-black' : 'text-white bg-primary'} transition-colors duration-custom ease-in-out rounded-r-[10px]`

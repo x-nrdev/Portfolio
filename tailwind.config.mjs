@@ -23,6 +23,9 @@ export default {
 				nunito: ['Nunito', 'sans-serif'],
 				nunitoBold: ['Nunito Bold', 'sans-serif'],
 			},
+			gridTemplateColumns: {
+				'header': '2fr 1fr',
+			},
 		},
 	},
 	plugins: [tailwindConfig],
