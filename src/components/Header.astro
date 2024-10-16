@@ -15,7 +15,9 @@ const { lang } = Astro.props;
     class="lg:h-screen lg:sticky top-0 left-0 lg:flex flex-col items-start justify-between lg:py-8"
 >
     <header class="mb-section-gap">
-        <div class="flex items-center mb-4 gap-x-6">
+        <div
+            class="grid grid-cols-2 items-center justify-items-center mb-4 gap-6"
+        >
             <div class="flex flex-col gap-y-4 gap-x-2 max-w-[40ch]">
                 <h1 class="font-bold leading-tight text-balance">
                     <span
@@ -39,9 +41,9 @@ const { lang } = Astro.props;
                 height={200}
                 loading={"eager"}
             />
-        </div>
-        <div class="flex justify-between">
-            <SocialNetworks />
+            <div class="place-self-start">
+                <SocialNetworks />
+            </div>
             <LangSlider lang={lang} href={lang === "es" ? "/" : "/es"} />
         </div>
     </header>
