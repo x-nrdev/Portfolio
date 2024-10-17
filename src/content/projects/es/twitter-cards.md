@@ -7,4 +7,4 @@ link: https://twitter-cards-seven.vercel.app/
 skills: [HTML, CSS, TypeScript, React, Tailwind]
 ---
 
-Este proyecto es una demostración de cómo construir una aplicación web para mostrar componentes de Twitter Cards.
+Este proyecto es una demostración de una aplicación web de componentes Twitter Cards desarrollado con React y Tailwind CSS.
