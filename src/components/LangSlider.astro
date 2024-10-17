@@ -31,10 +31,10 @@ const customTransition: TransitionDirectionalAnimations = {
 
 <a
     href={href}
-    class=`lang-slider block flex uppercase rounded-[10px] bg-accent overflow-hidden border-accent border-2 font-nunitoBold font-bold relative z-0 $`
+    class=`lang-slider block flex uppercase rounded-[10px] bg-accent overflow-hidden border-accent border-2 relative z-0 $`
 >
     <span
-        class=`py-1 px-4 ${lang === 'en' ? 'text-black' : 'text-white bg-primary'}  transition-colors duration-custom ease-in-out rounded-l-[10px]`
+        class=`py-1 px-2 ${lang === 'en' ? 'text-black font-bold font-nunitoBold' : 'text-white bg-primary'}  transition-colors duration-custom ease-in-out rounded-l-[10px]`
         >en</span
     >
     <span
@@ -43,7 +43,7 @@ const customTransition: TransitionDirectionalAnimations = {
         class=`absolute top-0 bottom-0 ${lang === 'es' ? '-right-0 left-[50%] ' : '-left-0 right-[50%]'} bg-accent -z-10 transition-transform duration-custom ease-in-out rounded-[10px]`
     ></span>
     <span
-        class=`py-1 px-4 ${lang === 'es' ? 'text-black' : 'text-white bg-primary'} transition-colors duration-custom ease-in-out rounded-r-[10px]`
+        class=`py-1 px-2 ${lang === 'es' ? 'text-black font-bold font-nunitoBold' : 'text-white bg-primary'} transition-colors duration-custom ease-in-out rounded-r-[10px]`
         >es</span
     >
 </a>
