@@ -22,7 +22,6 @@ const certificateSchema = z.object({
     subTitle: z.string(),
     date: z.string(),
     link: z.string().optional(),
-    skills: z.string().array().optional(),
 })
 
 // Collections
