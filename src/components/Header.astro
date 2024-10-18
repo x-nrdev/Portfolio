@@ -16,13 +16,13 @@ const { lang } = Astro.props;
 >
     <header class="mb-section-gap">
         <div
-            class="grid grid-cols-header items-center justify-items-center mb-4 gap-y-6 gap-x-4"
+            class="grid sm:grid-cols-header items-center justify-items-center mb-4 gap-y-6 gap-x-4"
         >
             <div
-                class="place-self-start flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
+                class="sm:place-self-start sm:text-start place-self-center text-center flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
             >
                 <h1 class="font-bold leading-tight text-balance">
-                    <span class="md:text-5xl text-3xl text-accent"
+                    <span class="md:text-5xl text-4xl text-accent"
                         >Nelson Rojas</span
                     >
                     <span class="md:text-2xl text-xl block"
@@ -33,23 +33,25 @@ const { lang } = Astro.props;
                         }</span
                     >
                 </h1>
-                <div class="prose prose-invert">
-                    {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
-                </div>
             </div>
             <Image
                 transition:name="profileImage"
                 src={profileImage}
                 alt="Profile"
-                class="lg:max-w-36 lg:max-h-36 md:max-w-36 md:max-h-36 max-w-36 max-h-36 aspect-square rounded-full"
+                class="lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square rounded-full sm:row-span-2"
                 width={200}
                 height={200}
                 loading={"eager"}
             />
-            <div class="place-self-start">
-                <SocialNetworks />
+            <div class="prose prose-invert">
+                {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
             </div>
-            <LangSlider lang={lang} href={lang === "es" ? "/" : "/es"} />
+            <div
+                class="sm:col-span-2 justify-self-stretch flex justify-between"
+            >
+                <SocialNetworks />
+                <LangSlider lang={lang} href={lang === "es" ? "/" : "/es"} />
+            </div>
         </div>
     </header>
     <div class="max-lg:hidden">
