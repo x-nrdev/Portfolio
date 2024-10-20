@@ -12,20 +12,22 @@ const { lang } = Astro.props;
 ---
 
 <div
-    class="lg:h-screen lg:sticky lg:z-10 top-0 left-0 lg:flex flex-col items-start justify-between lg:py-8"
+    class="top-0 left-0 flex-col items-start justify-between lg:h-screen lg:sticky lg:z-10 lg:flex lg:py-8"
 >
     <header class="mb-section-gap">
         <div
-            class="grid sm:grid-cols-header items-center justify-items-center mb-4 gap-y-6 gap-x-4"
+            class="grid items-center mb-4 lg:grid-cols-header md:grid-cols-2 justify-items-start gap-y-6 gap-x-4"
         >
             <div
-                class="sm:place-self-start sm:text-start place-self-center text-center flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
+                class="md:place-self-start place-self-center flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
             >
-                <h1 class="font-bold leading-tight text-balance">
-                    <span class="md:text-5xl text-4xl text-accent"
+                <h1
+                    class="font-bold leading-tight text-center text-balance md:text-start"
+                >
+                    <span class="text-4xl lg:text-5xl text-accent"
                         >Nelson Rojas</span
                     >
-                    <span class="md:text-2xl text-xl block"
+                    <span class="block text-xl lg:text-2xl"
                         >{
                             lang === "es"
                                 ? "Desarrollador Frontend"
@@ -38,19 +40,23 @@ const { lang } = Astro.props;
                 transition:name="profileImage"
                 src={profileImage}
                 alt="Profile"
-                class="lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square rounded-full sm:row-span-2"
+                class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square sm:row-span-2 place-self-center"
                 width={200}
                 height={200}
                 loading={"eager"}
             />
-            <div class="prose prose-invert">
+            <div class="prose prose-invert md:max-w-[30ch]">
                 {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
             </div>
             <div
-                class="sm:col-span-2 justify-self-stretch flex justify-between"
+                class="grid grid-cols-2 justify-self-stretch lg:grid-cols-header md:grid-cols-2 sm:grid-cols-header md:col-span-2 gap-x-4"
             >
-                <SocialNetworks />
-                <LangSlider lang={lang} href={lang === "es" ? "/" : "/es"} />
+                <SocialNetworks class:list={["place-self-start"]} />
+                <LangSlider
+                    class:list={["place-self-end md:place-self-center"]}
+                    lang={lang}
+                    href={lang === "es" ? "/" : "/es"}
+                />
             </div>
         </div>
     </header>
