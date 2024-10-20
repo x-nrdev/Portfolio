@@ -18,7 +18,11 @@ const certificates = (await getCollection("certificates"))
         {
             certificates.map((certificate) => (
                 <li>
-                    <Article {...certificate} isCertificate={true} />
+                    <Article
+                        {...certificate}
+                        isCertificate={true}
+                        class:list={["mb-0"]}
+                    />
                 </li>
             ))
         }

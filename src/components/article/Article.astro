@@ -8,6 +8,7 @@ import ArticleContent from "./ArticleContent.astro";
 import H4 from "../headings/H4.astro"
 
 const md = Astro.props;
+const { class: className = "", isMargin = false } = Astro.props;
 const { data } = md;
 const { Content } = await md.render();
 const { title, skills, link, date, subTitle } = data as ArticleType | ProjectType;
@@ -21,7 +22,7 @@ const isProject = instanceOfProject(data);
 ---
 
 <article
-    class=`transition-backgroundColor transition-opacity duration-custom ease-in-out mb-section-gap md:mb-0 lg:rounded-[10px] lg:p-4 py-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link"} ${imageSrc && "md:flex md:gap-x-12"}`
+    class=`transition-backgroundColor transition-opacity duration-custom ease-in-out  lg:rounded-[10px] lg:p-4 py-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link"} ${imageSrc && "md:flex md:gap-x-12"} ${className} ${isMargin ? "mb-section-gap" : ""}`
     data-href=`${link && link}`
 >
     {

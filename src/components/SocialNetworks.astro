@@ -19,8 +19,10 @@ const socials: SocialNetworkType[] = [
         alt: "Twitter Icon"
     }
 ];
+
+const { class: className = "" } = Astro.props;
 ---
 
-<div class="flex gap-x-4">
+<div class=`flex gap-x-4 ${className}`>
     {socials.map((social) => <Icon {...social} />)}
 </div>
