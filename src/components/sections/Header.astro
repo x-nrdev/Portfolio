@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import profileImage from "@assets/profile.webp";
 import SocialNetworks from "@components/ui/SocialNetworks.astro";
 import Footer from "@components/common/Footer.astro";
-import TechSkills from "@components/ui/TechSkills.astro";
+import Skills from "@components/sections/Skills.astro";
 
 import { Content as HeaderContent } from "@content/header/en/header.md";
 import { Content as HeaderContentES } from "@content/header/es/header.md";
@@ -60,7 +60,7 @@ const { lang } = Astro.props;
         </div>
     </header>
     <div class="max-lg:hidden">
-        <TechSkills class:list={["mb-section-gap"]} />
+        <Skills class:list={["mb-section-gap"]} />
     </div>
     <div class="max-lg:hidden">
         <Footer lang={lang} />

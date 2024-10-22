@@ -4,13 +4,14 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
     title: string;
+    lang: "en" | "es";
 }
 
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
@@ -58,5 +59,9 @@ const { title } = Astro.props;
     h5,
     h6 {
         font-family: "Nunito Bold", system-ui, sans-serif;
+    }
+
+    .content-visibility-auto {
+        content-visibility: auto;
     }
 </style>

@@ -3,22 +3,22 @@ import Header from "@components/sections/Header.astro";
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/common/Footer.astro";
 import Main from "@components/sections/Main.astro";
-import TechSkills from "@components/ui/TechSkills.astro";
+import Skills from "@components/sections/Skills.astro";
 
 import type { lang } from "@src/types";
 
 const lang: lang = "en";
 ---
 
-<Layout title="Nelson Rojas - Frontend Developer">
+<Layout title="Nelson Rojas - Frontend Developer" lang="en">
     <div class="lg:grid grid-cols-2 gap-x-10 relative">
         <Header lang={lang} />
         <Main lang={lang} />
         <div
             class="hidden lg:hidden max-lg:block md:flex md:items-end md:gap-x-12 justify-between"
         >
-            <TechSkills class:list={["max-md:mb-section-gap"]} />
-            <Footer lang={lang} />
+            <Skills class:list={["max-md:mb-section-gap"]} />
+            <Footer lang={lang} class:list={["content-visibility-auto"]} />
         </div>
     </div>
 </Layout>
