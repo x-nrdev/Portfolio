@@ -1,0 +1,83 @@
+---
+import type { TechSkillType } from "@src/types";
+import TechSkill from "@components/ui/TechSkill.astro";
+import H2 from "@components/headings/H2.astro";
+
+const techSkills: TechSkillType[] = [
+    {
+        title: "HTML",
+        src: "/assets/logos/html5.svg"
+    },
+    {
+        title: "CSS",
+        src: "/assets/logos/css3.svg"
+    },
+    {
+        title: "JavaScript",
+        src: "/assets/logos/javascript.svg"
+    },
+    {
+        title: "TypeScript",
+        src: "/assets/logos/typescript.svg"
+    },
+    {
+        title: "React",
+        src: "/assets/logos/react.svg"
+    },
+    {
+        title: "Astro",
+        src: "/assets/logos/astro.svg"
+    },
+    {
+        title: "Tailwind CSS",
+        src: "/assets/logos/tailwindcss.svg"
+    },
+    {
+        title: "SASS",
+        src: "/assets/logos/sass.svg"
+    },
+    {
+        title: "Bootstrap",
+        src: "/assets/logos/bootstrap.svg"
+    },
+    {
+        title: "Node.js",
+        src: "/assets/logos/nodedotjs.svg"
+    },
+    {
+        title: "Express",
+        src: "/assets/logos/express.svg"
+    },
+    {
+        title: "Git",
+        src: "/assets/logos/git.svg"
+    },
+    {
+        title: "GitHub",
+        src: "/assets/logos/github.svg"
+    }
+];
+
+const { class: className } = Astro.props;
+const lang = Astro.preferredLocale;
+---
+
+{
+    techSkills && (
+        <div class="content-visibility-auto">
+            <H2>{lang === "es" ? "Tecnologías" : "Skills"}</H2>
+            <ul
+                class:list={[
+                    className,
+                    "grid grid-cols-5 lg:grid-cols-4 gap-4 max-w-[16rem]"
+                ]}
+            >
+                {techSkills.map((skill) => (
+                    <li>
+                        <TechSkill {...skill} />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
