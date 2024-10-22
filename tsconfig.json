@@ -12,14 +12,11 @@
       "@assets/*": [
         "src/assets/*"
       ],
-      "@article/*": [
-        "src/components/article/*"
-      ],
       "@components/*": [
         "src/components/*"
       ],
-      "@ui/*": [
-        "src/components/ui/*"
+      "@content/*": [
+        "src/content/*"
       ],
     },
     "strictNullChecks": true

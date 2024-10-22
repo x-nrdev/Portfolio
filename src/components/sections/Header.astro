@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import profileImage from "@assets/profile.webp";
-import SocialNetworks from "./SocialNetworks.astro";
-import Footer from "./common/Footer.astro";
-import TechSkills from "./TechSkills.astro";
+import SocialNetworks from "@components/ui/SocialNetworks.astro";
+import Footer from "@components/common/Footer.astro";
+import TechSkills from "@components/ui/TechSkills.astro";
 
-import { Content as HeaderContent } from "../content/header/en/header.md";
-import { Content as HeaderContentES } from "../content/header/es/header.md";
-import LangSlider from "./LangSlider.astro";
+import { Content as HeaderContent } from "@content/header/en/header.md";
+import { Content as HeaderContentES } from "@content/header/es/header.md";
+import LangSlider from "@components/ui/LangSlider.astro";
 const { lang } = Astro.props;
 ---
 
@@ -37,7 +37,6 @@ const { lang } = Astro.props;
                 </h1>
             </div>
             <Image
-                transition:name="profileImage"
                 src={profileImage}
                 alt="Profile"
                 class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square sm:row-span-2 place-self-center"

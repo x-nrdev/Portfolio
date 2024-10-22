@@ -1,11 +1,11 @@
 ---
 import type { ArticleType, ProjectType } from "@src/types";
-import ArticleImage from "@article/ArticleImage.astro";
-import ArticleTitle from "@article/ArticleTitle.astro";
-import ArticleSkills from "@ui/ArticleSkills.astro";
-import ArticleDate from "./ArticleDate.astro";
-import ArticleContent from "./ArticleContent.astro";
-import H4 from "../headings/H4.astro"
+import ArticleImage from "@components/article/ArticleImage.astro";
+import ArticleTitle from "@components/article/ArticleTitle.astro";
+import ArticleSkills from "@components/article/ArticleSkills.astro";
+import ArticleDate from "@components/article/ArticleDate.astro";
+import ArticleContent from "@components/article/ArticleContent.astro";
+import H4 from "@components/headings/H4.astro"
 
 const md = Astro.props;
 const { class: className = "", isMargin = false } = Astro.props;
