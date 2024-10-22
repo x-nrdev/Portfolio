@@ -1,8 +1,10 @@
 ---
 import AnchorText from "@components/ui/AnchorText.astro";
+
+const { class: className } = Astro.props;
 ---
 
-<footer class="text-pretty">
+<footer class={`text-pretty ${className && className}`}>
     <p>
         Inspirado por el portafolio de <AnchorText
             href="https://brittanychiang.com/"

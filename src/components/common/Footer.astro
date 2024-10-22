@@ -1,14 +1,14 @@
 ---
 import AnchorText from "@components/ui/AnchorText.astro";
 import FooterEs from "@components/common/FooterEs.astro";
-const { lang } = Astro.props;
+const { lang, class: className = "" } = Astro.props;
 ---
 
 {
     lang === "es" ? (
-        <FooterEs />
+        <FooterEs class:list={[className]} />
     ) : (
-        <footer class="text-pretty">
+        <footer class={`text-pretty ${className && className}`}>
             <p>
                 Inspired by
                 <AnchorText href="https://brittanychiang.com/">

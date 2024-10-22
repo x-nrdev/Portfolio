@@ -10,7 +10,7 @@ const certificates = (await getCollection("certificates"))
     .sort((a, b) => b.data.date.localeCompare(a.data.date)); // sort by date
 ---
 
-<Section>
+<Section class:list={["content-visibility-auto"]}>
     <H2 class:list={"lg:px-4"}
         >{lang === "es" ? "Certificados" : "Certificates"}</H2
     >
