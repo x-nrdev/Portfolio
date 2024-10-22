@@ -52,7 +52,8 @@ const isProject = instanceOfProject(data);
 </article>
 
 <script>
-    let listenersAttached = false;
+    const articleClick = () => {
+        let listenersAttached = false;
 
     const handleArticleClick = () => {
         const articles = document.querySelectorAll(".fn-article-link");
@@ -98,4 +99,8 @@ const isProject = instanceOfProject(data);
     }
 
     window.addEventListener("resize", handleResize);
+    }
+
+    articleClick()
+    document.addEventListener("astro:after-swap", articleClick)
 </script>
