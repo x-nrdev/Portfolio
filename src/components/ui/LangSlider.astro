@@ -1,9 +1,5 @@
 ---
-import type {
-    lang,
-    TransitionAnimation,
-    TransitionDirectionalAnimations
-} from "@src/types";
+import type { lang } from "@src/types";
 
 interface Props {
     lang: lang;
@@ -12,22 +8,6 @@ interface Props {
 }
 
 const { lang, href, class: className = "" } = Astro.props;
-
-const anim: TransitionAnimation = {
-    name: "langSlideForwards",
-    fillMode: "forwards"
-};
-
-const customTransition: TransitionDirectionalAnimations = {
-    forwards: {
-        old: anim,
-        new: anim
-    },
-    backwards: {
-        old: anim,
-        new: anim
-    }
-};
 ---
 
 <a
