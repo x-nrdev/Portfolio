@@ -5,9 +5,10 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
     title: string;
     lang: "en" | "es";
+    isNotFound?: boolean;
 }
 
-const { title, lang } = Astro.props;
+const { title, lang, isNotFound } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ const { title, lang } = Astro.props;
         <ClientRouter />
     </head>
     <body
-        class="text-white max-lg:py-8 px-4 sm:px-4 lg:px-4 md:px-36 selection:bg-accent selection:text-primary before:block before:fixed before:-inset-80 before:bg-gradient-to-br before:from-secondary before:from-[-75%] before:via-primary before:to-secondary before:to-[175%]"
+        class=`text-white ${!isNotFound && "max-lg:py-8"} px-4 sm:px-4 lg:px-4 md:px-36 selection:bg-accent selection:text-primary before:block before:fixed before:-inset-80 before:bg-gradient-to-br before:from-secondary before:from-[-75%] before:via-primary before:to-secondary before:to-[175%]`
     >
         <Wrapper>
             <slot />

@@ -22,12 +22,13 @@ const { lang } = Astro.props;
                 class="md:place-self-start place-self-center flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
             >
                 <h1
-                    class="font-bold leading-tight text-center text-balance md:text-start"
+                    class="font-bold leading-tight text-center text-balance md:text-start font-nunitoBold"
                 >
                     <span class="text-4xl lg:text-5xl text-accent"
                         >Nelson Rojas</span
                     >
-                    <span class="block text-xl lg:text-2xl"
+                    <span
+                        class="block text-xl font-normal lg:text-2xl font-nunito"
                         >{
                             lang === "es"
                                 ? "Desarrollador Frontend"
