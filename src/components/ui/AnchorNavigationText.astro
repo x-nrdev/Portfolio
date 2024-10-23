@@ -1,0 +1,15 @@
+---
+import LinkIcon from "./LinkIcon.astro";
+
+interface Props {
+    href: string;
+    class?: string;
+}
+
+const { href, class: className = "" } = Astro.props as Props;
+---
+
+<a href={href} class={`group px-2 py-1 flex items-center gap-x-2 ${className}`}>
+    <slot />
+    <LinkIcon isExternal={false} />
+</a>

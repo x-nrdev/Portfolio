@@ -1,10 +1,22 @@
+---
+interface Props {
+    isExternal: boolean;
+}
+
+const { isExternal } = Astro.props as Props;
+
+let className = isExternal
+    ? "lg:group-hover:translate-x-0.5 lg:group-hover:-translate-y-0.5"
+    : "lg:group-hover:translate-x-0.5 rotate-45";
+---
+
 <svg
     width="20"
     height="20"
     viewBox="0 0 20 20"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    class="lg:group-hover:translate-x-0.5 lg:group-hover:-translate-y-0.5 transition-transform duration-custom ease-in-out"
+    class=`${className} transition-transform duration-custom ease-in-out`
 >
     <path
         fill-rule="evenodd"
