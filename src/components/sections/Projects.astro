@@ -3,6 +3,7 @@ import Article from "@components/article/Article.astro";
 import { getCollection } from "astro:content";
 import H2 from "@components/headings/H2.astro";
 import Section from "@components/article/Section.astro";
+import AnchorNavigationText from "../ui/AnchorNavigationText.astro";
 const { lang } = Astro.props;
 
 const projects = await getCollection("projects");
@@ -16,17 +17,36 @@ const projectsSorted = projects
         }
         return 0;
     });
+
+const allProjectsText = lang === "es" ? "Todos los proyectos" : "All Projects";
+const allProjectsHref = lang === "es" ? "/es/projects" : "/projects";
+const isLastProject = (index: number) => {
+    return ++index === projectsSorted.length;
+};
 ---
 
 <Section class:list={["content-visibility-auto"]}>
     <H2 class:list={"lg:px-4"}>{lang === "es" ? "Proyectos" : "Projects"}</H2>
     <ul class="group/opacity">
         {
-            projectsSorted.map((project) => (
-                <li>
-                    <Article {...project} isMargin={true} />
-                </li>
-            ))
+            projectsSorted.map((project, index) =>
+                isLastProject(index) ? (
+                    <li>
+                        <Article
+                            {...project}
+                            isMargin={false}
+                            class:list={["mb-1"]}
+                        />
+                    </li>
+                ) : (
+                    <li>
+                        <Article {...project} isMargin={true} />
+                    </li>
+                )
+            )
         }
     </ul>
+    <AnchorNavigationText href={allProjectsHref} class:list={["px-4"]}>
+        {allProjectsText}
+    </AnchorNavigationText>
 </Section>

@@ -23,7 +23,7 @@ const { title, lang, isNotFound } = Astro.props;
         <ClientRouter />
     </head>
     <body
-        class=`text-white ${!isNotFound && "max-lg:py-8"} px-4 sm:px-4 lg:px-4 md:px-36 selection:bg-accent selection:text-primary before:block before:fixed before:-inset-80 before:bg-gradient-to-br before:from-secondary before:from-[-75%] before:via-primary before:to-secondary before:to-[175%]`
+        class=`text-white ${!isNotFound && "max-lg:py-8"} px-4 sm:px-4 lg:px-4 md:px-36 selection:bg-accent selection:text-primary before:block before:fixed before:-inset-80 before:bg-gradient-to-br before:from-secondary before:from-[-75%] before:via-primary before:to-secondary before:to-[175%] before:-z-50`
     >
         <Wrapper>
             <slot />
