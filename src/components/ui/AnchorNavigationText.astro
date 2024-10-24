@@ -9,7 +9,14 @@ interface Props {
 const { href, class: className = "" } = Astro.props as Props;
 ---
 
-<a href={href} class={`group px-2 py-1 flex items-center gap-x-2 ${className}`}>
-    <slot />
+<a
+    href={href}
+    class={`group px-2 py-1 flex items-center gap-x-2  ${className}`}
+>
+    <div
+        class="transition-colors ease-in-out border-b-2 border-transparent lg:group-hover:border-current duration-custom"
+    >
+        <slot />
+    </div>
     <LinkIcon isExternal={false} />
 </a>
