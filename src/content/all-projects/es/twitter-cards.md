@@ -1,8 +1,6 @@
 ---
 title: Twitter Cards
-date: 02-06-2024
-order: 2
-imageSrc: /assets/projects/twitter-cards.webp
+date: 2024-06-02
 link: https://twitter-cards-seven.vercel.app/
 skills: [HTML, CSS, TypeScript, React, Tailwind]
 ---

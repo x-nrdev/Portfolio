@@ -1,8 +1,6 @@
 ---
 title: Free Games Website
-date: 19-05-2024
-order: 1
-imageSrc: /assets/projects/free-games-website.webp
+date: 2024-05-19
 link: https://free-games-api.vercel.app/
 skills: [HTML, CSS, JavaScript, Node.js, Express JS]
 ---

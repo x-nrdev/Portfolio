@@ -1,8 +1,6 @@
 ---
 title: Space Tourism
-date: 12-03-2023
-order: 3
-imageSrc: /assets/projects/space-tourism.webp
+date: 2023-03-12
 link: https://nrdevpy.github.io/space-tourism-website/
 skills: [HTML, CSS, JavaScript]
 ---
