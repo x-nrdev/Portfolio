@@ -13,13 +13,19 @@ const { data } = md;
 const { Content } = await md.render();
 const { title, skills, link, date, subTitle } = data as ArticleType | ProjectType;
 const { imageSrc }: { imageSrc?: string } = data;
-const formatedDate = date.toISOString().split("T")[0];
+
+let formatedDate: string | Date = date;
+
+if (date instanceof Date) {
+    formatedDate = date.toISOString().split("T")[0];
+}
 
 function instanceOfProject(data: any): data is ProjectType {
     return "imageSrc" in data;
 }
 
 const isProject = instanceOfProject(data);
+
 ---
 
 <article

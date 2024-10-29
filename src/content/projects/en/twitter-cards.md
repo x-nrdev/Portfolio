@@ -1,6 +1,6 @@
 ---
 title: Twitter Cards
-date: 02-06-2024
+date: 2024-06-02
 order: 2
 imageSrc: /assets/projects/twitter-cards.webp
 link: https://twitter-cards-seven.vercel.app/

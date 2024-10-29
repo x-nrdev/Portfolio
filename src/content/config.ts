@@ -10,7 +10,7 @@ const jobSchema = z.object({
 
 const projectSchema = z.object({
     title: z.string(),
-    date: z.string(),
+    date: z.date().optional(),
     order: z.number().optional(),
     imageSrc: z.string().optional(),
     skills: z.string().array().optional(),

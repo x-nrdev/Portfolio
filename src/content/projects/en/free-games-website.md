@@ -1,6 +1,6 @@
 ---
 title: Free Games Website
-date: 19-05-2024
+date: 2024-05-19
 order: 1
 imageSrc: /assets/projects/free-games-website.webp
 link: https://free-games-api.vercel.app/
