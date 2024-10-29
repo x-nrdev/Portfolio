@@ -2,10 +2,16 @@
 import Layout from "@src/layouts/Layout.astro";
 import AllProjects from "@src/components/AllProjects.astro";
 import FooterEs from "@src/components/common/FooterEs.astro";
+import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
 ---
 
 <Layout title="Nelson Rojas - Frontend Developer | Projects" lang="es">
     <div class="lg:py-8 lg:px-40">
+        <span class="text-accent">
+            <AnchorNavigationText href="/es" class:list={["px-4"]} goBack>
+                Nelson Rojas
+            </AnchorNavigationText>
+        </span>
         <h1 class="text-4xl lg:text-5xl lg:px-4 mb-4">Proyectos</h1>
         <AllProjects lang="es" />
         <div class="text-center lg:px-4 text-pretty">
