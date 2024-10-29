@@ -1,7 +1,6 @@
 ---
 title: Twitter Cards
 date: 2024-06-02
-order: 2
 link: https://twitter-cards-seven.vercel.app/
 skills: [HTML, CSS, TypeScript, React, Tailwind]
 ---
