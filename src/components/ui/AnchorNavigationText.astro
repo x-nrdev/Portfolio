@@ -3,20 +3,33 @@ import LinkIcon from "./LinkIcon.astro";
 
 interface Props {
     href: string;
+    goBack: boolean;
     class?: string;
 }
 
-const { href, class: className = "" } = Astro.props as Props;
+const { href, class: className = "", goBack } = Astro.props as Props;
 ---
 
-<a
-    href={href}
-    class={`group px-2 py-1 flex items-center gap-x-2  ${className}`}
->
-    <div
-        class="transition-colors ease-in-out border-b-2 border-transparent lg:group-hover:border-current duration-custom"
-    >
-        <slot />
-    </div>
-    <LinkIcon isExternal={false} />
-</a>
+{
+    goBack ? (
+        <a
+            href={href}
+            class={`group px-2 py-1 flex items-center gap-x-2  ${className}`}
+        >
+            <LinkIcon isExternal={false} goBack />
+            <div class="transition-colors ease-in-out border-b-2 border-transparent lg:group-hover:border-current duration-custom">
+                <slot />
+            </div>
+        </a>
+    ) : (
+        <a
+            href={href}
+            class={`group px-2 py-1 flex items-center gap-x-2  ${className}`}
+        >
+            <div class="transition-colors ease-in-out border-b-2 border-transparent lg:group-hover:border-current duration-custom">
+                <slot />
+            </div>
+            <LinkIcon isExternal={false} goBack={false} />
+        </a>
+    )
+}
