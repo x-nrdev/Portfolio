@@ -13,6 +13,7 @@ const { data } = md;
 const { Content } = await md.render();
 const { title, skills, link, date, subTitle } = data as ArticleType | ProjectType;
 const { imageSrc }: { imageSrc?: string } = data;
+const formatedDate = date.toISOString().split("T")[0];
 
 function instanceOfProject(data: any): data is ProjectType {
     return "imageSrc" in data;
@@ -34,7 +35,7 @@ const isProject = instanceOfProject(data);
         <ArticleTitle title={title} link={link} />
         <div>
             <H4 title={subTitle} isMargin={true}/>
-            <ArticleDate date={date} isProject={isProject} />
+            <ArticleDate date={formatedDate} isProject={isProject} />
         </div>
         <ArticleContent Content={Content} />
         <ArticleSkills skills={skills} />
@@ -44,7 +45,7 @@ const isProject = instanceOfProject(data);
         <ArticleTitle title={title} link={link} />
         <div>
             <H4 title={subTitle} isMargin={true}/>
-            <ArticleDate date={date} isProject={isProject} />
+            <ArticleDate date={formatedDate} isProject={isProject} />
         </div>
         <ArticleContent Content={Content} />
         <ArticleSkills skills={skills} />

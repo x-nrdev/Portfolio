@@ -1,9 +1,7 @@
 ---
 import Article from "@components/article/Article.astro";
 import { getCollection } from "astro:content";
-import H2 from "@components/headings/H2.astro";
 import Section from "@components/article/Section.astro";
-import AnchorNavigationText from "../ui/AnchorNavigationText.astro";
 import type { lang } from "@src/types";
 
 interface Props {
@@ -12,27 +10,21 @@ interface Props {
 
 const { lang } = Astro.props as Props;
 
-const projects = await getCollection("projects");
+const projects = await getCollection("all-projects");
 const projectsSorted = projects
     // filter jobs by locale
     .filter((job) => job.id.startsWith(`${lang}/`))
     // sort by order
     .sort((a, b) => {
-        if (a.data.order && b.data.order) {
-            return a.data.order - b.data.order;
-        }
-        return 0;
+        return b.data.date - a.data.date;
     });
 
-const allProjectsText = lang === "es" ? "Todos los proyectos" : "All Projects";
-const allProjectsHref = lang === "es" ? "/es/projects" : "/projects";
 const isLastProject = (index: number) => {
     return ++index === projectsSorted.length;
 };
 ---
 
 <Section class:list={["content-visibility-auto"]}>
-    <H2 class:list={"lg:px-4"}>{lang === "es" ? "Proyectos" : "Projects"}</H2>
     <ul class="group/opacity">
         {
             projectsSorted.map((project, index) =>
@@ -52,7 +44,4 @@ const isLastProject = (index: number) => {
             )
         }
     </ul>
-    <AnchorNavigationText href={allProjectsHref} class:list={["px-4"]}>
-        {allProjectsText}
-    </AnchorNavigationText>
 </Section>

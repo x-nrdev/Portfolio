@@ -1,6 +1,6 @@
 export interface ArticleType {
     title: string
-    date: string
+    date: Date
     subTitle?: string
     link?: string
     skills?: string[]
