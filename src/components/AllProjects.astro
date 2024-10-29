@@ -30,15 +30,15 @@ const isLastProject = (index: number) => {
             projectsSorted.map((project, index) =>
                 isLastProject(index) ? (
                     <li>
-                        <Article
-                            {...project}
-                            isMargin={false}
-                            class:list={["mb-1"]}
-                        />
+                        <Article {...project} isMargin={false} />
                     </li>
                 ) : (
                     <li>
-                        <Article {...project} isMargin={true} />
+                        <Article
+                            {...project}
+                            isMargin={false}
+                            class:list={["mb-4"]}
+                        />
                     </li>
                 )
             )
