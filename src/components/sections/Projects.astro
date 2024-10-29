@@ -52,7 +52,11 @@ const isLastProject = (index: number) => {
             )
         }
     </ul>
-    <AnchorNavigationText href={allProjectsHref} class:list={["px-4"]}>
+    <AnchorNavigationText
+        href={allProjectsHref}
+        class:list={["px-4"]}
+        goBack={false}
+    >
         {allProjectsText}
     </AnchorNavigationText>
 </Section>
