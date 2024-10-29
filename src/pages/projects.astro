@@ -1,6 +1,7 @@
 ---
 import Layout from "@src/layouts/Layout.astro";
 import AllProjects from "@src/components/AllProjects.astro";
+import Footer from "@src/components/common/Footer.astro";
 ---
 
 <Layout title="Nelson Rojas - Frontend Developer | Projects" lang="en">
@@ -9,5 +10,8 @@ import AllProjects from "@src/components/AllProjects.astro";
             All Projects
         </h1>
         <AllProjects lang="en" />
+        <div class="text-center lg:px-4 text-pretty">
+            <Footer />
+        </div>
     </div>
 </Layout>
