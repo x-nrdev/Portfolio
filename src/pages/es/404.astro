@@ -12,8 +12,10 @@ import Layout from "@src/layouts/Layout.astro";
             <span class="text-accent">404</span> Página no encontrada
         </h1>
         <p class="mb-4 text-2xl">No se ha podido encontrar esta página.</p>
-        <AnchorNavigationText class:list="place-self-center" href="/"
-            >Inicio</AnchorNavigationText
+        <AnchorNavigationText
+            class:list="place-self-center"
+            href="/"
+            goBack={false}>Inicio</AnchorNavigationText
         >
     </div>
     <Footer

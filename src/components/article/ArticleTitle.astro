@@ -13,7 +13,7 @@ const { title, link } = Astro.props as ArticleHeadingType;
             target="_blank"
         >
             <H3 title={title} />
-            <LinkIcon isExternal />
+            <LinkIcon isExternal goBack={false} />
         </a>
     ) : (
         <H3 title={title} isMargin={true} />
