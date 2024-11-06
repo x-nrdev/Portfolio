@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
 subTitle: freeCodeCamp
-date: '07/04/2022'
+date: 2022-04-07
 link: https://www.freecodecamp.org/certification/Nelson_Rojas_Dev/responsive-web-design
 ---
