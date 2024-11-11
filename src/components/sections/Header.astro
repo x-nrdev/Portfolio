@@ -1,10 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import profileImage from "@assets/profile.webp";
 import SocialNetworks from "@components/ui/SocialNetworks.astro";
 import Footer from "@components/common/Footer.astro";
 import Skills from "@components/sections/Skills.astro";
-
 import { Content as HeaderContent } from "@content/header/en/header.md";
 import { Content as HeaderContentES } from "@content/header/es/header.md";
 import LangSlider from "@components/ui/LangSlider.astro";
@@ -14,7 +11,7 @@ const { lang } = Astro.props;
 <div
     class="top-0 left-0 flex-col items-start justify-between lg:h-screen lg:sticky lg:z-10 lg:flex lg:py-8"
 >
-    <header class="mb-section-gap">
+    <header class="mb-section-gap w-full">
         <div
             class="grid items-center mb-4 lg:grid-cols-header md:grid-cols-2 justify-items-start gap-y-6 gap-x-4"
         >
@@ -37,8 +34,8 @@ const { lang } = Astro.props;
                     >
                 </h1>
             </div>
-            <Image
-                src={profileImage}
+            <img
+                src="/assets/profile.webp"
                 alt="Profile"
                 class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square sm:row-span-2 place-self-center"
                 width={200}
