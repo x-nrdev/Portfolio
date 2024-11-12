@@ -34,14 +34,20 @@ const { lang } = Astro.props;
                     >
                 </h1>
             </div>
-            <img
-                src="/assets/profile.webp"
-                alt="Profile"
-                class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square sm:row-span-2 place-self-center"
-                width={200}
-                height={200}
-                loading={"eager"}
-            />
+            <div
+                class="sm:row-span-2 place-self-center relative overflow-hidden"
+            >
+                <div class="profile-box-shadow absolute -inset-1 rounded-full">
+                </div>
+                <img
+                    src="/assets/profile-1.jpg"
+                    alt="Profile"
+                    class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square profile-img"
+                    width={200}
+                    height={200}
+                    loading={"eager"}
+                />
+            </div>
             <div class="prose prose-invert md:max-w-[30ch]">
                 {lang === "es" ? <HeaderContentES /> : <HeaderContent />}
             </div>
@@ -65,4 +71,8 @@ const { lang } = Astro.props;
     </div>
 </div>
 
-<style></style>
+<style>
+    .profile-box-shadow {
+        box-shadow: inset 0 0 40px 10px rgb(13, 8, 33);
+    }
+</style>
