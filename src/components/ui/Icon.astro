@@ -1,28 +1,31 @@
 ---
 import Image from "astro/components/Image.astro";
+import type { SocialNetworkType } from "@src/types";
 
-interface Props {
-    link?: string;
-    src: string;
-    alt: string;
-}
+const { link, src, alt, isMail } = Astro.props;
 
-const { link, src, alt } = Astro.props;
+const href = isMail ? `mailto:${link}` : link;
 ---
 
 <a
-    href={link}
+    href={href}
     target="_blank"
-    class="lg:hover:scale-110 transition-transform duration-custom ease-in-out icon"
+    class="lg:hover:scale-110 transition-transform duration-custom ease-in-out icon flex items-center justify-center"
 >
     <Image src={src} alt={alt} width={32} height={32} loading="eager" />
 </a>
 
 <style>
+    .icon {
+        filter: invert(74%) sepia(0%) saturate(0%) hue-rotate(195deg)
+            brightness(89%) contrast(93%);
+
+        transition: all 0.3s ease-in-out;
+    }
     @media screen and (min-width: 1024px) {
         .icon:hover {
-            filter: invert(68%) sepia(18%) saturate(1378%) hue-rotate(207deg)
-                brightness(100%) contrast(107%);
+            filter: invert(77%) sepia(60%) saturate(3090%) hue-rotate(202deg)
+                brightness(103%) contrast(101%);
         }
     }
 </style>

@@ -20,6 +20,7 @@ export interface SocialNetworkType {
     link: string
     src: string
     alt: string
+    isMail?: boolean
 }
 
 export interface TechSkillType {
