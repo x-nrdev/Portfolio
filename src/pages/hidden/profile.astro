@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import type { lang } from "@src/types";
+
+const lang: lang = "en";
+---
+
+<Layout title="Nelson Rojas - Frontend Developer" lang="en">
+    <div
+        class="max-w-xl min-h-screen mx-auto grid place-content-center justify-items-center grid-cols-2 gap-2"
+    >
+        <img
+            src="/assets/profile_200x200.webp"
+            alt="Profile"
+            class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square profile-img"
+            width={200}
+            height={200}
+            loading={"eager"}
+        />
+        <img
+            src="/assets/profile_curly_200x200.webp"
+            alt="Profile"
+            class="rounded-full lg:max-w-36 lg:max-h-36 max-w-36 max-h-36 aspect-square profile-img"
+            width={200}
+            height={200}
+            loading={"eager"}
+        />
+    </div>
+</Layout>
