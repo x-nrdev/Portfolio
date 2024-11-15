@@ -1,8 +1,8 @@
 ---
-import Article from "@components/article/Article.astro";
 import { getCollection } from "astro:content";
 import H2 from "@components/headings/H2.astro";
 import Section from "@components/article/Section.astro";
+import Certificate from "../Certificate.astro";
 const { lang } = Astro.props;
 
 const certificates = (await getCollection("certificates"))
@@ -22,7 +22,7 @@ const certificates = (await getCollection("certificates"))
         {
             certificates.map((certificate) => (
                 <li>
-                    <Article
+                    <Certificate
                         {...certificate}
                         isCertificate={true}
                         class:list={["mb-0"]}

@@ -1,0 +1,41 @@
+---
+import type { ArticleType, ProjectType } from "@src/types";
+import ArticleImage from "@components/article/ArticleImage.astro";
+import ArticleTitle from "@components/article/ArticleTitle.astro";
+import ArticleSkills from "@components/article/ArticleSkills.astro";
+import ArticleDate from "@components/article/ArticleDate.astro";
+import H4 from "@components/headings/H4.astro";
+
+const md = Astro.props;
+const { class: className = "", isMargin = false } = Astro.props;
+const { data } = md;
+const { title, skills, link, date, subTitle } = data as
+    | ArticleType
+    | ProjectType;
+const { imageSrc }: { imageSrc?: string } = data;
+
+let formatedDate: string | Date = date;
+
+if (date instanceof Date) {
+    formatedDate = date.toISOString().split("T")[0];
+}
+
+function instanceOfProject(data: any): data is ProjectType {
+    return "imageSrc" in data;
+}
+
+const isProject = instanceOfProject(data);
+---
+
+<article
+    class=`article-transition transition-backgroundColor transition-opacity duration-custom ease-in-out  lg:rounded-[10px] lg:p-4 py-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link "} ${imageSrc && "md:flex md:gap-x-12"} ${className} ${isMargin ? "mb-section-gap" : ""}`
+    data-href=`${link && link}`
+>
+    <ArticleImage title={title} imageSrc={imageSrc} link={link} />
+    <ArticleTitle title={title} link={link} />
+    <div>
+        <H4 title={subTitle} isMargin={true} />
+        <ArticleDate date={formatedDate} isProject={isProject} />
+    </div>
+    <ArticleSkills skills={skills} />
+</article>
