@@ -15,6 +15,12 @@ const jobs = (await getCollection("jobs"))
         >{lang === "es" ? "Experiencia" : "Experience"}</H2
     >
     <ul>
-        {jobs.map((job) => <Article {...job} isMargin={true} />)}
+        {
+            jobs.map((job) => (
+                <li>
+                    <Article {...job} isMargin={true} />
+                </li>
+            ))
+        }
     </ul>
 </Section>
