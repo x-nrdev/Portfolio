@@ -3,11 +3,11 @@ import type { AnchorTextType } from "@src/types";
 
 type Props = AnchorTextType;
 
-const { href, target } = Astro.props;
+const { href, target, class: className } = Astro.props;
 ---
 
 <a
-    class="font-bold lg:hover:text-accent transition-colors transition-duration-custom ease-in-out"
+    class=`lg:hover:text-accent transition-colors transition-duration-custom ease-in-out ${className}`
     href={href}
     target={target ? target : "_blank"}
 >

@@ -3,11 +3,20 @@ import { getCollection } from "astro:content";
 import Article from "@components/article/Article.astro";
 import H2 from "@components/headings/H2.astro";
 import Section from "@components/article/Section.astro";
+import AnchorText from "../ui/AnchorText.astro";
+import LinkIcon from "../ui/LinkIcon.astro";
 
 const { lang } = Astro.props;
 const jobs = (await getCollection("jobs"))
     .filter((job) => job.id.startsWith(`${lang}/`)) // filter jobs by locale
     .sort((a, b) => b.data.date.localeCompare(a.data.date)); // sort by date
+
+const resumeText = lang === "es" ? "Ver Curriculum" : "View full resume";
+const pdf = lang === "es" ? "/assets/pdf/nr-es.pdf" : "/assets/pdf/nr-en.pdf";
+
+const isLastProject = (index: number) => {
+    return ++index === jobs.length;
+};
 ---
 
 <Section>
@@ -16,11 +25,31 @@ const jobs = (await getCollection("jobs"))
     >
     <ul>
         {
-            jobs.map((job) => (
-                <li>
-                    <Article {...job} isMargin={true} />
-                </li>
-            ))
+            jobs.map((job, index) =>
+                isLastProject(index) ? (
+                    <li>
+                        <Article
+                            {...job}
+                            isMargin={false}
+                            class:list={["mb-1"]}
+                        />
+                    </li>
+                ) : (
+                    <li>
+                        <Article {...job} isMargin={true} />
+                    </li>
+                )
+            )
         }
     </ul>
+    <div>
+        <AnchorText
+            href={pdf}
+            class:list={[
+                "lg:px-4 py-1 flex mb-2 transition-colors ease-in-out group gap-x-1 lg:group-hover:text-accent group-hover:fill-acent fill-white duration-custom lg:hover:text-underline"
+            ]}
+            >{resumeText}
+            <LinkIcon isExternal goBack={false} />
+        </AnchorText>
+    </div>
 </Section>

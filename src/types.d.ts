@@ -14,6 +14,7 @@ export interface ProjectType extends ArticleType {
 export interface AnchorTextType {
     href: string
     target?: string
+    class?: string
 }
 
 export interface SocialNetworkType {
