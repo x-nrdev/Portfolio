@@ -11,7 +11,10 @@ const { lang, class: className = "" } = Astro.props;
         <footer class={`text-pretty ${className && className}`}>
             <p>
                 Inspired by
-                <AnchorText href="https://brittanychiang.com/">
+                <AnchorText
+                    class:list={["font-bold"]}
+                    href="https://brittanychiang.com/"
+                >
                     Brittany Chiang's
                 </AnchorText>
                 portfolio.
@@ -19,13 +22,24 @@ const { lang, class: className = "" } = Astro.props;
             <p>
                 Developed using
                 <>
-                    <AnchorText href="https://astro.build/">Astro,</AnchorText>
-                    <AnchorText href="https://tailwindcss.com/">
+                    <AnchorText
+                        class:list={["font-bold"]}
+                        href="https://astro.build/"
+                    >
+                        Astro,
+                    </AnchorText>
+                    <AnchorText
+                        class:list={["font-bold"]}
+                        href="https://tailwindcss.com/"
+                    >
                         Tailwind CSS,
                     </AnchorText>
                 </>
                 and{" "}
-                <AnchorText href="https://www.typescriptlang.org/">
+                <AnchorText
+                    class:list={["font-bold"]}
+                    href="https://www.typescriptlang.org/"
+                >
                     TypeScript.
                 </AnchorText>
             </p>

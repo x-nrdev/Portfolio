@@ -7,18 +7,23 @@ const { class: className } = Astro.props;
 <footer class={`text-pretty ${className && className}`}>
     <p>
         Inspirado por el portafolio de <AnchorText
+            class:list={["font-bold"]}
             href="https://brittanychiang.com/"
         >
             Brittany Chiang.</AnchorText
         >
     </p>
     <p>
-        Desarrollado con<AnchorText href="https://astro.build/"
-            >Astro,</AnchorText
+        Desarrollado con<AnchorText
+            class:list={["font-bold"]}
+            href="https://astro.build/">Astro,</AnchorText
         >
-        <AnchorText href="https://tailwindcss.com/">Tailwind CSS,</AnchorText>
-        y <AnchorText href="https://www.typescriptlang.org/"
-            >TypeScript.</AnchorText
+        <AnchorText class:list={["font-bold"]} href="https://tailwindcss.com/"
+            >Tailwind CSS,</AnchorText
+        >
+        y <AnchorText
+            class:list={["font-bold"]}
+            href="https://www.typescriptlang.org/">TypeScript.</AnchorText
         >
     </p>
     <p>
