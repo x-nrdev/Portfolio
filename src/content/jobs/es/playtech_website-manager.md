@@ -2,7 +2,7 @@
 title: Website Manager - Playtech
 date: 2022 - Presente
 link: https://www.playtech.com/
-skills: [CMS, HTML, CSS, JavaScript]
+skills: [CMS, HTML, CSS, JavaScript, Liferay, Wordpress]
 ---
 
 Crear páginas e interfaces adaptables para varios dispositivos con HTML y CSS, automatizar tareas manuales con JavaScript, colaborar con diseñadores para optimizar la experiencia del usuario, cooperar con equipos externos para entregar correcciones de errores y nuevas características.
