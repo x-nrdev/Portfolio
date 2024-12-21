@@ -1,7 +1,7 @@
 ---
 title: Space Tourism
 date: 2023-03-12
-link: https://nrdevpy.github.io/space-tourism-website/
+link: https://x-nrdev.github.io/space-tourism-website/
 skills: [HTML, CSS, JavaScript]
 ---
 

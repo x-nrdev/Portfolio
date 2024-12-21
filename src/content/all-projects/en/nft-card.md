@@ -1,7 +1,7 @@
 ---
 title: NFT Card
 date: 2022-06-05
-link: https://nrdevpy.github.io/nft-card/
+link: https://x-nrdev.github.io/nft-card/
 skills: [HTML, CSS, SASS, SCSS]
 ---
 

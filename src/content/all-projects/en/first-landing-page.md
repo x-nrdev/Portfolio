@@ -1,7 +1,7 @@
 ---
 title: First Landing Page
 date: 2021-05-18
-link: https://nrdevpy.github.io/Landing-Page/
+link: https://x-nrdev.github.io/Landing-Page/
 skills: [HTML, CSS]
 ---
 

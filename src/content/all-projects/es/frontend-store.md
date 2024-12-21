@@ -1,7 +1,7 @@
 ---
 title: Tienda Frontend
 date: 2021-06-09
-link: https://nrdevpy.github.io/FrontEnd-Store/index.html
+link: https://x-nrdev.github.io/FrontEnd-Store/index.html
 skills: [HTML, CSS]
 ---
 

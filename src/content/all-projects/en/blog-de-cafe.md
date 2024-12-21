@@ -1,7 +1,7 @@
 ---
 title: Coffee Blog
 date: 2021-11-02
-link: https://nrdevpy.github.io/Blog-Cafe/
+link: https://x-nrdev.github.io/Blog-Cafe/
 skills: [HTML, CSS]
 ---
 

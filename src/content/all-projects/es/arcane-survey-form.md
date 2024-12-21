@@ -1,7 +1,7 @@
 ---
 title: Formulario de Arcane
 date: 2022-01-25
-link: https://nrdevpy.github.io/survey-form/
+link: https://x-nrdev.github.io/survey-form/
 skills: [HTML, CSS]
 ---
 

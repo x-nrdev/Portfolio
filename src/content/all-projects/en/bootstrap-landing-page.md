@@ -1,7 +1,7 @@
 ---
 title: Bootstrap Landing Page
 date: 2022-06-08
-link: https://nrdevpy.github.io/bootstrap-webpage/
+link: https://x-nrdev.github.io/bootstrap-webpage/
 skills: [HTML, CSS, Bootstrap]
 ---
 
