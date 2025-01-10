@@ -1,0 +1,82 @@
+---
+import Layout from "@src/layouts/Layout.astro";
+---
+
+<style>
+    body {
+        margin-top: 8rem;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .card {
+        background-color: #444;
+        border-radius: var(--border-radius-sm);
+        min-height: 24rem;
+        padding: 1rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .card.schedule-hidden {
+        opacity: 0.5;
+        outline: 4px solid lightcoral;
+    }
+
+    .card.schedule-between {
+        opacity: 1;
+        outline: 4px solid lightseagreen;
+    }
+</style>
+<Layout title="Schedule Cards" lang="en">
+    <div class="cards">
+        <div
+            class="card"
+            data-start-date="2025-01-09"
+            data-end-date="2025-01-10"
+        >
+            <p>Start Date: 2025-01-09</p>
+            <p>End Date: 2025-01-10</p>
+        </div>
+        <div
+            class="card"
+            data-start-date="2025-01-11"
+            data-end-date="2025-01-11"
+        >
+            <p>Start Date: 2025-01-11</p>
+            <p>End Date: 2025-01-11</p>
+        </div>
+        <div
+            class="card"
+            data-start-date="2025-01-10"
+            data-end-date="2025-01-12"
+        >
+            <p>Start Date: 2025-01-10</p>
+            <p>End Date: 2025-01-12</p>
+        </div>
+    </div>
+</Layout>
+
+<script lang="ts">
+    const promotions = document.querySelectorAll(".card");
+
+    promotions.forEach((promo) => {
+        if (!(promo instanceof HTMLDivElement)) return;
+        if (!promo.dataset.startDate && !promo.dataset.endDate) return;
+        const currentDate = new Date();
+        const startDate = new Date(promo.dataset.startDate);
+        let endDate = new Date(promo.dataset.endDate);
+        endDate.setDate(endDate.getDate() + 1);
+        const isBetween = startDate <= currentDate && endDate >= currentDate;
+        console.log(
+            `Schedule Start: ${startDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\nSchedule Current: ${currentDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\nSchedule End: ${endDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\n${isBetween}`
+        );
+        if (!isBetween) {
+            promo.classList.add("schedule-hidden");
+        } else {
+            promo.classList.add("schedule-between");
+        }
+    });
+</script>
