@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Layout.astro";
+import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
+
+import type { lang } from "@src/types";
+
+const lang: lang = "en";
+---
+
+<Layout title="Nelson Rojas - Frontend Developer" lang="en">
+    <div class="py-8 lg:py-16 max-w-screen-lg mx-auto">
+        <h1
+            class="font-bold leading-tight text-center text-balance md:text-start font-nunitoBold text-4xl lg:text-5xl mb-8"
+        >
+            Hidden Admin Pages
+        </h1>
+        <ul>
+            <li>
+                <AnchorNavigationText href="/hidden/profile" goBack={false}>
+                    Profile
+                </AnchorNavigationText>
+            </li>
+            <li>
+                <AnchorNavigationText
+                    href="/hidden/schedule-cards"
+                    goBack={false}
+                >
+                    Schedule Cards
+                </AnchorNavigationText>
+            </li>
+        </ul>
+    </div>
+</Layout>
