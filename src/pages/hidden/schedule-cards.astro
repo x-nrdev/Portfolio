@@ -35,26 +35,18 @@ import Layout from "@src/layouts/Layout.astro";
         <div
             class="card"
             data-start-date="2025-01-09"
-            data-end-date="2025-01-10"
+            data-end-date="2025-01-19"
         >
             <p>Start Date: 2025-01-09</p>
-            <p>End Date: 2025-01-10</p>
+            <p>End Date: 2025-01-20</p>
         </div>
         <div
             class="card"
-            data-start-date="2025-01-11"
-            data-end-date="2025-01-11"
+            data-start-date="2025-01-20"
+            data-end-date="2025-01-26"
         >
-            <p>Start Date: 2025-01-11</p>
-            <p>End Date: 2025-01-11</p>
-        </div>
-        <div
-            class="card"
-            data-start-date="2025-01-10"
-            data-end-date="2025-01-12"
-        >
-            <p>Start Date: 2025-01-10</p>
-            <p>End Date: 2025-01-12</p>
+            <p>Start Date: 2025-01-20</p>
+            <p>End Date: 2025-01-26</p>
         </div>
     </div>
 </Layout>
@@ -68,7 +60,7 @@ import Layout from "@src/layouts/Layout.astro";
         const currentDate = new Date();
         const startDate = new Date(promo.dataset.startDate);
         let endDate = new Date(promo.dataset.endDate);
-        endDate.setDate(endDate.getDate() + 1);
+        // endDate.setDate(endDate.getDate() + 1);
         const isBetween = startDate <= currentDate && endDate >= currentDate;
         console.log(
             `Schedule Start: ${startDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\nSchedule Current: ${currentDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\nSchedule End: ${endDate.toLocaleDateString("en-GB", { timeZone: "Europe/London" })}\n${isBetween}`
