@@ -2,6 +2,7 @@
 import H2 from "../headings/H2.astro";
 ---
 
+<!-- TODO: Add a form validation state just when writing-->
 <div
     class="fixed inset-0 grid place-items-center backdrop-blur-sm backdrop-brightness-50"
 >
@@ -18,7 +19,7 @@ import H2 from "../headings/H2.astro";
                         >
                         <input
                             placeholder="Your name"
-                            class="w-full rounded-md bg-secondary text-white px-4 py-1"
+                            class="w-full rounded-md bg-secondary text-white px-4 py-1 invalid:border-pink-500 valid:border-green-500 border"
                             type="text"
                             required
                         />
@@ -29,7 +30,7 @@ import H2 from "../headings/H2.astro";
                         >
                         <input
                             placeholder="Your surname"
-                            class="w-full bg-secondary rounded-md border-gray-700 text-white px-2 py-1"
+                            class="w-full bg-secondary rounded-md text-white px-2 py-1"
                             type="text"
                         />
                     </div>
@@ -39,9 +40,10 @@ import H2 from "../headings/H2.astro";
                     >
                     <input
                         placeholder="Your email"
-                        class="w-full bg-secondary rounded-md border-gray-700 text-white px-2 py-1"
+                        class="w-full bg-secondary rounded-md text-white px-2 py-1 invalid:border-pink-500 valid:border-green-500 border"
                         type="email"
                         required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     />
                 </div>
             </div>
@@ -51,7 +53,7 @@ import H2 from "../headings/H2.astro";
                 >
                 <textarea
                     placeholder="Your message"
-                    class="w-full bg-secondary rounded-md border-gray-700 text-white px-2 py-1"
+                    class="w-full bg-secondary rounded-md text-white px-2 py-1"
                     id="message"
                     required></textarea>
             </div>
