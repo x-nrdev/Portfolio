@@ -5,6 +5,7 @@ import Skills from "@components/sections/Skills.astro";
 import { Content as HeaderContent } from "@content/header/en/header.md";
 import { Content as HeaderContentES } from "@content/header/es/header.md";
 import LangSlider from "@components/ui/LangSlider.astro";
+import Form from "../ui/Form.astro";
 const { lang } = Astro.props;
 ---
 
@@ -62,6 +63,7 @@ const { lang } = Astro.props;
                 />
             </div>
         </div>
+        <Form />
     </header>
     <div class="max-lg:hidden">
         <Skills class:list={["mb-section-gap"]} />

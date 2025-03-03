@@ -2,6 +2,7 @@
 import H2 from "../headings/H2.astro";
 import { actions } from "astro:actions";
 import SuccessIcon from "./SuccessIcon.astro";
+import Button from "./Button.astro";
 const sendResult = Astro.getActionResult(actions.send);
 const formSuccess = sendResult && !sendResult.error;
 ---
@@ -25,19 +26,15 @@ const formSuccess = sendResult && !sendResult.error;
         border-color: rgb(186 168 255 / var(--tw-bg-opacity, 1));
     }
 </style>
+<Button class:list={"form-btn"}>Contact me</Button>
 <div
-    class="fixed inset-0 grid place-items-center backdrop-blur-sm backdrop-brightness-50"
+    class="form-popup fixed inset-0 z-30 hidden place-items-center backdrop-blur-sm backdrop-brightness-50"
 >
     <div
-        class="flex flex-col w-full max-w-[95%] sm:max-w-lg bg-gray-900 rounded-lg p-4 shadow-sm bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%]"
+        class=`flex flex-col w-full max-w-[95%] sm:max-w-lg bg-gray-900 rounded-lg p-4 shadow-sm bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%] ${formSuccess ? 'success-hidden': ''}`
     >
         <H2 class="text-white font-bold text-lg">Contact me</H2>
         <form action={actions.send} method="POST" class=`relative`>
-            <div
-                class=`absolute inset-0 z-50 hidden place-items-center ${formSuccess ? 'success-icon': ''}`
-            >
-                <SuccessIcon />
-            </div>
             <div class=`${formSuccess && 'opacity-0'}`>
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -91,13 +88,22 @@ const formSuccess = sendResult && !sendResult.error;
                         required></textarea>
                 </div>
                 <div class="mt-4 flex justify-end">
-                    <button
-                        class="bg-white text-black rounded-md px-4 py-1 hover:bg-accent hover:text-black transition-all duration-200"
-                        type="submit">Submit</button
-                    >
+                    <Button type="submit">Submit</Button>
                 </div>
             </div>
         </form>
+    </div>
+</div>
+<div
+    class="success-popup fixed inset-0 z-30 hidden place-items-center backdrop-blur-sm backdrop-brightness-50"
+>
+    <div
+        class=`flex flex-col w-full max-w-[95%] sm:max-w-lg bg-gray-900 rounded-lg p-4 shadow-sm bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%] `
+    >
+        <H2 class="text-white font-bold text-lg">Contact me</H2>
+        <div class="py-28 mx-auto">
+            <SuccessIcon />
+        </div>
     </div>
 </div>
 <style>
@@ -113,10 +119,38 @@ const formSuccess = sendResult && !sendResult.error;
     ) as HTMLInputElement;
     const inputMsg = document.querySelector(".input-msg") as HTMLInputElement;
     const requiredInputs = [inputName, inputEmail, inputMsg];
+    const formBtn = document.querySelector(".form-btn") as HTMLButtonElement;
+    const formPopup = document.querySelector(".form-popup") as HTMLDivElement;
+    const successPopup = document.querySelector(
+        ".success-popup"
+    ) as HTMLDivElement;
+
+    const toggleFormPopup = () => {
+        formPopup.classList.toggle("hidden");
+        formPopup.classList.toggle("grid");
+        formPopup.classList.toggle("success-hidden");
+    };
+    const toggleSuccessPopup = () => {
+        successPopup.classList.toggle("hidden");
+        successPopup.classList.toggle("grid");
+    };
 
     requiredInputs.forEach((input) => {
         input.addEventListener("input", () => {
             addValidationClasses(input);
         });
+    });
+
+    formBtn.addEventListener("click", toggleFormPopup);
+
+    formPopup.addEventListener("click", (e) => {
+        if (e.target === formPopup) toggleFormPopup();
+    });
+
+    formPopup.addEventListener("submit", (e) => {
+        if (formPopup.classList.contains("success-hidden")) {
+            toggleSuccessPopup();
+            setTimeout(toggleSuccessPopup, 3000);
+        }
     });
 </script>

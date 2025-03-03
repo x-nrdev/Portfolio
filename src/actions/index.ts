@@ -23,8 +23,6 @@ export const server = {
                 text: message,
             })
 
-            console.log(data)
-
             if (error) {
                 throw new ActionError({
                     code: 'BAD_REQUEST',
