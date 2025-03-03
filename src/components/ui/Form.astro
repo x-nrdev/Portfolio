@@ -5,6 +5,12 @@ import SuccessIcon from "./SuccessIcon.astro";
 import Button from "./Button.astro";
 const sendResult = Astro.getActionResult(actions.send);
 const formSuccess = sendResult && !sendResult.error;
+
+// TODO: Refactor this
+// TODO: Improve email input validation
+// TODO: Check setTimeout on success popup
+// TODO: Translate contact me to spanish
+// TODO: Add contact me to spanish page
 ---
 
 <style>
