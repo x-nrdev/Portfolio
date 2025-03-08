@@ -4,6 +4,7 @@ import { actions } from "astro:actions";
 import SuccessIcon from "./SuccessIcon.astro";
 import Button from "./Button.astro";
 import Label from "./Label.astro";
+import Input from "./Input.astro";
 const sendResult = Astro.getActionResult(actions.send);
 const formSuccess = sendResult && !sendResult.error;
 
@@ -46,9 +47,9 @@ const formSuccess = sendResult && !sendResult.error;
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="w-full">
                             <Label for="name">Name</Label>
-                            <input
+                            <Input
                                 placeholder="Your name"
-                                class="input-name w-full rounded-md bg-secondary text-white px-4 py-1"
+                                class="input-name"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -57,9 +58,9 @@ const formSuccess = sendResult && !sendResult.error;
                         </div>
                         <div class="w-full">
                             <Label for="surname">Surname</Label>
-                            <input
+                            <Input
                                 placeholder="Your surname (optional)"
-                                class="input-surname w-full bg-secondary rounded-md text-white px-2 py-1"
+                                class="input-surname"
                                 type="text"
                                 id="surname"
                                 name="surname"
@@ -68,9 +69,9 @@ const formSuccess = sendResult && !sendResult.error;
                     </div>
                     <div>
                         <Label for="email">Email</Label>
-                        <input
+                        <Input
                             placeholder="Your email"
-                            class="input-email w-full bg-secondary rounded-md text-white px-2 py-1"
+                            class="input-email"
                             type="email"
                             name="email"
                             id="email"
