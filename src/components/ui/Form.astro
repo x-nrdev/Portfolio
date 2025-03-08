@@ -5,6 +5,7 @@ import SuccessIcon from "./SuccessIcon.astro";
 import Button from "./Button.astro";
 import Label from "./Label.astro";
 import Input from "./Input.astro";
+import TextArea from "./TextArea.astro";
 const sendResult = Astro.getActionResult(actions.send);
 const formSuccess = sendResult && !sendResult.error;
 
@@ -82,12 +83,13 @@ const formSuccess = sendResult && !sendResult.error;
                 </div>
                 <div class="mt-4">
                     <Label for="message">Message</Label>
-                    <textarea
+                    <TextArea
                         placeholder="Your message"
                         class="input-msg w-full bg-secondary rounded-md text-white px-2 py-1"
                         id="message"
                         name="message"
-                        required></textarea>
+                        required
+                    />
                 </div>
                 <div class="mt-4 flex justify-end">
                     <Button type="submit">Submit</Button>
