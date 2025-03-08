@@ -3,12 +3,12 @@ import H2 from "../headings/H2.astro";
 import { actions } from "astro:actions";
 import SuccessIcon from "./SuccessIcon.astro";
 import Button from "./Button.astro";
+import Label from "./Label.astro";
 const sendResult = Astro.getActionResult(actions.send);
 const formSuccess = sendResult && !sendResult.error;
 
 // TODO: Refactor this
 // TODO: Improve email input validation
-// TODO: Check setTimeout on success popup
 // TODO: Translate contact me to spanish
 // TODO: Add contact me to spanish page
 ---
@@ -45,47 +45,42 @@ const formSuccess = sendResult && !sendResult.error;
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="w-full">
-                            <label class="text-white block pb-2" for="name"
-                                >Name</label
-                            >
+                            <Label for="name">Name</Label>
                             <input
                                 placeholder="Your name"
                                 class="input-name w-full rounded-md bg-secondary text-white px-4 py-1"
                                 type="text"
                                 name="name"
+                                id="name"
                                 required
                             />
                         </div>
                         <div class="w-full">
-                            <label class="text-white block pb-2" for="name"
-                                >Surname</label
-                            >
+                            <Label for="surname">Surname</Label>
                             <input
                                 placeholder="Your surname (optional)"
                                 class="input-surname w-full bg-secondary rounded-md text-white px-2 py-1"
                                 type="text"
+                                id="surname"
                                 name="surname"
                             />
                         </div>
                     </div>
                     <div>
-                        <label class="text-white block pb-2" for="name"
-                            >Email</label
-                        >
+                        <Label for="email">Email</Label>
                         <input
                             placeholder="Your email"
                             class="input-email w-full bg-secondary rounded-md text-white px-2 py-1"
                             type="email"
                             name="email"
+                            id="email"
                             required
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                         />
                     </div>
                 </div>
                 <div class="mt-4">
-                    <label class="text-white block pb-2" for="message"
-                        >Message</label
-                    >
+                    <Label for="message">Message</Label>
                     <textarea
                         placeholder="Your message"
                         class="input-msg w-full bg-secondary rounded-md text-white px-2 py-1"
