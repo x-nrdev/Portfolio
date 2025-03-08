@@ -1,146 +1,62 @@
 ---
-import H2 from "../headings/H2.astro";
-import { actions } from "astro:actions";
-import SuccessIcon from "./SuccessIcon.astro";
-import Button from "./Button.astro";
 import Label from "./Label.astro";
 import Input from "./Input.astro";
 import TextArea from "./TextArea.astro";
-const sendResult = Astro.getActionResult(actions.send);
-const formSuccess = sendResult && !sendResult.error;
-
-// TODO: Improve email input validation
-// TODO: Translate contact me to spanish
-// TODO: Add contact me to spanish page
+import Button from "./Button.astro";
+import { actions } from "astro:actions";
 ---
 
-<Button class:list={"form-btn"}>Contact me</Button>
-<div
-    class="form-popup fixed inset-0 z-30 hidden place-items-center backdrop-blur-sm backdrop-brightness-50"
->
-    <div
-        class=`flex flex-col w-full max-w-[95%] sm:max-w-lg bg-gray-900 rounded-lg p-4 shadow-sm bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%] ${formSuccess ? 'success-hidden': ''}`
-    >
-        <H2 class="text-white font-bold text-lg">Contact me</H2>
-        <form action={actions.send} method="POST" class=`relative`>
-            <div class=`${formSuccess && 'opacity-0'}`>
-                <div class="flex flex-col gap-4">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <div class="w-full">
-                            <Label className={["input-name"]} for="name"
-                                >Name</Label
-                            >
-                            <Input
-                                placeholder="Your name"
-                                class="input-name"
-                                type="text"
-                                name="name"
-                                id="name"
-                                required
-                            />
-                        </div>
-                        <div class="w-full">
-                            <Label for="surname">Surname</Label>
-                            <Input
-                                placeholder="Your surname (optional)"
-                                class="input-surname"
-                                type="text"
-                                id="surname"
-                                name="surname"
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <Label className={["input-email"]} for="email"
-                            >Email</Label
-                        >
-                        <Input
-                            placeholder="Your email"
-                            class="input-email"
-                            type="email"
-                            name="email"
-                            id="email"
-                            required
-                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                        />
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <Label className={["input-msg"]} for="message"
-                        >Message</Label
-                    >
-                    <TextArea
-                        placeholder="Your message"
-                        class="input-msg w-full bg-secondary rounded-md text-white px-2 py-1"
-                        id="message"
-                        name="message"
-                        required
-                    />
-                </div>
-                <div class="mt-4 flex justify-end">
-                    <Button type="submit">Submit</Button>
-                </div>
+<form action={actions.send} method="POST">
+    <div class="flex flex-col gap-4">
+        <div
+            class="flex flex-col gap-4 md:flex-row md:justify-between md:gap-8"
+        >
+            <div class="w-full">
+                <Label for="name">Name</Label>
+                <Input
+                    placeholder="Your name"
+                    className={["input-name"]}
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                />
             </div>
-        </form>
-    </div>
-</div>
-<div
-    class="success-popup fixed inset-0 z-30 hidden place-items-center backdrop-blur-sm backdrop-brightness-50"
->
-    <div
-        class=`flex flex-col w-full max-w-[95%] sm:max-w-lg bg-gray-900 rounded-lg p-4 shadow-sm bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%] `
-    >
-        <H2 class="text-white font-bold text-lg">Contact me</H2>
-        <div class="py-28 mx-auto">
-            <SuccessIcon />
+            <div class="w-full">
+                <Label for="surname">Surname</Label>
+                <Input
+                    placeholder="Your surname (optional)"
+                    className={["input-surname"]}
+                    type="text"
+                    id="surname"
+                    name="surname"
+                />
+            </div>
+        </div>
+        <div>
+            <Label for="email">Email</Label>
+            <Input
+                placeholder="Your email"
+                className={["input-email"]}
+                type="email"
+                name="email"
+                id="email"
+                required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            />
+        </div>
+        <div>
+            <Label for="message">Message</Label>
+            <TextArea
+                placeholder="Your message"
+                className={["input-msg"]}
+                id="message"
+                name="message"
+                required
+            />
+        </div>
+        <div class="flex justify-end">
+            <Button type="submit">Submit</Button>
         </div>
     </div>
-</div>
-<style>
-    div.success-icon {
-        display: grid;
-    }
-</style>
-<script>
-    import { addValidationClasses } from "../../utils/formValidation";
-    const inputName = document.querySelector(".input-name") as HTMLInputElement;
-    const inputEmail = document.querySelector(
-        ".input-email"
-    ) as HTMLInputElement;
-    const inputMsg = document.querySelector(".input-msg") as HTMLInputElement;
-    const requiredInputs = [inputName, inputEmail, inputMsg];
-    const formBtn = document.querySelector(".form-btn") as HTMLButtonElement;
-    const formPopup = document.querySelector(".form-popup") as HTMLDivElement;
-    const successPopup = document.querySelector(
-        ".success-popup"
-    ) as HTMLDivElement;
-
-    const toggleFormPopup = () => {
-        formPopup.classList.toggle("hidden");
-        formPopup.classList.toggle("grid");
-        formPopup.classList.toggle("success-hidden");
-    };
-    const toggleSuccessPopup = () => {
-        successPopup.classList.toggle("hidden");
-        successPopup.classList.toggle("grid");
-    };
-
-    requiredInputs.forEach((input) => {
-        input.addEventListener("input", () => {
-            addValidationClasses(input);
-        });
-    });
-
-    formBtn.addEventListener("click", toggleFormPopup);
-
-    formPopup.addEventListener("click", (e) => {
-        if (e.target === formPopup) toggleFormPopup();
-    });
-
-    formPopup.addEventListener("submit", (e) => {
-        if (formPopup.classList.contains("success-hidden")) {
-            toggleSuccessPopup();
-            setTimeout(toggleSuccessPopup, 3000);
-        }
-    });
-</script>
+</form>
