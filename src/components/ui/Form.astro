@@ -14,25 +14,6 @@ const formSuccess = sendResult && !sendResult.error;
 // TODO: Add contact me to spanish page
 ---
 
-<style>
-    input,
-    textarea {
-        border: 2px solid transparent;
-        outline: none;
-    }
-
-    .input-state:valid {
-        border-color: oklch(0.723 0.219 149.579);
-    }
-    .input-state:invalid {
-        border-color: oklch(0.656 0.241 354.308);
-    }
-
-    input:focus,
-    textarea:focus {
-        border-color: rgb(186 168 255 / var(--tw-bg-opacity, 1));
-    }
-</style>
 <Button class:list={"form-btn"}>Contact me</Button>
 <div
     class="form-popup fixed inset-0 z-30 hidden place-items-center backdrop-blur-sm backdrop-brightness-50"
@@ -46,7 +27,9 @@ const formSuccess = sendResult && !sendResult.error;
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="w-full">
-                            <Label for="name">Name</Label>
+                            <Label className={["input-name"]} for="name"
+                                >Name</Label
+                            >
                             <Input
                                 placeholder="Your name"
                                 class="input-name"
@@ -68,7 +51,9 @@ const formSuccess = sendResult && !sendResult.error;
                         </div>
                     </div>
                     <div>
-                        <Label for="email">Email</Label>
+                        <Label className={["input-email"]} for="email"
+                            >Email</Label
+                        >
                         <Input
                             placeholder="Your email"
                             class="input-email"
@@ -81,7 +66,9 @@ const formSuccess = sendResult && !sendResult.error;
                     </div>
                 </div>
                 <div class="mt-4">
-                    <Label for="message">Message</Label>
+                    <Label className={["input-msg"]} for="message"
+                        >Message</Label
+                    >
                     <TextArea
                         placeholder="Your message"
                         class="input-msg w-full bg-secondary rounded-md text-white px-2 py-1"

@@ -2,6 +2,24 @@
 const { class: className = "", name, id, placeholder, required } = Astro.props;
 ---
 
+<style>
+    textarea {
+        border: 2px solid transparent;
+        outline: none;
+    }
+
+    .input-state:valid {
+        border-color: oklch(0.723 0.219 149.579);
+    }
+    .input-state:invalid {
+        border-color: oklch(0.656 0.241 354.308);
+    }
+
+    textarea:focus {
+        border-color: rgb(186 168 255 / var(--tw-bg-opacity, 1));
+    }
+</style>
+
 <textarea
     class={`${className} w-full bg-secondary rounded-md text-white px-2 py-1`}
     name={name}
