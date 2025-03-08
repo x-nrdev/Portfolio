@@ -47,7 +47,7 @@ import { actions } from "astro:actions";
                 name="email"
                 id="email"
                 required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}"
             />
         </div>
         <div>
@@ -68,6 +68,7 @@ import { actions } from "astro:actions";
 </form>
 
 <script>
+    import { isInputError } from "astro:actions";
     import { addValidationClasses } from "../../utils/formValidation";
     const inputName = document.querySelector(".input-name") as HTMLInputElement;
     const inputEmail = document.querySelector(
@@ -77,6 +78,7 @@ import { actions } from "astro:actions";
         ".input-msg"
     ) as HTMLTextAreaElement;
     const requiredInputs = [inputName, inputEmail, inputMsg];
+    const submitBtn = document.querySelector("button") as HTMLButtonElement;
 
     const handleInput = (event: Event) => {
         if (
@@ -89,7 +91,21 @@ import { actions } from "astro:actions";
         }
     };
 
+    const handleSubmit = (event: Event) => {
+        const formIsValid = requiredInputs.every((input) => {
+            return input.checkValidity();
+        });
+
+        if (formIsValid) {
+            console.log("Form is valid");
+        } else {
+            console.log("Form is invalid");
+        }
+    };
+
     requiredInputs.forEach((input) => {
         input.addEventListener("input", handleInput);
     });
+
+    submitBtn.addEventListener("click", handleSubmit);
 </script>
