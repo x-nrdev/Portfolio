@@ -5,6 +5,9 @@ import { Resend } from 'resend'
 const { RESEND_API_KEY, RESEND_EMAIL } = import.meta.env
 const resend = new Resend(RESEND_API_KEY)
 
+const fromEmail = `<no-reply@resend.dev>`
+const subjectTemplate = 'X-NRDEV - Business Email from'
+
 export const server = {
     send: defineAction({
         accept: 'form',
@@ -16,10 +19,10 @@ export const server = {
         }),
         handler: async ({ name, surname, email, message }) => {
             const { data, error } = await resend.emails.send({
-                from: `${name} <no-reply@resend.dev>`,
+                from: `${name} ${fromEmail}`,
                 to: RESEND_EMAIL,
                 replyTo: `${name} <${email}>`,
-                subject: `X-NRDEV - Business Email from ${name} ${surname}`,
+                subject: `${subjectTemplate} ${name} ${surname}`,
                 text: message,
             })
 
