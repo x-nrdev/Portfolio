@@ -15,20 +15,25 @@ import { actions } from "astro:actions";
                 <Label for="name">Name</Label>
                 <Input
                     placeholder="Your name"
-                    className={["input-name"]}
+                    class:list={["input-name"]}
                     type="text"
                     name="name"
                     id="name"
+                    minlength={2}
+                    maxlength={24}
                     required
+                    pattern="[a-zA-Z]+( [a-zA-Z]+)?"
+                    autofocus
                 />
             </div>
             <div class="w-full">
                 <Label for="surname">Surname</Label>
                 <Input
                     placeholder="Your surname (optional)"
-                    className={["input-surname"]}
                     type="text"
                     id="surname"
+                    minlength={2}
+                    maxlength={24}
                     name="surname"
                 />
             </div>
@@ -37,7 +42,7 @@ import { actions } from "astro:actions";
             <Label for="email">Email</Label>
             <Input
                 placeholder="Your email"
-                className={["input-email"]}
+                class:list={["input-email"]}
                 type="email"
                 name="email"
                 id="email"
@@ -49,10 +54,11 @@ import { actions } from "astro:actions";
             <Label for="message">Message</Label>
             <TextArea
                 placeholder="Your message"
-                className={["input-msg"]}
+                class:list={["input-msg"]}
                 id="message"
                 name="message"
                 required
+                pattern="[a-zA-Z]+"
             />
         </div>
         <div class="flex justify-end">
@@ -60,3 +66,30 @@ import { actions } from "astro:actions";
         </div>
     </div>
 </form>
+
+<script>
+    import { addValidationClasses } from "../../utils/formValidation";
+    const inputName = document.querySelector(".input-name") as HTMLInputElement;
+    const inputEmail = document.querySelector(
+        ".input-email"
+    ) as HTMLInputElement;
+    const inputMsg = document.querySelector(
+        ".input-msg"
+    ) as HTMLTextAreaElement;
+    const requiredInputs = [inputName, inputEmail, inputMsg];
+
+    const handleInput = (event: Event) => {
+        if (
+            event.target instanceof HTMLInputElement ||
+            event.target instanceof HTMLTextAreaElement
+        ) {
+            addValidationClasses(event.target as HTMLInputElement);
+        } else {
+            event.target?.removeEventListener("input", handleInput);
+        }
+    };
+
+    requiredInputs.forEach((input) => {
+        input.addEventListener("input", handleInput);
+    });
+</script>

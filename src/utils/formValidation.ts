@@ -1,3 +1,5 @@
-export const addValidationClasses = (input: HTMLInputElement) => {
-    input.classList.add("input-state")
+export const addValidationClasses = (input: HTMLInputElement | HTMLTextAreaElement) => {
+    if (!input.classList.contains("input-validation")) {
+        input.classList.add("input-validation")
+    }
 }

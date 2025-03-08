@@ -1,5 +1,12 @@
 ---
-const { class: className = "", name, id, placeholder, required } = Astro.props;
+const {
+    class: className = "",
+    name,
+    id,
+    placeholder,
+    required,
+    autofocus
+} = Astro.props;
 ---
 
 <style>
@@ -8,10 +15,10 @@ const { class: className = "", name, id, placeholder, required } = Astro.props;
         outline: none;
     }
 
-    .input-state:valid {
+    .input-validation:valid {
         border-color: oklch(0.723 0.219 149.579);
     }
-    .input-state:invalid {
+    .input-validation:invalid {
         border-color: oklch(0.656 0.241 354.308);
     }
 
@@ -25,4 +32,7 @@ const { class: className = "", name, id, placeholder, required } = Astro.props;
     name={name}
     id={id}
     placeholder={placeholder}
-    required={required}></textarea>
+    required={required}
+    {autofocus}
+>
+</textarea>
