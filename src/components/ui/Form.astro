@@ -1,111 +1,68 @@
 ---
-import Label from "./Label.astro";
-import Input from "./Input.astro";
-import TextArea from "./TextArea.astro";
-import Button from "./Button.astro";
-import { actions } from "astro:actions";
+import FormContent from "../FormContent.astro";
+import FormContentES from "../FormContentES.astro";
+
+const { lang, class: className = "" } = Astro.props;
 ---
 
-<form action={actions.send} method="POST">
-    <div class="flex flex-col gap-4">
-        <div
-            class="flex flex-col gap-4 md:flex-row md:justify-between md:gap-8"
-        >
-            <div class="w-full">
-                <Label for="name">Name</Label>
-                <Input
-                    placeholder="Your name"
-                    class:list={["input-name"]}
-                    type="text"
-                    name="name"
-                    id="name"
-                    minlength={2}
-                    maxlength={24}
-                    required
-                    pattern="[a-zA-Z]+( [a-zA-Z]+)?"
-                    autofocus
-                />
-            </div>
-            <div class="w-full">
-                <Label for="surname">Surname</Label>
-                <Input
-                    placeholder="Your surname (optional)"
-                    type="text"
-                    id="surname"
-                    minlength={2}
-                    maxlength={24}
-                    name="surname"
-                />
-            </div>
-        </div>
-        <div>
-            <Label for="email">Email</Label>
-            <Input
-                placeholder="Your email"
-                class:list={["input-email"]}
-                type="email"
-                name="email"
-                id="email"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}"
-            />
-        </div>
-        <div>
-            <Label for="message">Message</Label>
-            <TextArea
-                placeholder="Your message"
-                class:list={["input-msg"]}
-                id="message"
-                name="message"
-                required
-                pattern="[a-zA-Z]+"
-            />
-        </div>
-        <div class="flex justify-end">
-            <Button type="submit">Submit</Button>
-        </div>
-    </div>
-</form>
+{
+    lang === "es" ? (
+        <FormContentES class:list={[className]} />
+    ) : (
+        <FormContent class:list={[className]} />
+    )
+}
 
 <script>
-    import { isInputError } from "astro:actions";
-    import { addValidationClasses } from "../../utils/formValidation";
-    const inputName = document.querySelector(".input-name") as HTMLInputElement;
-    const inputEmail = document.querySelector(
-        ".input-email"
-    ) as HTMLInputElement;
-    const inputMsg = document.querySelector(
-        ".input-msg"
-    ) as HTMLTextAreaElement;
-    const requiredInputs = [inputName, inputEmail, inputMsg];
-    const submitBtn = document.querySelector("button") as HTMLButtonElement;
+    import { addValidationClasses } from "@utils/formValidation";
+    import { navigate } from "astro:transitions/client";
 
-    const handleInput = (event: Event) => {
-        if (
-            event.target instanceof HTMLInputElement ||
-            event.target instanceof HTMLTextAreaElement
-        ) {
-            addValidationClasses(event.target as HTMLInputElement);
-        } else {
-            event.target?.removeEventListener("input", handleInput);
-        }
-    };
+    const initializeForm = () => {
+        const inputName = document.querySelector(
+            ".input-name"
+        ) as HTMLInputElement;
+        const inputEmail = document.querySelector(
+            ".input-email"
+        ) as HTMLInputElement;
+        const inputMsg = document.querySelector(
+            ".input-msg"
+        ) as HTMLTextAreaElement;
+        const requiredInputs = [inputName, inputEmail, inputMsg];
+        const submitBtn = document.querySelector("button") as HTMLButtonElement;
 
-    const handleSubmit = (event: Event) => {
-        const formIsValid = requiredInputs.every((input) => {
-            return input.checkValidity();
+        const handleInput = (event: Event) => {
+            if (
+                event.target instanceof HTMLInputElement ||
+                event.target instanceof HTMLTextAreaElement
+            ) {
+                addValidationClasses(event.target as HTMLInputElement);
+            }
+        };
+
+        const handleSubmit = () => {
+            const formIsValid = requiredInputs.every((input) => {
+                return input.checkValidity();
+            });
+
+            if (formIsValid) {
+                // TODO: Show Popup of sending email
+                console.log("Sending email...");
+                setTimeout(() => {
+                    console.log("Email sent!");
+                    navigate("/");
+                }, 3000);
+            }
+        };
+
+        requiredInputs.forEach((input) => {
+            input.addEventListener("input", handleInput);
         });
 
-        if (formIsValid) {
-            console.log("Form is valid");
-        } else {
-            console.log("Form is invalid");
-        }
+        submitBtn.addEventListener("click", handleSubmit);
+
+        inputName.focus();
     };
 
-    requiredInputs.forEach((input) => {
-        input.addEventListener("input", handleInput);
-    });
-
-    submitBtn.addEventListener("click", handleSubmit);
+    initializeForm();
+    document.addEventListener("astro:after-swap", initializeForm);
 </script>
