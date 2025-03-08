@@ -33,7 +33,12 @@ export const server = {
                 })
             }
 
-            return data
+            return {
+                status: 302,
+                headers: {
+                    Location: '/', // Redirect to the homepage
+                },
+            }
         },
     }),
 }
