@@ -2,6 +2,7 @@
 import Footer from "@src/components/common/Footer.astro";
 import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
 import Layout from "@src/layouts/Layout.astro";
+import H1 from "@src/components/headings/H1.astro";
 
 const lang = Astro.currentLocale;
 ---
@@ -12,10 +13,10 @@ const lang = Astro.currentLocale;
             <Layout title="404 Not Found" lang="es" isNotFound>
                 <div class="relative grid min-h-screen text-center place-content-center">
                     <div>
-                        <h1 class="mb-4 text-4xl font-bold leading-tight text-balance font-nunitoBold lg:text-5xl">
+                        <H1 class="mb-4 text-4xl font-bold leading-tight text-balance font-nunitoBold lg:text-5xl">
                             <span class="text-accent">404</span> Página no
                             encontrada
-                        </h1>
+                        </H1>
                         <p class="mb-4 text-2xl">
                             No se ha podido encontrar esta página.
                         </p>
@@ -41,9 +42,9 @@ const lang = Astro.currentLocale;
             <Layout title="404 Not Found" lang="en" isNotFound>
                 <div class="relative grid min-h-screen text-center place-content-center">
                     <div>
-                        <h1 class="mb-4 text-4xl font-bold leading-tight text-balance font-nunitoBold lg:text-5xl">
+                        <H1 class="mb-4 text-4xl font-bold leading-tight text-balance font-nunitoBold lg:text-5xl">
                             <span class="text-accent">404</span> Not Found
-                        </h1>
+                        </H1>
                         <p class="mb-4 text-2xl">
                             This page could not be found.
                         </p>
