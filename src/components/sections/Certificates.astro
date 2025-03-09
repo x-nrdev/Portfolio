@@ -6,12 +6,12 @@ import Certificate from "../Certificate.astro";
 const { lang } = Astro.props;
 
 const certificates = (await getCollection("certificates"))
-    .filter((job) => job.id.startsWith(`${lang}/`)) // filter certificates by locale
+    .filter((job) => job.id.startsWith(`${lang}/`))
     .sort((a, b) => {
         return (
             new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
         );
-    }); // sort by date
+    });
 ---
 
 <Section class:list={["content-visibility-auto"]}>

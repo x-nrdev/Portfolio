@@ -4,67 +4,105 @@ import Input from "./ui/Input.astro";
 import TextArea from "./ui/TextArea.astro";
 import Button from "./ui/Button.astro";
 import { actions } from "astro:actions";
+import Modal from "./ui/Modal.astro";
+import SuccessIcon from "./ui/SuccessIcon.astro";
+import AnchorNavigationText from "./ui/AnchorNavigationText.astro";
+import H2 from "./headings/H2.astro";
 const { class: className = "" } = Astro.props;
+
+const { searchParams } = Astro.url;
+const _action = searchParams.get("_action");
+const isActionSend = _action === "send";
 ---
 
-<!-- TODO: Add Subject for email? -->
-<form action={actions.send} method="POST" class={className}>
-    <div class="flex flex-col gap-4">
-        <div
-            class="flex flex-col gap-4 md:flex-row md:justify-between md:gap-8"
+<!-- TODO: Add Subject for email? -->{
+    isActionSend ? (
+        <Modal
+            class:list={
+                "flex flex-col justify-center items-center success-animation text-center"
+            }
+            isFixed={false}
+            isBg={false}
         >
-            <div class="w-full">
-                <Label for="name">Nombre</Label>
-                <Input
-                    placeholder="Escribe tu nombre"
-                    class:list={["input-name"]}
-                    type="text"
-                    name="name"
-                    id="name"
-                    minlength={2}
-                    maxlength={24}
-                    required
-                    pattern="[a-zA-Z]+( [a-zA-Z]+)?"
-                    autofocus
-                />
+            <div class="mb-8">
+                <SuccessIcon />
             </div>
-            <div class="w-full">
-                <Label for="surname">Apellido</Label>
-                <Input
-                    placeholder="Escribe tu apellido (opcional)"
-                    type="text"
-                    id="surname"
-                    minlength={2}
-                    maxlength={24}
-                    name="surname"
-                />
+            <H2>
+                <span class="text-[#219a00]">¡Gracias!</span> Tu mensaje se ha
+                enviado correctamente.
+            </H2>
+            <span class="text-accent">
+                <AnchorNavigationText href="/es" goBack>
+                    Nelson Rojas
+                </AnchorNavigationText>
+            </span>
+        </Modal>
+    ) : (
+        <form action={actions.send} method="POST" class={className}>
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 md:flex-row md:justify-between md:gap-8">
+                    <div class="w-full">
+                        <Label for="name">Nombre</Label>
+                        <Input
+                            placeholder="Escribe tu nombre"
+                            class:list={["input-name"]}
+                            type="text"
+                            name="name"
+                            id="name"
+                            minlength={2}
+                            maxlength={24}
+                            required
+                            pattern="[a-zA-Z]+( [a-zA-Z]+)?"
+                            autofocus
+                        />
+                    </div>
+                    <div class="w-full">
+                        <Label for="surname">Apellido</Label>
+                        <Input
+                            placeholder="Escribe tu apellido (opcional)"
+                            type="text"
+                            id="surname"
+                            minlength={2}
+                            maxlength={24}
+                            name="surname"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <Label for="email">Email</Label>
+                    <Input
+                        placeholder="Escribe tu Email"
+                        class:list={["input-email"]}
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}"
+                    />
+                </div>
+                <div>
+                    <Label for="message">Mensaje</Label>
+                    <TextArea
+                        placeholder="Escribe tu mensaje"
+                        class:list={["input-msg  min-h-24"]}
+                        id="message"
+                        name="message"
+                        required
+                        pattern="[a-zA-Z]+"
+                    />
+                </div>
+                <div class="flex justify-end">
+                    <Button type="submit">Enviar</Button>
+                </div>
             </div>
-        </div>
-        <div>
-            <Label for="email">Email</Label>
-            <Input
-                placeholder="Escribe tu Email"
-                class:list={["input-email"]}
-                type="email"
-                name="email"
-                id="email"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}"
-            />
-        </div>
-        <div>
-            <Label for="message">Mensaje</Label>
-            <TextArea
-                placeholder="Escribe tu mensaje"
-                class:list={["input-msg  min-h-24"]}
-                id="message"
-                name="message"
-                required
-                pattern="[a-zA-Z]+"
-            />
-        </div>
-        <div class="flex justify-end">
-            <Button type="submit">Enviar</Button>
-        </div>
-    </div>
-</form>
+        </form>
+    )
+}
+
+<!-- <Modal
+    class:list={"grid place-content-center success-animation"}
+    isFixed={false}
+    isBg={false}
+>
+    <SuccessIcon />
+</Modal> -->

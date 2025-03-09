@@ -21,20 +21,18 @@ const { lang, class: className = "" } = Astro.props;
             </p>
             <p>
                 Developed using
-                <>
-                    <AnchorText
-                        class:list={["font-bold"]}
-                        href="https://astro.build/"
-                    >
-                        Astro,
-                    </AnchorText>
-                    <AnchorText
-                        class:list={["font-bold"]}
-                        href="https://tailwindcss.com/"
-                    >
-                        Tailwind CSS,
-                    </AnchorText>
-                </>
+                <AnchorText
+                    class:list={["font-bold"]}
+                    href="https://astro.build/"
+                >
+                    Astro,
+                </AnchorText>
+                <AnchorText
+                    class:list={["font-bold"]}
+                    href="https://tailwindcss.com/"
+                >
+                    Tailwind CSS,
+                </AnchorText>
                 and{" "}
                 <AnchorText
                     class:list={["font-bold"]}

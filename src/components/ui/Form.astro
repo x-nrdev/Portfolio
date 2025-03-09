@@ -3,9 +3,6 @@ import FormContent from "../FormContent.astro";
 import FormContentES from "../FormContentES.astro";
 
 const { lang, class: className = "" } = Astro.props;
-
-// TODO: Create modal component
-// TODO: Create popup of sending on email success
 ---
 
 {
@@ -31,7 +28,6 @@ const { lang, class: className = "" } = Astro.props;
             ".input-msg"
         ) as HTMLTextAreaElement;
         const requiredInputs = [inputName, inputEmail, inputMsg];
-        const submitBtn = document.querySelector("button") as HTMLButtonElement;
 
         const handleInput = (event: Event) => {
             if (
@@ -42,28 +38,11 @@ const { lang, class: className = "" } = Astro.props;
             }
         };
 
-        const handleSubmit = () => {
-            const formIsValid = requiredInputs.every((input) => {
-                return input.checkValidity();
-            });
-
-            if (formIsValid) {
-                // TODO: Show Popup of sending email
-                console.log("Sending email...");
-                setTimeout(() => {
-                    console.log("Email sent!");
-                    navigate("/");
-                }, 3000);
-            }
-        };
-
         requiredInputs.forEach((input) => {
-            input.addEventListener("input", handleInput);
+            input?.addEventListener("input", handleInput);
         });
 
-        submitBtn.addEventListener("click", handleSubmit);
-
-        inputName.focus();
+        inputName?.focus();
     };
 
     initializeForm();
