@@ -2,7 +2,6 @@ import { ActionError, defineAction } from 'astro:actions'
 import { z } from 'zod'
 import { Resend } from 'resend'
 
-// TODO: Add Subject for email ?
 const { RESEND_API_KEY, RESEND_EMAIL } = import.meta.env
 const resend = new Resend(RESEND_API_KEY)
 

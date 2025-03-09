@@ -9,10 +9,20 @@ const lang: lang = "en";
 
 <Layout title="Nelson Rojas - Frontend Developer" lang="en">
     <Modal
-        class:list={"grid place-content-center"}
+        class:list={"grid place-content-center success-animation"}
         isFixed={false}
         isBg={false}
     >
         <SuccessIcon />
     </Modal>
 </Layout>
+<script>
+    const onSuccess = () => {
+        const modal = document.querySelector(".popup-modal") as HTMLElement;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modal.classList.add("success");
+    };
+
+    onSuccess();
+</script>

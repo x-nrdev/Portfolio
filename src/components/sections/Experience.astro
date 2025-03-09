@@ -8,8 +8,8 @@ import LinkIcon from "../ui/LinkIcon.astro";
 
 const { lang } = Astro.props;
 const jobs = (await getCollection("jobs"))
-    .filter((job) => job.id.startsWith(`${lang}/`)) // filter jobs by locale
-    .sort((a, b) => b.data.date.localeCompare(a.data.date)); // sort by date
+    .filter((job) => job.id.startsWith(`${lang}/`))
+    .sort((a, b) => b.data.date.localeCompare(a.data.date));
 
 const resumeText = lang === "es" ? "Ver Curriculum" : "View full resume";
 const pdf = lang === "es" ? "/assets/pdf/nr-es.pdf" : "/assets/pdf/nr-en.pdf";

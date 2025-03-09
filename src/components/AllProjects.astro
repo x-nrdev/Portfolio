@@ -12,9 +12,7 @@ const { lang } = Astro.props as Props;
 
 const projects = await getCollection("all-projects");
 const projectsSorted = projects
-    // filter jobs by locale
     .filter((job) => job.id.startsWith(`${lang}/`))
-    // sort by order
     .sort((a, b) => {
         return b.data.date - a.data.date;
     });

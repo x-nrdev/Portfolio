@@ -29,7 +29,7 @@ const isProject = instanceOfProject(data);
 ---
 
 <article
-    class=`article-transition transition-backgroundColor transition-opacity duration-custom ease-in-out  lg:rounded-[10px] lg:p-4 py-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link "} ${imageSrc && "md:flex md:gap-x-12"} ${className} ${isMargin ? "mb-section-gap" : ""}`
+    class=`article-transition  transition-opacity duration-custom ease-in-out  lg:rounded-[10px] lg:p-4 py-4 lg:block ${link && "group lg:hover:backdrop-blur-sm lg:hover:bg-white/[.025] lg:hover:cursor-pointer lg:group-hover/opacity:[&:not(:hover)]:opacity-20 fn-article-link "} ${imageSrc && "md:flex md:gap-x-12"} ${className} ${isMargin ? "mb-section-gap" : ""}`
     data-href=`${link && link}`
 >
     {
