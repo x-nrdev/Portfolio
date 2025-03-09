@@ -12,7 +12,7 @@ const { lang, href, class: className = "" } = Astro.props;
 
 <a
     href={href}
-    class=`lang-slider block flex uppercase rounded-[10px] bg-accent overflow-hidden border-accent border-2 relative z-0 ${className}`
+    class=`lang-slider flex uppercase rounded-[10px] bg-accent overflow-hidden border-accent border-2 relative z-0 ${className}`
 >
     <span
         class=`py-1 px-2 ${lang === 'en' ? 'text-black font-bold font-nunitoBold' : 'text-white bg-primary'}  transition-colors duration-custom ease-in-out rounded-l-[10px]`

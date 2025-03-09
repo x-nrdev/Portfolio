@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+import FooterEs from "@src/components/common/FooterEs.astro";
+import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
+import Form from "@src/components/ui/Form.astro";
+import H1 from "@src/components/headings/H1.astro";
+import type { lang } from "@src/types";
+
+const { searchParams } = Astro.url;
+const _action = searchParams.get("_action");
+const isActionSend = _action === "send";
+const lang: lang = "es";
+---
+
+<Layout title="Nelson Rojas - Frontend Developer" lang={lang}>
+    <div class="lg:py-8 lg:px-40 mb-16">
+        {
+            !isActionSend && (
+                <div class="mb-16">
+                    <span class="text-accent">
+                        <AnchorNavigationText
+                            href="/"
+                            class:list={["py-2"]}
+                            goBack
+                        >
+                            Nelson Rojas
+                        </AnchorNavigationText>
+                    </span>
+                    <H1 class="text-4xl lg:text-5xl mb-4">Contáctame</H1>
+                </div>
+            )
+        }
+        <Form lang={lang} />
+    </div>
+    {!isActionSend && <FooterEs class:list={["text-center"]} />}
+</Layout>

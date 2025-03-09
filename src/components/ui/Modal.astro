@@ -1,0 +1,43 @@
+---
+const { class: className = "", isFixed = true, isBg = true } = Astro.props;
+const fixed = isFixed ? "min-w-[34rem] min-h-[34rem]" : "";
+const bgClass = isBg
+    ? "bg-gradient-to-br from-secondary from-[-75%] via-primary to-secondary to-[175%]"
+    : "";
+---
+
+<style>
+    .popup-modal.success {
+        animation: 1s success-popup-animation 2s ease-in-out forwards;
+    }
+
+    .popup-modal.success .popup-modal-card {
+        animation: 1s success-animation 2s ease-in-out forwards;
+    }
+
+    @keyframes success-icon-animation {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+
+    @keyframes success-popup-animation {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+<div
+    class="popup-modal flex backdrop-brightness-75 backdrop-blur-sm fixed inset-0 z-50 items-center justify-center"
+>
+    <div class=`${className} ${fixed} ${bgClass} -z-50 p-6 popup-modal-card`>
+        <slot />
+    </div>
+</div>

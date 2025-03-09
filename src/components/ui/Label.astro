@@ -1,0 +1,7 @@
+---
+const { class: className = "", for: forName } = Astro.props;
+---
+
+<label class={`${className} text-white block pb-2`} for={forName}>
+    <slot />
+</label>

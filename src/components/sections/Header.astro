@@ -5,6 +5,8 @@ import Skills from "@components/sections/Skills.astro";
 import { Content as HeaderContent } from "@content/header/en/header.md";
 import { Content as HeaderContentES } from "@content/header/es/header.md";
 import LangSlider from "@components/ui/LangSlider.astro";
+import Button from "@components/ui/Button.astro";
+import H1 from "../headings/H1.astro";
 const { lang } = Astro.props;
 ---
 
@@ -18,9 +20,7 @@ const { lang } = Astro.props;
             <div
                 class="md:place-self-start place-self-center flex flex-col gap-y-4 gap-x-2 max-w-[40ch]"
             >
-                <h1
-                    class="font-bold leading-tight text-center text-balance md:text-start font-nunitoBold"
-                >
+                <H1>
                     <span class="text-4xl lg:text-5xl text-accent"
                         >Nelson Rojas</span
                     >
@@ -32,7 +32,7 @@ const { lang } = Astro.props;
                                 : "Frontend Developer"
                         }</span
                     >
-                </h1>
+                </H1>
             </div>
             <div
                 class="sm:row-span-2 place-self-center relative overflow-hidden"
@@ -61,6 +61,17 @@ const { lang } = Astro.props;
                     href={lang === "es" ? "/" : "/es"}
                 />
             </div>
+            {
+                lang === "es" ? (
+                    <a href="/es/contact-me">
+                        <Button>Contáctame</Button>
+                    </a>
+                ) : (
+                    <a href="/contact-me">
+                        <Button>Contact me</Button>
+                    </a>
+                )
+            }
         </div>
     </header>
     <div class="max-lg:hidden">

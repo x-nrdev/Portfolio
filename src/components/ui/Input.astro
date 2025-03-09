@@ -1,0 +1,45 @@
+---
+const {
+    class: className = "",
+    type = "text",
+    name,
+    id,
+    placeholder,
+    pattern,
+    required,
+    minlength,
+    maxlength,
+    autofocus
+} = Astro.props;
+---
+
+<style>
+    input {
+        border: 2px solid transparent;
+        outline: none;
+    }
+
+    .input-validation:valid {
+        border-color: oklch(0.723 0.219 149.579);
+    }
+    .input-validation:invalid {
+        border-color: oklch(0.656 0.241 354.308);
+    }
+
+    input:focus {
+        border-color: rgb(186 168 255 / var(--tw-bg-opacity, 1));
+    }
+</style>
+
+<input
+    class={`${className} w-full rounded-md bg-secondary text-white px-4 py-1`}
+    type={type}
+    name={name}
+    id={id}
+    placeholder={placeholder}
+    pattern={pattern}
+    required={required}
+    minlength={minlength && minlength}
+    maxlength={maxlength && maxlength}
+    {autofocus}
+/>

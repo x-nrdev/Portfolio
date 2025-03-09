@@ -18,6 +18,9 @@
       "@content/*": [
         "src/content/*"
       ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
     },
     "strictNullChecks": true
   },
