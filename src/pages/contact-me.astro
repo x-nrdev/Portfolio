@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Footer from "@src/components/common/Footer.astro";
 import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
 import Form from "@src/components/ui/Form.astro";
+import H1 from "@src/components/headings/H1.astro";
 
 import type { lang } from "@src/types";
 
@@ -17,7 +18,7 @@ const lang: lang = "en";
                     Nelson Rojas
                 </AnchorNavigationText>
             </span>
-            <h1 class="text-4xl lg:text-5xl mb-4">Contact me</h1>
+            <H1 class="text-4xl lg:text-5xl mb-4">Contact me</H1>
         </div>
         <Form lang={lang} />
     </div>

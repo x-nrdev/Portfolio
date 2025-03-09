@@ -1,14 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Form from "@src/components/ui/Form.astro";
-
+import Modal from "@src/components/ui/Modal.astro";
+import SuccessIcon from "@src/components/ui/SuccessIcon.astro";
 import type { lang } from "@src/types";
 
 const lang: lang = "en";
 ---
 
 <Layout title="Nelson Rojas - Frontend Developer" lang="en">
-    <div class="md:grid place-content-center min-h-screen">
-        <Form />
-    </div>
+    <Modal
+        class:list={"grid place-content-center"}
+        isFixed={false}
+        isBg={false}
+    >
+        <SuccessIcon />
+    </Modal>
 </Layout>
