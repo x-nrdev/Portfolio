@@ -15,7 +15,6 @@ const { lang, class: className = "" } = Astro.props;
 
 <script>
     import { addValidationClasses } from "@utils/formValidation";
-    import { navigate } from "astro:transitions/client";
 
     const initializeForm = () => {
         const inputName = document.querySelector(
