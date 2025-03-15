@@ -3,9 +3,17 @@ import Footer from "@src/components/common/Footer.astro";
 import AnchorNavigationText from "@src/components/ui/AnchorNavigationText.astro";
 import Layout from "@src/layouts/Layout.astro";
 import H1 from "@src/components/headings/H1.astro";
+
+const description =
+    "Lo sentimos, la página que buscas no existe. Regresa a la página de inicio y sigue explorando mis proyectos.";
 ---
 
-<Layout title="404 Not Found" lang="es" isNotFound>
+<Layout
+    title="Error 404 - Página no encontrada"
+    lang="es"
+    isNotFound
+    metaDescription={description}
+>
     <div class="relative grid min-h-screen text-center place-content-center">
         <H1
             class="mb-4 text-4xl font-bold leading-tight text-balance font-nunitoBold lg:text-5xl"

@@ -7,9 +7,15 @@ import Skills from "@components/sections/Skills.astro";
 import type { lang } from "@src/types";
 
 const lang: lang = "es";
+const description =
+    " Soy Nelson Rojas, desarrollador frontend especializado en crear soluciones digitales modernas y optimizadas.";
 ---
 
-<Layout title="Nelson Rojas - Frontend Developer ES" lang="es">
+<Layout
+    title="Desarrollador Frontend - Nelson Rojas"
+    lang="es"
+    metaDescription={description}
+>
     <div class="lg:grid grid-cols-2 gap-x-10 relative">
         <Header lang={lang} />
         <Main lang={lang} />

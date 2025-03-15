@@ -10,9 +10,15 @@ const { searchParams } = Astro.url;
 const _action = searchParams.get("_action");
 const isActionSend = _action === "send";
 const lang: lang = "en";
+const description =
+    "Do you have an idea or project in mind? Contact me to develop a compelling and efficient digital solution.";
 ---
 
-<Layout title="Nelson Rojas - Frontend Developer" lang={lang}>
+<Layout
+    title="Contact - Let's Talk About Your Project"
+    lang={lang}
+    metaDescription={description}
+>
     <div class="lg:py-8 lg:px-40 mb-16">
         {
             !isActionSend && (

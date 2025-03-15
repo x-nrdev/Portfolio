@@ -6,9 +6,13 @@ interface Props {
     title: string;
     lang: "en" | "es";
     isNotFound?: boolean;
+    metaDescription?: string;
 }
 
-const { title, lang, isNotFound } = Astro.props;
+const { title, lang, isNotFound, metaDescription } = Astro.props;
+const description =
+    metaDescription ??
+    "I build clean, modern, and efficient software solutions.";
 ---
 
 <!doctype html>
@@ -29,18 +33,11 @@ const { title, lang, isNotFound } = Astro.props;
             crossorigin="anonymous"
         />
         <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="I build clean, modern, and efficient software solutions."
-        />
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/ico" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-        <meta
-            name="description"
-            content="I build clean, modern, and efficient software solutions."
-        />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
