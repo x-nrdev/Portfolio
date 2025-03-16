@@ -31,7 +31,10 @@ const isLastProject = (index: number) => {
 };
 ---
 
-<Section class:list={["content-visibility-auto"]}>
+<Section
+    class:list={["content-visibility-auto"]}
+    role={lang === "es" ? "Proyectos" : "Projects"}
+>
     <H2 class:list={"lg:px-4"}>{lang === "es" ? "Proyectos" : "Projects"}</H2>
     <ul class="group/opacity">
         {

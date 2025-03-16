@@ -60,7 +60,10 @@ const lang = Astro.preferredLocale;
 
 {
     techSkills && (
-        <div class="content-visibility-auto">
+        <div
+            class="content-visibility-auto"
+            aria-label={lang === "es" ? "Tecnologías" : "Skills"}
+        >
             <H2>{lang === "es" ? "Tecnologías" : "Skills"}</H2>
             <ul
                 class:list={[
