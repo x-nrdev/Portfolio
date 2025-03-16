@@ -38,6 +38,7 @@ export const server = {
                 headers: {
                     Location: '/', // Redirect to the homepage
                 },
+                data: data,
             }
         },
     }),

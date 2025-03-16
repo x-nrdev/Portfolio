@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+Disallow: /hidden
+Allow: /
+Sitemap: https://nelsonrojas.dev/sitemap-index.xml
