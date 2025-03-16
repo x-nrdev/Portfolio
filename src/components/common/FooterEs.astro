@@ -9,6 +9,7 @@ const { class: className } = Astro.props;
         Inspirado por el portafolio de <AnchorText
             class:list={["font-bold"]}
             href="https://brittanychiang.com/"
+            noFollow
         >
             Brittany Chiang.</AnchorText
         >
@@ -16,14 +17,18 @@ const { class: className } = Astro.props;
     <p>
         Desarrollado con<AnchorText
             class:list={["font-bold"]}
-            href="https://astro.build/">Astro,</AnchorText
+            href="https://astro.build/"
+            noFollow>Astro,</AnchorText
         >
-        <AnchorText class:list={["font-bold"]} href="https://tailwindcss.com/"
-            >Tailwind CSS,</AnchorText
+        <AnchorText
+            class:list={["font-bold"]}
+            noFollow
+            href="https://tailwindcss.com/">Tailwind CSS,</AnchorText
         >
         y <AnchorText
             class:list={["font-bold"]}
-            href="https://www.typescriptlang.org/">TypeScript.</AnchorText
+            href="https://www.typescriptlang.org/"
+            noFollow>TypeScript.</AnchorText
         >
     </p>
     <p>

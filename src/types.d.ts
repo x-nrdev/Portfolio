@@ -15,6 +15,7 @@ export interface AnchorTextType {
     href: string
     target?: string
     class?: string
+    noFollow?: boolean
 }
 
 export interface SocialNetworkType {
