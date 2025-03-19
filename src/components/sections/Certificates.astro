@@ -16,7 +16,7 @@ const certificates = (await getCollection("certificates"))
 
 <Section
     class:list={["content-visibility-auto"]}
-    role={lang === "es" ? "Certificados" : "Certificates"}
+    ariaLabel={lang === "es" ? "Certificados" : "Certificates"}
 >
     <H2 class:list={"lg:px-4"}
         >{lang === "es" ? "Certificados" : "Certificates"}</H2

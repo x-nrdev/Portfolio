@@ -1,8 +1,8 @@
 ---
-const { class: className, role } = Astro.props;
+const { class: className, ariaLabel } = Astro.props;
 const classList = className ? `mb-section-gap ${className}` : "mb-section-gap";
 ---
 
-<section class={classList} role={role}>
+<section class={classList} aria-label={ariaLabel}>
     <slot />
 </section>
