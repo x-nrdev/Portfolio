@@ -2,7 +2,7 @@
 title: CMS Administrator - Playtech
 date: 2024 - Present
 link: https://www.playtech.com/
-skills: [CMS, HTML, CSS, JavaScript, Liferay]
+skills: [TypeScript, JavaScript, Vitest, Figma, Astro, HTML, CSS, CMS, Liferay]
 ---
 
 Develop, customize, and maintain reusable templates for websites , ensuring consistency and efficiency across projects, enhance website aesthetics , optimize pages layouts, and collaborate with designers.

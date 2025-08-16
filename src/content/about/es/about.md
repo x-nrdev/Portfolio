@@ -1,8 +1,8 @@
 ¡Hola a todos! 👋
 
-Durante los últimos cuatro años, me he sumergido en diferentes proyectos 
-que han **perfeccionado mis habilidades** a través de diversas tecnologías 👨‍💻.
+Desarrollador Frontend con más de 5 años de experiencia creando interfaces modernas, rápidas, adaptables y accesibles.
+Apasionado por el rendimiento web, la experiencia de usuario y el aprendizaje continuo.
 
-Como estilo de vida, me encanta **leer articulos** sobre diferentes tipos de soluciones sobre el desarrollo de software o **ver streams** sobre nuevas tendencias tecnológicas, frameworks, actualizaciones sobre lenguajes de programación, nuevas funcionalidades de los mismos, etc 📚.
-
-En mi tiempo libre me encanta jugar a videojuegos 🎮, ir al cine y pasar tiempo con la **familia y los amigos** 👪.
+Experto en el uso de herramientas
+como GitHub Copilot y soluciones de IA generativa para acelerar el desarrollo, reducir tareas repetitivas y concentrarme en
+la entrega de funcionalidades de alto impacto.

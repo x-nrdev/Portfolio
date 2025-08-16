@@ -1,8 +1,6 @@
-Hi there! 👋 
+Hi there! 👋
 
-Over the past four years, I have been immersed myself in different projects 
-that have **honed my skills** across various technologies 👨‍💻.
+5+ years of experience building modern, fast, responsive, and accessible interfaces. Passionate about web performance, user experience, and continuous learning.
 
-As a lifestyle, I like to **read articles** about different types of software development solutions or **watch streams** about new technology trends, frameworks, updates on programming languages, new functionalities, etc 📚.
-
-In my free time I love playing videogames 🎮, going to the cinema and spending time with **family and friends** 👪.
+Skilled at leveraging tools like GitHub Copilot and generative AI to speed up
+development, reducing repetitive coding tasks, and focus on high-impact solutions.
